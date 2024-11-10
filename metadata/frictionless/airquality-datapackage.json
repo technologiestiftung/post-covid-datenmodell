@@ -1,0 +1,120 @@
+{
+  "name": "luftqualitaetsdaten_api_uba",
+  "title": "Luftqualitätsdaten API v3 - Umweltbundesamt",
+  "description": "API zur Abfrage von Luftqualitätsdaten des Umweltbundesamts (UBA), Version 3. Die API stellt Daten zu verschiedenen Luftschadstoffen (z.B. PM10, CO, NO2, PM2.5) zur Verfügung, die an Messstationen in Deutschland erhoben werden. Abfragen sind für spezifische Schadstoffe, Zeiträume und Auswertungen möglich.",
+  "licenses": [
+    {
+      "name": "TODO",
+      "path": "TODO",
+      "title": "Lizenz für die Nutzung der Daten"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Umweltbundesamt",
+      "path": "https://www.umweltbundesamt.de",
+      "email": "immission@uba.de"
+    }
+  ],
+  "profile": "data-package",
+  "resources": [
+    {
+      "name": "luftqualitaetsdaten_json",
+      "title": "Luftqualitätsdaten JSON API",
+      "path": "https://www.umweltbundesamt.de/api/air_data/v3/airquality/json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "JSON API zur Abfrage von Luftqualitätsdaten nach Schadstoff und Zeitraum.",
+      "schema": {
+        "fields": [
+          {
+            "name": "station",
+            "type": "string",
+            "description": "Stationskennung der Messstation"
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "description": "Datum der Messung im Format YYYY-MM-DD"
+          },
+          {
+            "name": "time",
+            "type": "time",
+            "description": "Zeit der Messung im Format HH:MM"
+          },
+          {
+            "name": "component",
+            "type": "string",
+            "description": "Schadstoffkomponente (z.B. PM10, CO, NO2, PM2.5)"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Messwert der Schadstoffkonzentration"
+          },
+          {
+            "name": "unit",
+            "type": "string",
+            "description": "Einheit des Messwerts (z.B. µg/m³)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "luftqualitaetsdaten_csv",
+      "title": "Luftqualitätsdaten CSV API",
+      "path": "https://www.umweltbundesamt.de/api/air_data/v3/airquality/csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "CSV API zur Abfrage von Luftqualitätsdaten nach Schadstoff und Zeitraum.",
+      "schema": {
+        "fields": [
+          {
+            "name": "station",
+            "type": "string",
+            "description": "Stationskennung der Messstation"
+          },
+          {
+            "name": "date",
+            "type": "date",
+            "description": "Datum der Messung im Format YYYY-MM-DD"
+          },
+          {
+            "name": "time",
+            "type": "time",
+            "description": "Zeit der Messung im Format HH:MM"
+          },
+          {
+            "name": "component",
+            "type": "string",
+            "description": "Schadstoffkomponente (z.B. PM10, CO, NO2, PM2.5)"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Messwert der Schadstoffkonzentration"
+          },
+          {
+            "name": "unit",
+            "type": "string",
+            "description": "Einheit des Messwerts (z.B. µg/m³)"
+          }
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    "Luftqualität",
+    "Umwelt",
+    "Schadstoffe",
+    "Deutschland",
+    "Umweltbundesamt"
+  ],
+  "version": "3.0",
+  "language": ["de"],
+  "temporal": {
+    "start": "2016-01-01",
+    "end": "TODO"
+  },
+  "spatial": "Deutschland"
+}
