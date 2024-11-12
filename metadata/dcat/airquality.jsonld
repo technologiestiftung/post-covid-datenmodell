@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcatap": "http://data.europa.eu/r5r/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcatde": "http://dcat-ap.de/def/dcatde/"
+  },
+  "@type": "dcat:DataService",
+  "dct:title": "Luftqualitätsdaten API v3 - Umweltbundesamt",
+  "dct:description": "API zur Abfrage von Luftqualitätsdaten des Umweltbundesamts (UBA), Version 3. Die API stellt Daten zu verschiedenen Luftschadstoffen (z.B. PM10, CO, NO2, PM2.5) zur Verfügung, die an Messstationen in Deutschland erhoben werden. Abfragen sind für spezifische Schadstoffe, Zeiträume und Auswertungen möglich.",
+  "dcat:endpointURL": [
+    "https://www.umweltbundesamt.de/api/air_data/v3/airquality/json",
+    "https://www.umweltbundesamt.de/api/air_data/v3/airquality/csv"
+  ],
+  "dcat:endpointDescription": "API v3 für die Abfrage von Luftqualitätsdaten in JSON und CSV Formaten. Daten umfassen Schadstoffe wie Feinstaub (PM10, PM2.5), Ozon, Stickstoffdioxid und Kohlenmonoxid.",
+  "dcat:servesDataset": {
+    "@type": "dcat:Dataset",
+    "dct:title": "Luftqualitätsdaten - Umweltbundesamt",
+    "dct:description": "Datensatz zur Luftqualität, der Messdaten zu verschiedenen Luftschadstoffen an Stationen in Deutschland enthält.",
+    "dcat:landingPage": "https://www.umweltbundesamt.de/daten/luft/luftdaten"
+  },
+  "dct:license": {
+    "@type": "dcterms:LicenseDocument",
+    "dcterms:title": "TODO"
+  },
+  "dcatap:availability": {
+    "@type": "skos:Concept",
+    "skos:prefLabel": "TODO"
+  },
+  "dct:accessRights": {
+    "@type": "dcterms:RightsStatement",
+    "dcterms:title": "TODO"
+  },
+  "dct:temporal": {
+    "@type": "dcterms:PeriodOfTime",
+    "dcat:startDate": "2016-01-01"
+  },
+  "dcat:temporalResolution": "TODO",
+  "dct:accrualPeriodicity": "TODO",
+  "dcat:contactPoint": {
+    "@type": "vcard:Contact",
+    "vcard:fn": "Umweltbundesamt",
+    "vcard:hasEmail": "mailto:immission@uba.de"
+  },
+  "dcat:landingPage": "https://www.umweltbundesamt.de/daten/luft/luftdaten",
+  "dct:language": "de",
+  "dct:issued": "2023-10-27",
+  "dct:publisher": {
+    "@type": "org:Organization",
+    "org:name": "Umweltbundesamt",
+    "org:contactPoint": {
+      "@type": "vcard:Contact",
+      "vcard:fn": "Kontakt Umweltbundesamt",
+      "vcard:hasEmail": "mailto:immission@uba.de"
+    }
+  }
+}
