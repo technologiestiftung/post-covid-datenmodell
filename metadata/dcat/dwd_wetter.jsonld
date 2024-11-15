@@ -6,26 +6,32 @@
     "org": "http://www.w3.org/ns/org#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "prov": "http://www.w3.org/ns/prov#",
-    "dcatde": "https://www.dcat-ap.de/def/dcatde/2.0/"
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dcatde": "https://www.dcat-ap.de/def/dcatde/2.0/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "dcat:DataService",
   "dct:title": "Stündliche Wetterdaten - Bright Sky API (basierend auf DWD)",
   "dct:description": "Eine kostenlose API, bereitgestellt von Bright Sky, zur Abfrage stündlicher Wetterdaten basierend auf den offenen Daten des Deutschen Wetterdienstes (DWD). Die API liefert Beobachtungen und Vorhersagen für Deutschland und weltweit, mit einem besonderen Fokus auf Deutschland.",
   "dcat:endpointURL": [
-    "https://api.brightsky.dev/weather"
+    {
+      "@id": "https://api.brightsky.dev/weather"
+    }
   ],
-  "dcat:endpointDescription": "API zur Abfrage stündlicher Wetterdaten (historische und aktuelle Beobachtungen sowie Vorhersagen) für Deutschland und weltweit.",
+  "dcat:endpointDescription": {
+    "@id": "https://api.brightsky.dev/docs"
+  },
   "dcat:servesDataset": {
     "@type": "dcat:Dataset",
     "dct:title": "Stündliche Wetterbeobachtungen und Vorhersagen - DWD Daten über Bright Sky",
     "dct:description": "Datensatz stündlicher Wetterbeobachtungen und Vorhersagen, bereitgestellt durch Bright Sky und basierend auf DWD Daten, mit Messwerten für Temperatur, Niederschlag, Wind, Luftfeuchtigkeit, Luftdruck und Taupunkt.",
-    "dcat:landingPage": "https://opendata.dwd.de"
+    "dcat:landingPage": {
+      "@id": "https://opendata.dwd.de"
+    }
   },
   "dct:license": {
-    "@type": "dcterms:LicenseDocument",
-    "dcterms:title": "DWD Nutzungsbedingungen",
-    "dcterms:description": "Die durch die API abgerufenen Daten unterliegen den Nutzungsbedingungen des Deutschen Wetterdienstes.",
-    "dcterms:accessURL": "https://opendata.dwd.de/terms/"
+    "@id": "https://opendata.dwd.de/terms/"
   },
   "dct:accessRights": {
     "@type": "dcterms:RightsStatement",
@@ -33,25 +39,40 @@
   },
   "dct:spatial": {
     "@type": "dcterms:Location",
-    "dcterms:location": "Deutschland und weltweit (Deutschland mit hoher Dichte, weltweit mit geringerer Dichte)"
+    "dcat:bbox": "5.866, 47.27, 15.041, 55.058"
   },
   "dct:temporal": {
     "@type": "dcterms:PeriodOfTime",
-    "dcat:startDate": "2010-01-01"
+    "dcat:startDate": {
+      "@value": "2010-01-01",
+      "@type": "xsd:date"
+    }
   },
-  "dcat:temporalResolution": "Stündlich",
-  "dcat:spatialResolutionInMeters": "PLATZHALTER: Räumliche Auflösung",
-  "dct:accrualPeriodicity": "Stündlich aktualisiert",
+  "dcat:temporalResolution": {
+    "@value": "PT1H",
+    "@type": "xsd:duration"
+  },
+  "dct:accrualPeriodicity": {
+    "@id": "http://publications.europa.eu/resource/authority/frequency/HOURLY"
+  },
   "dcat:contactPoint": {
     "@type": "vcard:Contact",
-    "vcard:fn": "Bright Sky"
+    "vcard:fn": "Bright Sky",
+    "vcard:hasEmail": "mailto:info@brightsky.dev"
   },
-  "dcat:landingPage": "https://api.brightsky.dev",
-  "dct:language": "de",
-  "dct:issued": "TODO",
+  "dcat:landingPage": {
+    "@id": "https://api.brightsky.dev"
+  },
+  "dct:language": {
+    "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+  },
+  "dct:issued": {
+    "@value": "2023-10-01",
+    "@type": "xsd:date"
+  },
   "dct:publisher": {
-    "@type": "org:Organization",
-    "org:name": "Deutscher Wetterdienst (DWD)"
+    "@type": "foaf:Agent",
+    "foaf:name": "Deutscher Wetterdienst (DWD)"
   },
   "dcat:keyword": [
     "Wetter",

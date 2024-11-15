@@ -13,7 +13,7 @@
    - Unter **Verteilung** (`dcat:distribution`) haben wir Zugangs-URLs und Dateiformate beschrieben, um Nutzern einen direkten Zugriff zu ermöglichen.
 
 2. **Validierung**:  
-   Die erstellten Metadaten haben wir im [DCAT-AP.de Validator](https://www.itb.ec.europa.eu/shacl/dcat-ap.de/upload) geprüft. Der Validator bestätigte die Konformität unserer Metadaten; fehlende oder optionale Felder wurden ergänzt oder markiert.
+   Die erstellten Metadaten haben wir im [DCAT-AP.de Validator](https://www.itb.ec.europa.eu/shacl/dcat-ap.de/upload) geprüft. Der Validator bestätigte die Konformität unserer Metadaten. Über den DCAT-AP.de-Validator können bei Bedarf auch SHACL-Shapes erstellt werden.
 
 ### Frictionless Data
 

@@ -6,26 +6,31 @@
     "org": "http://www.w3.org/ns/org#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "prov": "http://www.w3.org/ns/prov#",
-    "dcatde": "https://www.dcat-ap.de/def/dcatde/2.0/"
+    "dcatde": "https://www.dcat-ap.de/def/dcatde/2.0/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "dcat:Dataset",
   "dct:title": "SARS-CoV-2 Infektionen in Deutschland",
   "dct:description": "Der Datensatz enthält Informationen zu SARS-CoV-2-Infektionen in Deutschland, einschließlich Fallzahlen, Todesfällen und Genesungen, die täglich aktualisiert werden. Die Daten stammen aus dem Meldesystem nach dem Infektionsschutzgesetz (IfSG) und werden vom Robert Koch-Institut (RKI) bereitgestellt.",
   "dct:identifier": "10.5281/zenodo.14127726",
-  "dct:issued": "2024-01-01",
-  "dct:language": "de",
-  "dcat:theme": [
-    "http://eurovoc.europa.eu/100277"
-  ],
+  "dct:issued": {
+    "@value": "2024-01-01",
+    "@type": "xsd:date"
+  },
+  "dct:language": {
+    "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+  },
+  "@id": "https://www.dcat-ap.de/def/dcatde/2.0/spec/themes#public_health",
   "dcat:contactPoint": {
-    "@type": "vcard:Contact",
+    "@type": "vcard:Kind",
     "vcard:fn": "Open Data Team, Fachgebiet MF4",
     "vcard:hasEmail": "mailto:OpenData@rki.de"
   },
   "dct:publisher": {
-    "@type": "org:Organization",
-    "org:name": "Robert Koch-Institut",
-    "org:address": {
+    "@type": "http://xmlns.com/foaf/0.1/Agent",
+    "http://xmlns.com/foaf/0.1/name": "Robert Koch-Institut",
+    "vcard:hasAddress": {
       "@type": "vcard:Address",
       "vcard:street-address": "Nordufer 20",
       "vcard:locality": "Berlin",
@@ -43,48 +48,36 @@
   "dcat:distribution": [
     {
       "@type": "dcat:Distribution",
-      "dcat:accessURL": "https://github.com/robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland",
+      "dcat:accessURL": {
+        "@id": "https://github.com/robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland"
+      },
       "dct:title": "GitHub Repository des Robert Koch-Instituts",
       "dct:description": "Repository des RKI auf GitHub mit Zugriff auf SARS-CoV-2-Daten und Dokumentation."
     }
   ],
-  "dct:accrualPeriodicity": "täglich",
+  "dct:accrualPeriodicity": {
+    "@id": "http://publications.europa.eu/resource/authority/frequency/DAILY"
+  },
   "dct:spatial": {
-    "@type": "dcterms:Location",
-    "dcterms:location": "Deutschland"
+    "@type": "http://purl.org/dc/terms/Location",
+    "dcat:bbox": "10.0, 51.0, 15.0, 55.0"
   },
   "dcat:temporal": {
-    "@type": "dcterms:PeriodOfTime",
-    "dcat:startDate": "2020-01-01"
-  },
-  "dcat:landingPage": "https://www.rki.de",
-  "dct:contributor": [
-    {
-      "@type": "vcard:Individual",
-      "vcard:fn": "Michaela Diercke",
-      "vcard:title": "Leitung, Fachgebiet 32"
-    },
-    {
-      "@type": "vcard:Individual",
-      "vcard:fn": "Linus Grabenhenrich",
-      "vcard:title": "Leitung, Abteilung MFI"
-    },
-    {
-      "@type": "vcard:Individual",
-      "vcard:fn": "Herrmann Claus",
-      "vcard:title": "Leitung, Fachgebiet 32"
-    },
-    {
-      "@type": "vcard:Individual",
-      "vcard:fn": "Hannes Wuensche",
-      "vcard:title": "Datenkuration, Fachgebiet MF4"
+    "@type": "http://purl.org/dc/terms/PeriodOfTime",
+    "dcat:startDate": {
+      "@value": "2020-01-01",
+      "@type": "xsd:date"
     }
-  ],
+  },
+  "dcat:landingPage": {
+    "@id": "https://www.rki.de"
+  },
   "dct:license": {
-    "@type": "dcterms:LicenseDocument",
+    "@type": "http://purl.org/dc/terms/LicenseDocument",
     "dcterms:title": "Creative Commons Attribution 4.0 International License (CC-BY 4.0)",
     "dcterms:description": "Der Datensatz ist unter der Creative Commons Namensnennung 4.0 International Public License lizenziert. Er kann frei verwendet, geteilt und bearbeitet werden, solange die Quelle angemessen genannt wird.",
-    "dcterms:accessURL": "https://creativecommons.org/licenses/by/4.0/",
-    "dcterms:license": "https://creativecommons.org/licenses/by/4.0/"
+    "dcterms:accessURL": {
+      "@id": "https://creativecommons.org/licenses/by/4.0/"
+    }
   }
 }
