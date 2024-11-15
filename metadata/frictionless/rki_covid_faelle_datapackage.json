@@ -1,0 +1,173 @@
+{
+  "name": "sars-cov-2-infektionen-deutschland",
+  "title": "SARS-CoV-2 Infektionen in Deutschland",
+  "description": "Der Datensatz enthält Informationen zu SARS-CoV-2-Infektionen in Deutschland, einschließlich Fallzahlen, Todesfällen und Genesungen, die täglich aktualisiert werden. Die Daten werden gemäß Infektionsschutzgesetz vom RKI bereitgestellt.",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International License",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Robert Koch-Institut",
+      "path": "https://www.rki.de",
+      "email": "OpenData@rki.de"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Leitung, Fachgebiet 32",
+      "name": "Michaela Diercke"
+    },
+    {
+      "title": "Leitung, Abteilung MFI",
+      "name": "Linus Grabenhenrich"
+    },
+    {
+      "title": "Leitung, Fachgebiet 32",
+      "name": "Herrmann Claus"
+    },
+    {
+      "title": "Datenkuration, Fachgebiet MF4",
+      "name": "Hannes Wuensche"
+    }
+  ],
+  "profile": "data-package",
+  "version": "2024",
+  "keywords": [
+    "COVID-19",
+    "SARS-CoV-2",
+    "Infektionen",
+    "RKI"
+  ],
+  "language": [
+    "de"
+  ],
+  "temporal": {
+    "start": "2020-01-01"
+  },
+  "resources": [
+    {
+      "name": "Aktuell_Deutschland_SARSCoV2_Infektionen",
+      "title": "Tagesaktuelle SARS-CoV-2 Infektionen in Deutschland",
+      "path": "https://zenodo.org/record/14127726",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "UTF-8",
+      "description": "Tagesaktuelle Fallzahlen der SARS-CoV-2-Infektionen in Deutschland auf Landkreisebene. Die Daten umfassen Infektionsfälle, Todesfälle und Genesungen und werden täglich um Mitternacht aktualisiert.",
+      "schema": {
+        "fields": [
+          {
+            "name": "IdLandkreis",
+            "type": "integer",
+            "description": "Identifikationsnummer des Landkreises basierend auf dem Amtlichen Gemeindeschlüssel (AGS) und den 12 Berliner Bezirken."
+          },
+          {
+            "name": "Geschlecht",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "W",
+                "M",
+                "unbekannt"
+              ]
+            },
+            "description": "Geschlecht der Fallgruppe: weiblich (W), männlich (M), oder unbekannt."
+          },
+          {
+            "name": "Altersgruppe",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "A00-A04",
+                "A05-A14",
+                "A15-A34",
+                "A35-A59",
+                "A60-A79",
+                "A80+",
+                "unbekannt"
+              ]
+            },
+            "description": "Altersgruppe der Fälle, gruppiert nach Altersbereichen."
+          },
+          {
+            "name": "Meldedatum",
+            "type": "date",
+            "description": "Datum, an dem der Fall dem Gesundheitsamt gemeldet wurde."
+          },
+          {
+            "name": "Refdatum",
+            "type": "date",
+            "description": "Datum des Erkrankungsbeginns oder Meldedatum, wenn das Erkrankungsdatum unbekannt ist."
+          },
+          {
+            "name": "IstErkrankungsbeginn",
+            "type": "boolean",
+            "description": "1, wenn Refdatum der Erkrankungsbeginn ist; 0, wenn Refdatum das Meldedatum ist."
+          },
+          {
+            "name": "AnzahlFall",
+            "type": "integer",
+            "description": "Anzahl der gemeldeten Infektionsfälle in der Fallgruppe. Negative Werte zeigen Korrekturen an."
+          },
+          {
+            "name": "AnzahlTodesfall",
+            "type": "integer",
+            "description": "Anzahl der gemeldeten Todesfälle in der Fallgruppe. Negative Werte zeigen Korrekturen an."
+          },
+          {
+            "name": "AnzahlGenesen",
+            "type": "integer",
+            "description": "Anzahl der genesenen Fälle in der Fallgruppe. Negative Werte zeigen Korrekturen an."
+          },
+          {
+            "name": "NeuerFall",
+            "type": "integer",
+            "constraints": {
+              "enum": [
+                0,
+                1,
+                -1
+              ]
+            },
+            "description": "Meldestatus des Falles: 1 für neu, 0 für bekannt, -1 für Korrektur."
+          },
+          {
+            "name": "NeuerTodesfall",
+            "type": "integer",
+            "constraints": {
+              "enum": [
+                0,
+                1,
+                -1,
+                -9
+              ]
+            },
+            "description": "Meldestatus Todesfall: 1 für neu, 0 für bekannt, -1 für Korrektur, -9 wenn keine Information vorhanden ist."
+          },
+          {
+            "name": "NeuGenesen",
+            "type": "integer",
+            "constraints": {
+              "enum": [
+                0,
+                1,
+                -1,
+                -9
+              ]
+            },
+            "description": "Meldestatus Genesung: 1 für neu, 0 für bekannt, -1 für Korrektur, -9 wenn keine Information vorhanden ist."
+          }
+        ],
+        "primaryKey": [
+          "IdLandkreis",
+          "Meldedatum",
+          "Geschlecht",
+          "Altersgruppe"
+        ]
+      }
+    }
+  ]
+}

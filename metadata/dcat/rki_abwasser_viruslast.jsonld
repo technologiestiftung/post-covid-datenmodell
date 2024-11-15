@@ -1,0 +1,142 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dct": "http://purl.org/dc/terms/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcatde": "https://www.dcat-ap.de/def/dcatde/2.0/"
+  },
+  "@type": "dcat:Dataset",
+  "dct:title": "Abwassersurveillance AMELAG",
+  "dct:description": "Das Projekt 'Abwassermonitoring für die epidemiologische Lagebewertung' (AMELAG) zielt darauf ab, SARS-CoV-2-Nachweise aus dem Abwasser als zusätzlichen Indikator zur epidemiologischen Lagebewertung in Deutschland zu etablieren. Durch Zusammenarbeit zwischen Behörden, Kläranlagen und Laboren soll ein bundesweites Netzwerk für die Abwassersurveillance aufgebaut und Strukturen für ein fortlaufendes Monitoring entwickelt werden.",
+  "dct:identifier": "10.5281/zenodo.14137715",
+  "dct:issued": {
+    "@value": "2024-11-13",
+    "@type": "xsd:date"
+  },
+  "dct:modified": {
+    "@value": "2024-11-12",
+    "@type": "xsd:date"
+  },
+  "dct:publisher": {
+    "@type": "foaf:Organization",
+    "foaf:name": "Robert Koch-Institut",
+    "foaf:mbox": "mailto:opendata@rki.de"
+  },
+  "dcat:contactPoint": {
+    "@type": "vcard:Organization",
+    "vcard:fn": "Robert Koch-Institut | Open Data Projektteam",
+    "vcard:hasStreetAddress": "Nordufer 20",
+    "vcard:hasLocality": "Berlin",
+    "vcard:hasPostalCode": "13353",
+    "vcard:hasCountryName": "Deutschland",
+    "vcard:hasEmail": "mailto:opendata@rki.de"
+  },
+  "dcat:landingPage": {
+    "@id": "https://robert-koch-institut.github.io/Abwassersurveillance_AMELAG"
+  },
+  "dcat:theme": [
+    {
+      "@id": "http://publications.europa.eu/resource/authority/data-theme/HEAL"
+    },
+    {
+      "@id": "http://publications.europa.eu/resource/authority/data-theme/SOCI"
+    },
+    {
+      "@id": "http://publications.europa.eu/resource/authority/data-theme/TECH"
+    }
+  ],
+  "dcat:keyword": [
+    "COVID-19",
+    "SARS-CoV-2",
+    "Abwasserbasierte epidemiologische Überwachung",
+    "Wastewater-Based Epidemiological Monitoring",
+    "Epidemiologie",
+    "Gesundheitsberichterstattung",
+    "Public health surveillance",
+    "Epidemiology",
+    "Open Data",
+    "Offene Daten",
+    "RKI"
+  ],
+  "dct:license": {
+    "@id": "http://dcat-ap.de/def/licenses/cc-by/4.0"
+  },
+  "dcat:distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "dct:title": "GitHub - Abwassersurveillance AMELAG",
+      "dct:description": "GitHub ist eine Plattform zur gemeinsamen Entwicklung und Bereitstellung von Code und Datensätzen. Hier werden die Abwassersurveillance-Daten gehostet und verwaltet.",
+      "dcat:accessURL": {
+        "@id": "https://github.com/robert-koch-institut/Abwassersurveillance_AMELAG"
+      },
+      "dct:language": {
+        "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+      },
+      "dct:modified": {
+        "@value": "2024-11-13",
+        "@type": "xsd:date"
+      },
+      "dcatde:licenseAttributionByText": "Robert Koch-Institut, Fachgebiet 32 (2024): Abwassersurveillance AMELAG, Berlin: Zenodo. DOI:10.5281/zenodo.14137715",
+      "dcatde:plannedAvailability": {
+        "@id": "http://dcat-ap.de/def/plannedAvailability/stable"
+      }
+    },
+    {
+      "@type": "dcat:Distribution",
+      "dct:title": "Zenodo - Abwassersurveillance AMELAG",
+      "dct:description": "Zenodo ist eine europäische Plattform zur Langzeitarchivierung und Bereitstellung wissenschaftlicher Inhalte, die den FAIR-Prinzipien folgt.",
+      "dcat:accessURL": {
+        "@id": "https://zenodo.org/record/10782702"
+      },
+      "dct:language": {
+        "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+      },
+      "dct:modified": {
+        "@value": "2024-11-13",
+        "@type": "xsd:date"
+      },
+      "dcatde:licenseAttributionByText": "Robert Koch-Institut, Fachgebiet 32 (2024): Abwassersurveillance AMELAG, Berlin: Zenodo. DOI:10.5281/zenodo.14137715",
+      "dcatde:plannedAvailability": {
+        "@id": "http://dcat-ap.de/def/plannedAvailability/stable"
+      }
+    },
+    {
+      "@type": "dcat:Distribution",
+      "dct:title": "[Dokumentation] Abwassersurveillance_AMELAG.pdf",
+      "dct:description": "Die Datensatzdokumentation enthält Informationen zum Entstehungskontext, Aufbau und zur Nachnutzung der im Datensatz 'Abwassersurveillance AMELAG' bereitgestellten Daten.",
+      "dcat:accessURL": {
+        "@id": "https://zenodo.org/record/10782702/files/%5BDokumentation%5D_Abwassersurveillance_AMELAG.pdf"
+      },
+      "dct:language": {
+        "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+      },
+      "dct:modified": {
+        "@value": "2024-11-13",
+        "@type": "xsd:date"
+      },
+      "dct:format": {
+        "@id": "http://publications.europa.eu/resource/authority/file-type/PDF"
+      },
+      "dcatde:licenseAttributionByText": "Robert Koch-Institut, Fachgebiet 32 (2024): Abwassersurveillance AMELAG, Berlin: Zenodo. DOI:10.5281/zenodo.14137715",
+      "dcatde:plannedAvailability": {
+        "@id": "http://dcat-ap.de/def/plannedAvailability/stable"
+      }
+    }
+  ],
+  "dct:contributor": [
+    {
+      "@type": "foaf:Agent",
+      "foaf:name": "Robert Koch-Institut | Open Data Team",
+      "foaf:mbox": "mailto:opendata@rki.de"
+    },
+    {
+      "@type": "foaf:Agent",
+      "foaf:name": "Fachgebiet 32 Robert Koch-Institut"
+    }
+  ]
+}
