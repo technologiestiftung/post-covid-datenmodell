@@ -1,5 +1,15 @@
 # post-covid-metadatenkatalog
 
+
+## Dependency Installation
+
+The respository is implemented with poetry for dependency management. To use please install poetry and then execute these commands in your terminal in the project. See the [official Poetry documentation](https://python-poetry.org/docs/basic-usage/) for more information.
+
+```sh
+$ poetry install # will install dependencies from the pyproject.toml file and add a poetry.lock file
+$ poetry shell # will activate the virtual environment that has all dependencies installed
+```
+
 ## Erstellen und Validieren von Metadaten: Vorgehen und Ergebnisse
 
 ### DCAT-AP.de
@@ -28,3 +38,4 @@
    TODO: Validierung der Frictionless Data Metadaten
 
 Durch die strukturierte Erstellung und Validierung nach DCAT-AP.de- und Frictionless-Standards sind die Metadaten nun gut auffindbar und beschrieben. Dies erleichtert die Nutzung und Weiterverwendung der Daten für unterschiedliche Zwecke.
+
