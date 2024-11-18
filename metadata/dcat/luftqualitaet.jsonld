@@ -6,48 +6,72 @@
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "prov": "http://www.w3.org/ns/prov#",
-    "dcatde": "http://dcat-ap.de/def/dcatde/"
+    "dcatde": "http://dcat-ap.de/def/dcatde/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/"
   },
   "@type": "dcat:DataService",
   "dct:title": "Luftqualitätsdaten API v3 - Umweltbundesamt",
   "dct:description": "API zur Abfrage von Luftqualitätsdaten des Umweltbundesamts (UBA), Version 3. Die API stellt Daten zu verschiedenen Luftschadstoffen (z.B. PM10, CO, NO2, PM2.5) zur Verfügung, die an Messstationen in Deutschland erhoben werden. Abfragen sind für spezifische Schadstoffe, Zeiträume und Auswertungen möglich.",
   "dcat:endpointURL": [
-    "https://www.umweltbundesamt.de/api/air_data/v3/airquality/json",
-    "https://www.umweltbundesamt.de/api/air_data/v3/airquality/csv"
+    {
+      "@id": "https://www.umweltbundesamt.de/api/air_data/v3/airquality/json"
+    },
+    {
+      "@id": "https://www.umweltbundesamt.de/api/air_data/v3/airquality/csv"
+    }
   ],
-  "dcat:endpointDescription": "API v3 für die Abfrage von Luftqualitätsdaten in JSON und CSV Formaten. Daten umfassen Schadstoffe wie Feinstaub (PM10, PM2.5), Ozon, Stickstoffdioxid und Kohlenmonoxid.",
+  "dcat:endpointDescription": {
+    "@id": "https://www.umweltbundesamt.de/daten/luft/api/v3/endpoint-description"
+  },
   "dcat:servesDataset": {
     "@type": "dcat:Dataset",
     "dct:title": "Luftqualitätsdaten - Umweltbundesamt",
     "dct:description": "Datensatz zur Luftqualität, der Messdaten zu verschiedenen Luftschadstoffen an Stationen in Deutschland enthält.",
-    "dcat:landingPage": "https://www.umweltbundesamt.de/daten/luft/luftdaten"
+    "dcat:landingPage": {
+      "@id": "https://www.umweltbundesamt.de/daten/luft/luftdaten"
+    }
   },
   "dct:license": {
-    "@type": "dcterms:LicenseDocument",
-    "dcterms:title": "TODO"
+    "@id": "https://www.dcat-ap.de/def/licenses/cc-by-4.0"
   },
   "dcatap:availability": {
     "@type": "skos:Concept",
-    "skos:prefLabel": "TODO"
+    "skos:prefLabel": "Verfügbar"
   },
   "dct:accessRights": {
     "@type": "dcterms:RightsStatement",
-    "dcterms:title": "TODO"
+    "dcterms:title": "Öffentlich zugänglich"
   },
   "dct:temporal": {
     "@type": "dcterms:PeriodOfTime",
-    "dcat:startDate": "2016-01-01"
+    "dcat:startDate": {
+      "@value": "2016-01-01",
+      "@type": "xsd:date"
+    }
   },
-  "dcat:temporalResolution": "TODO",
-  "dct:accrualPeriodicity": "TODO",
+  "dcat:temporalResolution": {
+    "@value": "P1D",
+    "@type": "xsd:duration"
+  },
+  "dct:accrualPeriodicity": {
+    "@id": "http://publications.europa.eu/resource/authority/frequency/DAILY"
+  },
   "dcat:contactPoint": {
     "@type": "vcard:Contact",
     "vcard:fn": "Umweltbundesamt",
     "vcard:hasEmail": "mailto:immission@uba.de"
   },
-  "dcat:landingPage": "https://www.umweltbundesamt.de/daten/luft/luftdaten",
-  "dct:language": "de",
-  "dct:issued": "2023-10-27",
+  "dcat:landingPage": {
+    "@id": "https://www.umweltbundesamt.de/daten/luft/luftdaten"
+  },
+  "dct:language": {
+    "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+  },
+  "dct:issued": {
+    "@value": "2023-10-27",
+    "@type": "xsd:date"
+  },
   "dct:publisher": {
     "@type": "org:Organization",
     "org:name": "Umweltbundesamt",

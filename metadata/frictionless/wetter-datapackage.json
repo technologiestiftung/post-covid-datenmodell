@@ -1,0 +1,100 @@
+{
+  "name": "stundenwetterdaten_brightsky_dwd",
+  "title": "Stundenaktuelle Wetterdaten - Bright Sky API (basierend auf DWD)",
+  "description": "API für stündliche Wetterdaten, bereitgestellt von Bright Sky, basierend auf Daten des Deutschen Wetterdienstes (DWD). Die API bietet stündliche Wetterbeobachtungen und Vorhersagen für Deutschland und weltweit, mit einem Fokus auf Deutschland.",
+  "licenses": [
+    {
+      "name": "DWD Terms of Use",
+      "path": "https://opendata.dwd.de/terms/",
+      "title": "Nutzungsbedingungen des DWD"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Bright Sky",
+      "path": "https://api.brightsky.dev",
+      "email": "PLATZHALTER: Kontaktinformationen falls verfügbar"
+    },
+    {
+      "title": "Deutscher Wetterdienst (DWD)",
+      "path": "https://opendata.dwd.de"
+    }
+  ],
+  "profile": "data-package",
+  "resources": [
+    {
+      "name": "stundenwetter_brightsky",
+      "title": "Stundenwetterdaten Bright Sky API",
+      "path": "https://api.brightsky.dev/weather",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "API zur Abfrage von stündlichen Wetterdaten und Vorhersagen für Deutschland und weltweit.",
+      "schema": {
+        "fields": [
+          {
+            "name": "date",
+            "type": "datetime",
+            "description": "Zeitstempel der Wetteraufzeichnung im ISO 8601 Format"
+          },
+          {
+            "name": "station_id",
+            "type": "string",
+            "description": "DWD Stations-ID, typischerweise fünf alphanumerische Zeichen"
+          },
+          {
+            "name": "lat",
+            "type": "number",
+            "description": "Breitengrad in Dezimalgrad"
+          },
+          {
+            "name": "lon",
+            "type": "number",
+            "description": "Längengrad in Dezimalgrad"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "description": "Temperatur in Grad Celsius oder Kelvin (abhängig von den gewählten Einheiten)"
+          },
+          {
+            "name": "precipitation",
+            "type": "number",
+            "description": "Niederschlag in Millimetern"
+          },
+          {
+            "name": "wind_speed",
+            "type": "number",
+            "description": "Windgeschwindigkeit in m/s oder km/h (abhängig von den gewählten Einheiten)"
+          },
+          {
+            "name": "wind_direction",
+            "type": "integer",
+            "description": "Windrichtung in Grad"
+          },
+          {
+            "name": "humidity",
+            "type": "number",
+            "description": "Relative Luftfeuchtigkeit in Prozent"
+          },
+          {
+            "name": "pressure",
+            "type": "number",
+            "description": "Luftdruck in hPa"
+          },
+          {
+            "name": "dew_point",
+            "type": "number",
+            "description": "Taupunkt in Grad Celsius oder Kelvin"
+          }
+        ]
+      }
+    }
+  ],
+  "keywords": ["Wetter", "Stundenwetter", "DWD", "Bright Sky", "API"],
+  "version": "1.0",
+  "language": ["de"],
+  "temporal": {
+    "start": "2010-01-01"
+  },
+  "spatial": "Deutschland"
+}

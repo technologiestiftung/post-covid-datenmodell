@@ -1,0 +1,219 @@
+{
+  "name": "abwassersurveillance_amelag",
+  "title": "Abwassersurveillance AMELAG",
+  "description": "AMELAG ist ein Projekt zur Überwachung der SARS-CoV-2-Viruslast im Abwasser als zusätzlicher Indikator zur epidemiologischen Lagebewertung. Das Projekt läuft vom 22.11.2022 bis zum 31.12.2024 und wird vom Robert Koch-Institut durchgeführt.",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International License",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Robert Koch-Institut",
+      "path": "https://robert-koch-institut.github.io/Abwassersurveillance_AMELAG",
+      "email": "OpenData@rki.de"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Fachgebiet 32 | Surveillance und elektronisches Melde- und Informationssystem (DEMIS)",
+      "name": "Robert Koch-Institut"
+    }
+  ],
+  "profile": "data-package",
+  "version": "2024",
+  "keywords": [
+    "COVID-19",
+    "SARS-CoV-2",
+    "Abwassersurveillance",
+    "Epidemiologie",
+    "RKI"
+  ],
+  "language": ["de"],
+  "temporal": {
+    "start": "2022-11-22",
+    "end": "2024-12-31"
+  },
+  "resources": [
+    {
+      "name": "amelag_einzelstandorte",
+      "title": "AMELAG - Normalisierte Daten pro Standort",
+      "path": "https://zenodo.org/record/10782702/files/amelag_einzelstandorte.tsv",
+      "format": "tsv",
+      "mediatype": "text/tab-separated-values",
+      "encoding": "UTF-8",
+      "description": "Normalisierte SARS-CoV-2- und nicht-normalisierte Influenza-Viruslast-Daten für einzelne Standorte im Projekt AMELAG.",
+      "schema": {
+        "fields": [
+          {
+            "name": "standort",
+            "type": "string",
+            "description": "Standort der Kläranlage."
+          },
+          {
+            "name": "bundesland",
+            "type": "string",
+            "description": "Bundesland, in dem sich die Kläranlage befindet (Abkürzung, z.B. BW, BY)."
+          },
+          {
+            "name": "datum",
+            "type": "date",
+            "description": "Datum der Probenahme (jjjj-mm-tt)."
+          },
+          {
+            "name": "viruslast",
+            "type": "number",
+            "description": "Gemessene SARS-CoV-2-Viruslast in Genkopien pro Liter."
+          },
+          {
+            "name": "loess_vorhersage",
+            "type": "number",
+            "description": "Vorhergesagte Viruslast mittels LOESS-Regression."
+          },
+          {
+            "name": "loess_obere_schranke",
+            "type": "number",
+            "description": "Obere Grenze des 95%-Konfidenzintervalls des LOESS-Wertes."
+          },
+          {
+            "name": "loess_untere_schranke",
+            "type": "number",
+            "description": "Untere Grenze des 95%-Konfidenzintervalls des LOESS-Wertes."
+          },
+          {
+            "name": "loess_aenderung",
+            "type": "number",
+            "description": "Änderung des LOESS-Wertes zur Vorwoche."
+          },
+          {
+            "name": "einwohner",
+            "type": "integer",
+            "description": "Einwohnerzahl, die an das Klärwerk des Standortes angeschlossen ist."
+          },
+          {
+            "name": "laborwechsel",
+            "type": "string",
+            "constraints": {
+              "enum": ["ja", "nein", "NA"]
+            },
+            "description": "Änderung der Labormethoden am Standort."
+          },
+          {
+            "name": "trend",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "ansteigend",
+                "fallend",
+                "unverändert",
+                "keine Daten vorhanden",
+                "NA"
+              ]
+            },
+            "description": "Kategorisierte Veränderung des geglätteten LOESS-Wertes zur Vorwoche."
+          },
+          {
+            "name": "normalisierung",
+            "type": "string",
+            "constraints": {
+              "enum": ["ja", "nein", "NA"]
+            },
+            "description": "Angabe, ob eine Normalisierung nach Durchfluss erfolgt ist."
+          },
+          {
+            "name": "typ",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "SARS-CoV-2",
+                "Influenza A",
+                "Influenza B",
+                "Influenza A+B"
+              ]
+            },
+            "description": "Virustyp (SARS-CoV-2, Influenza A/B)."
+          },
+          {
+            "name": "unter_bg",
+            "type": "string",
+            "constraints": {
+              "enum": ["ja", "nein", "NA"]
+            },
+            "description": "Mindestens die Hälfte der gemessenen Gene unter der Bestimmungsgrenze."
+          }
+        ]
+      }
+    },
+    {
+      "name": "amelag_aggregierte_kurve",
+      "title": "AMELAG - Aggregierte Zeitreihe",
+      "path": "https://zenodo.org/record/10782702/files/amelag_aggregierte_kurve.tsv",
+      "format": "tsv",
+      "mediatype": "text/tab-separated-values",
+      "encoding": "UTF-8",
+      "description": "Zeitreihe der SARS-CoV-2- und Influenza-Viruslast auf aggregierter Ebene für Deutschland.",
+      "schema": {
+        "fields": [
+          {
+            "name": "datum",
+            "type": "date",
+            "description": "Datum des Mittwochs einer Woche."
+          },
+          {
+            "name": "n",
+            "type": "integer",
+            "description": "Anzahl der Standorte mit mindestens einem Messwert im Zeitraum."
+          },
+          {
+            "name": "anteil_bev",
+            "type": "number",
+            "description": "Prozentanteil der Gesamtbevölkerung, die an die übermittelnden Klärwerke angeschlossen ist."
+          },
+          {
+            "name": "viruslast",
+            "type": "number",
+            "description": "Durchschnittliche SARS-CoV-2-Viruslast über alle Standorte, gewichtet nach Einwohnerzahl."
+          },
+          {
+            "name": "loess_vorhersage",
+            "type": "number",
+            "description": "LOESS-regression Vorhersage der Viruslast."
+          },
+          {
+            "name": "loess_obere_schranke",
+            "type": "number",
+            "description": "Obere Schranke des 95%-Konfidenzintervalls des LOESS-Vorhersagewerts."
+          },
+          {
+            "name": "loess_untere_schranke",
+            "type": "number",
+            "description": "Untere Schranke des 95%-Konfidenzintervalls des LOESS-Vorhersagewerts."
+          },
+          {
+            "name": "normalisierung",
+            "type": "string",
+            "constraints": {
+              "enum": ["ja", "nein", "NA"]
+            },
+            "description": "Angabe, ob die Werte normalisiert wurden."
+          },
+          {
+            "name": "typ",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "SARS-CoV-2",
+                "Influenza A",
+                "Influenza B",
+                "Influenza A+B"
+              ]
+            },
+            "description": "Virustyp (SARS-CoV-2, Influenza A/B)."
+          }
+        ]
+      }
+    }
+  ]
+}
