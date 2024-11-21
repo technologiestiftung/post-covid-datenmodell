@@ -3,6 +3,7 @@ Script to transform addresses to different other geodata, like longitude and lat
 
 '''
 import pandas as pd
+import geopandas as gpd
 
 
 def get_long_lat_from_postal_code(postal_code: str) -> tuple | None:
@@ -25,8 +26,13 @@ def get_long_lat_from_postal_code(postal_code: str) -> tuple | None:
     # postal code is complete
     if len(postal_code) == 5: 
         return mapper.get(int(postal_code), None)
-
-    # todo: handle cases where postal code is not complete
+    
+    # postal code in not complete
+    else:
+        mapper_data = mapper_data[mapper_data["plz"].astype(str).str.startswith(postal_code)] # find postal codes that would fit 
+        gdf = gpd.GeoDataFrame(mapper_data, geometry=gpd.points_from_xy(mapper_data.lng, mapper_data.lat), crs="EPSG:4326") # make geopandas dataframe from fitting ones 
+        centroid = gdf.geometry.unary_union.centroid
+        return (centroid.x, centroid.y) if centroid else None
 
     return None
 

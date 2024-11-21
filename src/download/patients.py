@@ -72,59 +72,82 @@ class PatientCondition:
         self.recorded_date: datetime
         self.note: str = ""
 
-class PatientDownload:
-    '''
-    Class is based on 'Modul Person: Patient - Pseudonymisiert', see here: 
-    https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Person_Version_2/MIIIGModulPerson-TechnischeImplementierung-FHIR-Profile-PseudonymisiertePatientinPatient.html 
-    
-    '''
-
+class Patient: 
     def __init__(self):
         self.id: str
         self.gender: Literal["male", "female", "other", "unknown"]
         self.birth_date: datetime
         self.address: PatientAddress = PatientAddress()
-
-    @classmethod
-    def extract_patient(cls, entry):
-        '''
-        Extract patient data from a provided dataset (json) and return a PatientDownload object.
         
-        '''
-
-        if entry["resource"].get("resourceType") == "Patient":
-            patient = cls()  # Create a new instance of PatientDownload
-
-            try: 
-                patient.id = entry["resource"].get("id", None)
-                patient.gender = entry["resource"].get("gender", None)
-                patient.birth_date = entry["resource"].get("birthDate", None)
-
-            except KeyError: 
-                print("Error: Basic Patient data incomplete")
-                
-            # Add address data
-            try: 
-                patient.address.country = entry["resource"]["address"][0].get("country", None)
-                patient.address.state = entry["resource"]["address"][0].get("state", None)
-                patient.address.city = entry["resource"]["address"][0].get("city", None)
-                patient.address.postal_code = entry["resource"]["address"][0].get("postalCode", None)
-
-            except KeyError: 
-                print("Error: Patient Address data incomplete")
-
-            # add longitude and latitiude from postal code
-            if patient.address.postal_code:
-                patient.address.longitude, patient.address.latitude = get_long_lat_from_postal_code(patient.address.postal_code)
-
-            # Patient street is accessed differently (it may not be given)
-            try: 
-                patient.address.street = entry["resource"]["address"][0].get("line", [None])[0]
-            except KeyError: 
-                print("Error: Patient Street data incomplete")
-
-            return patient
+        # Luftdaten
+        self.closest_airdata_station = None
+        self.airdata_index = None
+        self.airdata_schadstoffe = None
         
-        # If no patient is found, return None
+
+
+class PatientsDownload: # PatientCollection
+    '''
+    Class is based on 'Modul Person: Patient - Pseudonymisiert', see here: 
+    https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Person_Version_2/MIIIGModulPerson-TechnischeImplementierung-FHIR-Profile-PseudonymisiertePatientinPatient.html 
+    
+    '''
+    def __init__(self):
+        self.patients = []
+
+
+
+    def get_patient_by_id(self, patient_id: str):
+        """
+        Retrieves a patient by their unique ID.
+        
+        """
+        for patient in self.patients:
+            if patient.id == patient_id:
+                return patient
         return None
+
+    # @classmethod
+    def extract_patients(self, data):
+        '''
+        Extract patients data from a provided dataset (json) and return a PatientsDownload object.
+        
+        '''
+        patients = []
+        for entry in data["entry"]:
+            if entry["resource"].get("resourceType") == "Patient":
+                patient = Patient()  # Create a new instance of PatientDownload
+
+                try: 
+                    patient.id = entry["resource"].get("id", None)
+                    patient.gender = entry["resource"].get("gender", None)
+                    patient.birth_date = entry["resource"].get("birthDate", None)
+
+                except KeyError: 
+                    print("Error: Basic Patient data incomplete")
+                    
+                # Add address data
+                try: 
+                    patient.address.country = entry["resource"]["address"][0].get("country", None)
+                    patient.address.state = entry["resource"]["address"][0].get("state", None)
+                    patient.address.city = entry["resource"]["address"][0].get("city", None)
+                    patient.address.postal_code = entry["resource"]["address"][0].get("postalCode", None)
+
+                except KeyError: 
+                    print("Error: Patient Address data incomplete")
+
+                # add longitude and latitiude from postal code
+                if patient.address.postal_code:
+                    patient.address.longitude, patient.address.latitude = get_long_lat_from_postal_code(patient.address.postal_code)
+
+                # Patient street is accessed differently (it may not be given)
+                try: 
+                    patient.address.street = entry["resource"]["address"][0].get("line", [None])[0]
+                except KeyError: 
+                    print("Error: Patient Street data incomplete")
+
+                self.patients.append(patient)
+                
+        
+        return self.patients
 

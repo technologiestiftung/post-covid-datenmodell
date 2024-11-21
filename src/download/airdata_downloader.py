@@ -7,40 +7,46 @@ For a location (latitude, longitude) of a patient one can get the data from the 
 
 from haversine import haversine
 import httpx
+import pandas as pd
+import warnings
 
 
 class AirdataDownloader: 
     def __init__(self):
         self.all_stations = self.get_all_stations()
+       
 
-
-    def get_all_stations(self) -> list:
+    def get_all_stations(self, time_start: str = "2019-01-01", time_end: str = "2019-12-31") -> list:
         """
         Gets all available air quality stations in Germany that are available through
         the Umwelt Bundesamt Luftdaten API.
+
+        Args:
+            time_start (str): start date of the timeframe, default is 2019-01-01
+            time_end (str): end date of the timeframe, default is 2019-12-31
 
         Returns:
             list: list of all available stations with their respective data
         """
         
-        # todo: adjust timeframe?
-        url = "https://www.umweltbundesamt.de/api/air_data/v3/stations/json?use=airquality&lang=de&date_from=2019-01-01&date_to=2019-01-01&time_from=9&time_to=9"
 
-        response = httpx.get(url)
+        url = f"https://www.umweltbundesamt.de/api/air_data/v3/stations/json?use=airquality&lang=de&date_from={time_start}&date_to={time_end}&time_from=1&time_to=24"
+
+        response = httpx.get(url, timeout=10.0)
         response_data = response.json()
 
         # get necessary station data
         stations = []
 
-        for key, value in response_data["data"].items():
-            stations.append({
-            "id": value[0],
-            "code": value[1],
-            "name": value[2], 
-            "longitude": float(value[7]), 
-            "latitude": float(value[8])})
-
-        # todo: handle API errors or no data
+        # if response is valid
+        if response_data["data"] and response_data["data"]:
+            for key, value in response_data["data"].items():
+                stations.append({
+                "id": value[0],
+                "code": value[1],
+                "name": value[2], 
+                "longitude": float(value[7]), 
+                "latitude": float(value[8])})
 
         return stations
 
@@ -91,11 +97,12 @@ class AirdataDownloader:
             dict: a dictionary containing the daily mean air quality index for the given timeframe (daily)
         '''
         request_url = f"https://www.umweltbundesamt.de/api/air_data/v3/airquality/json?date_from={start_date}&time_from=1&date_to={end_date}&time_to=24&station={station_id}"
-        response = httpx.get(request_url)
+        response = httpx.get(request_url, timeout=10.0)
         response_data = response.json()
-        if response_data["data"]: 
-            station_data = response_data["data"].get(station_id, None)
 
+        if response_data["data"] and len(response_data["data"]) > 0: 
+            
+            station_data = response_data["data"].get(station_id, None)
 
             # INDEX - Tagesmittelwert
             daily_data = {}
@@ -115,8 +122,13 @@ class AirdataDownloader:
                 assert len(value) < 25 # we can only have 24 measures as there is one per hour
                 daily_data_index_mean[key] = sum(value) / len(value)
 
-        # daily_data contains the daily values for the given timeframe, not the mean
-        return daily_data_index_mean
+            # daily_data contains the daily values for the given timeframe, not the mean
+            return daily_data_index_mean
+
+        else: 
+            warnings.warn("No data available for the given request")
+        
+        return None
 
 
     def get_luftdaten_schadstoffe(self, station_id: str, start_date: str, end_date: str) -> dict:
@@ -128,18 +140,27 @@ class AirdataDownloader:
             3: 2,  # Ozon O3 -> Ein-Stunden-Mittelwert 1SMW
         }
 
+        component_name_mapping = {
+            1: "Feinstaub (PM10)",
+            5: "Stickstoffdioxid",
+            9: "Feinstaub (PM2,5)",
+            3: "Ozon"
+        }
+
         schadstoff_data = {}
 
         # iterate over all components and get the data
         for key, value in schadstoff_scope_mapping.items():
             component = key
+            component_name = component_name_mapping[component]
             scope = value
         
             request_url = f"https://www.umweltbundesamt.de/api/air_data/v3/measures/json?date_from={start_date}&time_from=1&date_to={end_date}&time_to=24&station={station_id}&component={component}&scope={scope}"
-            response = httpx.get(request_url)
+            response = httpx.get(request_url, timeout=10.0)
             response_data = response.json()
 
-            if response_data["data"]: 
+            # if request is successful
+            if response_data["data"] and len(response_data["data"]) > 0: 
                 station_data = response_data["data"].get(station_id, None)
 
                 daily_data = {}
@@ -156,13 +177,15 @@ class AirdataDownloader:
                         daily_data[day].append(value[2])
 
                 for key, value in daily_data.items():
-                    # print(value)
                     assert len(value) > 0 # if we have a day, we should have at least one value
                     assert len(value) < 25 # we can only have 24 measures as there is one per hour
                     daily_data_mean[key] = sum(value) / len(value)
                 
-                schadstoff_data[str(component)] = daily_data_mean
+                schadstoff_data[component_name] = daily_data_mean
+            # if the measurement is not available
+            else : 
+                schadstoff_data[component_name] = None
             
 
-        
+        schadstoff_data = pd.DataFrame(schadstoff_data)
         return schadstoff_data

@@ -13,7 +13,7 @@ luftdaten_color_ranges = {
     1: "#50cdaa", # gut 
     2: "#f0e641", # mäßig 
     3: "#ff5050", # schlecht 
-    4: "960032" # sehr schlecht
+    4: "#960032" # sehr schlecht
 }
 
 ############################################################################################
@@ -53,8 +53,24 @@ def get_index_timeline_plot(data, closest_station) -> None:
             plt.plot(x, y, color=df['Color'].iloc[i])
 
     plt.ylim(0, 4)
-    plt.title(f"Time Series of Airquality index for all components for station '{closest_station['station']['name']}' (id: {closest_station['station']['id']})")
+    plt.title(f"Time Series of Airquality index for station '{closest_station['station']['name']}' (id: {closest_station['station']['id']})")
     plt.xlabel("Days")
-    plt.ylabel("Airquality index for all components")
+    plt.ylabel("Airquality index")
 
+    plt.show()
+
+def get_component_timeline_plot(data: pd.DataFrame, component_name: str, closest_station)-> None: 
+    #todo: time range dynamically
+    data = data.rename_axis('Date').reset_index()
+
+    # Reindex to include all dates in the range, filling with NaN where data is missing
+    data['Date'] = pd.to_datetime(data['Date'])
+    data.set_index('Date', inplace=True)
+    data = data.reindex(pd.date_range(start=data.index.min(), end=data.index.max()), fill_value=None)
+    plt.figure(figsize=(10, 5))
+    plt.plot(data.index, data[component_name])
+    plt.title(f"Time Series of {component_name} for station '{closest_station['station']['name']}' (id: {closest_station['station']['id']})")
+    plt.xlabel("Tage")
+    plt.ylabel(f"{component_name}")
+    plt.legend()
     plt.show()
