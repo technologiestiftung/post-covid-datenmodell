@@ -16,8 +16,6 @@ luftdaten_color_ranges = {
     4: "#960032" # sehr schlecht
 }
 
-############################################################################################
-# LUFTDATEN
 def get_color(value, mapper)-> str: 
     '''
     Function to get the color for the value based on the color ranges
@@ -26,6 +24,9 @@ def get_color(value, mapper)-> str:
         if round(value) == index:
             return color
     return "#00000000"  # Transparent for NaN or out of range values
+
+############################################################################################
+# LUFTDATEN
 
 
 def get_index_timeline_plot(data, closest_station) -> None:
