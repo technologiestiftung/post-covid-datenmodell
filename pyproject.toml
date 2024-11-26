@@ -13,6 +13,8 @@ haversine = "^2.8.1"
 seaborn = "^0.13.2"
 httpx = "^0.27.2"
 geopandas = "^1.0.1"
+openpyxl = "^3.1.5"
+pydantic-settings = "^2.6.1"
 
 
 [build-system]
