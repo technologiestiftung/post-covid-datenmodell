@@ -5,6 +5,7 @@ This script contains the configurations for the different graphs used in the das
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from typing import Literal
 
 # get colors for timeline series based on values
 # values are taken and used as intended in the original tool from Umweltbundesamt Luftdaten API
@@ -29,8 +30,16 @@ def get_color(value, mapper)-> str:
 # LUFTDATEN
 
 
-def get_index_timeline_plot(data, closest_station) -> None:
-    # todo: documentation
+def get_index_timeline_plot(data) -> None:
+    """
+    Function to plot the timeline graph of the airdata API (index)
+
+    Args: 
+        data : pd.DataFrame containing the weather data for one patient over a timeframe
+        column : the column to be plotted over time
+    Returns: 
+        None (plots the graph)
+    """
 
     df = pd.DataFrame(list(data.items()), columns=['Date', 'Value'])
     df['Date'] = pd.to_datetime(df['Date'])
@@ -54,13 +63,13 @@ def get_index_timeline_plot(data, closest_station) -> None:
             plt.plot(x, y, color=df['Color'].iloc[i])
 
     plt.ylim(0, 4)
-    plt.title(f"Time Series of Airquality index for station '{closest_station['station']['name']}' (id: {closest_station['station']['id']})")
-    plt.xlabel("Days")
-    plt.ylabel("Airquality index")
+    plt.title("Luftqualität index Timeline")
+    plt.xlabel("Tage")
+    plt.ylabel("Luftqualität Index")
 
     plt.show()
 
-def get_component_timeline_plot(data: pd.DataFrame, component_name: str, closest_station)-> None: 
+def get_component_timeline_plot(data: pd.DataFrame, component_name: str)-> None: 
     #todo: time range dynamically
     data = data.rename_axis('Date').reset_index()
 
@@ -70,8 +79,69 @@ def get_component_timeline_plot(data: pd.DataFrame, component_name: str, closest
     data = data.reindex(pd.date_range(start=data.index.min(), end=data.index.max()), fill_value=None)
     plt.figure(figsize=(10, 5))
     plt.plot(data.index, data[component_name])
-    plt.title(f"Time Series of {component_name} for station '{closest_station['station']['name']}' (id: {closest_station['station']['id']})")
+    plt.title(f"{component_name} Timeline")
     plt.xlabel("Tage")
     plt.ylabel(f"{component_name}")
     plt.legend()
+    plt.show()
+
+
+############################################################################################
+# WEATHERDATA
+
+def get_weatherdata_timeline_plot(data: pd.DataFrame, column: Literal["Niederschlag (mm)", "Luftdruck (hPa)", "Sonnenscheindauer (min)", "Temperatur (°C)","Windgeschwindigkeit (km / h)", "Relative Luftfeuchtigkeit (%)",])-> None:
+    """
+    Function to plot the timeline graph of the weather data.
+
+    Args: 
+        data : pd.DataFrame containing the weather data for one patient over a timeframe
+        column : the column to be plotted over time
+    Returns: 
+        None (plots the graph)
+    """
+
+    data['Tag'] = pd.to_datetime(data['Tag'])  # Ensure 'Tag' is in datetime format
+
+    # Plot the timeline graph
+    plt.figure(figsize=(10, 6))
+    plt.plot(data['Tag'], data[column], linestyle='-', color='b', label=column)
+    plt.title(f'{column} über Zeit', fontsize=14)
+    plt.xlabel('Tag', fontsize=12)
+    plt.ylabel(f'{column}', fontsize=12)
+    plt.grid(True)
+    plt.legend()
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+
+    plt.show()
+
+############################################################################################
+# SEWAGE DATA
+
+# todo: add literals for columns
+def get_sewagedata_timeline_plot(data: pd.DataFrame, column: str)-> None:
+    """
+    Function to plot the timeline graph of the sewage data.
+
+    Args: 
+        data : pd.DataFrame containing the sewage data for one patient over a timeframe
+        column : the column to be plotted over time
+    Returns: 
+        None (plots the graph)
+    """
+
+    data['datum'] = pd.to_datetime(data['datum'])
+    
+
+    # Plot the timeline graph
+    plt.figure(figsize=(10, 6))
+    plt.plot(data['datum'], data[column], linestyle='-', color='b', label=column)
+    plt.title(f'{column} über Zeit', fontsize=14)
+    plt.xlabel('datum', fontsize=12)
+    plt.ylabel(f'{column}', fontsize=12)
+    plt.grid(True)
+    plt.legend()
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+
     plt.show()

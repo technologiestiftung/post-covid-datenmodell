@@ -16,7 +16,7 @@ class AirdataDownloader:
         self.all_stations = self.get_all_stations()
        
 
-    def get_all_stations(self, time_start: str = "2019-01-01", time_end: str = "2019-12-31") -> list:
+    def get_all_stations(self, time_start: str = "2019-01-01", time_end: str = "2019-01-01") -> list:
         """
         Gets all available air quality stations in Germany that are available through
         the Umwelt Bundesamt Luftdaten API.
@@ -32,21 +32,27 @@ class AirdataDownloader:
 
         url = f"https://www.umweltbundesamt.de/api/air_data/v3/stations/json?use=airquality&lang=de&date_from={time_start}&date_to={time_end}&time_from=1&time_to=24"
 
-        response = httpx.get(url, timeout=10.0)
-        response_data = response.json()
+        
+        try: 
+            response = httpx.get(url, timeout=10.0)
+            response_data = response.json()
 
-        # get necessary station data
-        stations = []
+            # get necessary station data
+            stations = []
 
-        # if response is valid
-        if response_data["data"] and response_data["data"]:
-            for key, value in response_data["data"].items():
-                stations.append({
-                "id": value[0],
-                "code": value[1],
-                "name": value[2], 
-                "longitude": float(value[7]), 
-                "latitude": float(value[8])})
+            # if response is valid
+            if response_data["data"] and response_data["data"]:
+                for key, value in response_data["data"].items():
+                    stations.append({
+                    "id": value[0],
+                    "code": value[1],
+                    "name": value[2], 
+                    "longitude": float(value[7]), 
+                    "latitude": float(value[8])})
+        except ReadTimeout:
+            warnings.warn("Request timed out")
+            
+
 
         return stations
 
@@ -82,20 +88,26 @@ class AirdataDownloader:
         return closest_station
 
 
-    def get_luftdaten_index(self, station_id: str, start_date: str, end_date: str) -> dict: 
+    def get_luftdaten_index(self, longitude: float, latitude: float, start_date: str, end_date: str) -> dict: 
         '''
         Function to get the air quality data from the closest station to a given patient location
         The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
         https://www.umweltbundesamt.de/daten/luft/luftdaten/luftqualitaet/eJzrWJSSuMrIwMhE19BQ18B0UUnmIkPDRXmpCxYVlyxYnOJWBJU00DWyXJwSko-sNreKbVFuctPinMSS0w6eq-a9apQ7vjgnL_20g8o5F4dPFrMBSMokdQ==
 
         Args:
-            station_id (str): ID of the needed station
+            longitude (float): longitude of the patient 
+            latitude (float): latitude of the patient
             start_date (str): start date of the timeframe
             end_date (str): end date of the timeframe
 
         Returns: 
             dict: a dictionary containing the daily mean air quality index for the given timeframe (daily)
         '''
+
+        # find nearest station 
+        closest_station = self.get_closest_station(latitude, longitude)
+        station_id = closest_station['station']['id']
+
         request_url = f"https://www.umweltbundesamt.de/api/air_data/v3/airquality/json?date_from={start_date}&time_from=1&date_to={end_date}&time_to=24&station={station_id}"
         response = httpx.get(request_url, timeout=10.0)
         response_data = response.json()
@@ -131,7 +143,12 @@ class AirdataDownloader:
         return None
 
 
-    def get_luftdaten_schadstoffe(self, station_id: str, start_date: str, end_date: str) -> dict:
+    def get_luftdaten_schadstoffe(self, longitude: float, latitude: float, start_date: str, end_date: str) -> dict:
+        # todo: documentation
+
+        # find nearest station 
+        closest_station = self.get_closest_station(latitude, longitude)
+        station_id = closest_station['station']['id']
 
         schadstoff_scope_mapping = {
             1: 6,  # Feinstaub (PM10) PM10 -> stündlich gleitendes Tagesmittel 
