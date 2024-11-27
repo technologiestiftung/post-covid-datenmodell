@@ -1,13 +1,14 @@
 # post-covid-metadatenkatalog
 
-
 ## Dependency Installation
 
-The respository is implemented with poetry for dependency management. To use please install poetry and then execute these commands in your terminal in the project. See the [official Poetry documentation](https://python-poetry.org/docs/basic-usage/) for more information.
+Dieses Projekt wurde mit Hilfe von poetry aufgesetzt. Poetry übernimmt das Management der benötigten Pakete/ Libraries für die Skripte in python.
+
+Um das Projekt lokal aufzusetzen und alle dependencies zu installieren führen Sie bitte folgende Terminal-Befehle innerhalb des Projekts aus. Siehe auch [offizielle Poetry Dokumentation](https://python-poetry.org/docs/basic-usage/) für mehr Informationen.
 
 ```sh
-$ poetry install # will install dependencies from the pyproject.toml file and add a poetry.lock file
-$ poetry shell # will activate the virtual environment that has all dependencies installed
+$ poetry install # installiert dependencies von der Datei 'pyproject.toml' und erstellt eine Datei 'poetry.lock'
+$ poetry shell # Aktiviert das virtual environment (mit dependencies)
 ```
 
 ## Erstellen und Validieren von Metadaten: Vorgehen und Ergebnisse
@@ -16,6 +17,7 @@ $ poetry shell # will activate the virtual environment that has all dependencies
 
 1. **Erstellung der DCAT-AP.de-Metadaten**:  
    Wir haben die zentralen Felder nach DCAT-AP.de-Standard definiert, um eine optimale Auffindbarkeit und klare Struktur sicherzustellen. Dabei haben wir:
+
    - Je nachdem ob ein Datensatz oder eine API (Datenservice) beschrieben wird, haben wir die entsprechenden **Klassen** (`dcat:Dataset` oder `dcat:DataService`) verwendet.
    - **Titel** (`dct:title`), **Beschreibung** (`dct:description`), und **Herausgeber** (`dct:publisher`) festgelegt, um die Identität und den Kontext des Datensatzes zu beschreiben.
    - **Kontaktinformationen** (`dcat:contactPoint`) sowie **Lizenzdetails** (`dct:license`) aufgenommen, um rechtliche und Support-Angaben einzubinden.
@@ -29,6 +31,7 @@ $ poetry shell # will activate the virtual environment that has all dependencies
 
 1. **Erstellung der Frictionless Data Metadaten**:  
    Zur Strukturierung haben wir eine `datapackage.json` erstellt und darin die relevanten Metadatenfelder aufgenommen:
+
    - **Name**, **Titel** und **Beschreibung** geben grundlegende Informationen zum Datensatz.
    - **Lizenzen** und **Quellen** bieten rechtliche Klarheit und Dokumentation der Datenherkunft.
    - Unter **contributors** wurden alle beteiligten Teams und Personen verzeichnet.
@@ -38,4 +41,3 @@ $ poetry shell # will activate the virtual environment that has all dependencies
    TODO: Validierung der Frictionless Data Metadaten
 
 Durch die strukturierte Erstellung und Validierung nach DCAT-AP.de- und Frictionless-Standards sind die Metadaten nun gut auffindbar und beschrieben. Dies erleichtert die Nutzung und Weiterverwendung der Daten für unterschiedliche Zwecke.
-
