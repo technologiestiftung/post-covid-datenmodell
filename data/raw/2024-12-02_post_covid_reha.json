@@ -1,0 +1,1582 @@
+{
+    "name": "POST-Covid Rehaeinrichtungen in Deutschland",
+    "source": "https://www.reha-einrichtungsverzeichnis.de/suche.html",
+    "lastAccessed": "2024-12-02",
+    "data": [
+        {
+            "uid": 358,
+            "nameKurz": "KJF Klinik Hochried",
+            "nameLang": "KJF Klinik Hochried - Rehaklinik für Kinder und Jugendliche",
+            "latitude": "47.6757657",
+            "longitude": "11.1794419"
+        },
+        {
+            "uid": 428,
+            "nameKurz": "Fachkliniken Wangen",
+            "nameLang": "Rehabilitationsklinik für Kinder und Jugendliche",
+            "latitude": "47.6989014",
+            "longitude": "9.83604474"
+        },
+        {
+            "uid": 900,
+            "nameKurz": "Mittelrhein-Klinik",
+            "nameLang": "Fachklinik für Psychosomatische Rehabilitation",
+            "latitude": "50.2004797",
+            "longitude": "7.62477508"
+        },
+        {
+            "uid": 2234,
+            "nameKurz": "VIALIFE Rosenquelle",
+            "nameLang": "VIALIFE Rosenquelle",
+            "latitude": "50.7664655",
+            "longitude": "6.09571360"
+        },
+        {
+            "uid": 2237,
+            "nameKurz": "Kliniken Schmieder Allensbach",
+            "nameLang": "Neurologisches Fach- und Rehabilitationskrankenhaus",
+            "latitude": "47.7145368",
+            "longitude": "9.07725250"
+        },
+        {
+            "uid": 2238,
+            "nameKurz": "Kliniken Schmieder Gailingen",
+            "nameLang": "Neurologisches Fach- und Rehabilitationskrankenhaus",
+            "latitude": "47.7025796",
+            "longitude": "8.75141998"
+        },
+        {
+            "uid": 2239,
+            "nameKurz": "Kliniken Schmieder Konstanz",
+            "nameLang": "Neurologisches Fach- und Rehabilitationskrankenhaus",
+            "latitude": "47.6654790",
+            "longitude": "9.20311910"
+        },
+        {
+            "uid": 2240,
+            "nameKurz": "Kliniken Schmieder Heidelberg",
+            "nameLang": "Neurologisches Fach- und Rehabilitationskrankenhaus",
+            "latitude": "49.3954279",
+            "longitude": "8.70863589"
+        },
+        {
+            "uid": 2241,
+            "nameKurz": "Kliniken-Schmieder Stuttgart/Gerlingen",
+            "nameLang": "Neurologisches Fach- und Rehabilitationskrankenhaus",
+            "latitude": "48.7866200",
+            "longitude": "9.07488460"
+        },
+        {
+            "uid": 2243,
+            "nameKurz": "Johannesbad Raupennest GmbH & Co. KG",
+            "nameLang": "Johannesbad Fachklinik & Gesundheitszentrum Raupennest",
+            "latitude": "50.7588166",
+            "longitude": "13.7432944"
+        },
+        {
+            "uid": 2244,
+            "nameKurz": "Geriatrische Rehabilitationsklinik der Hessing Stiftung",
+            "nameLang": "Geriatrische Rehabilitationsklinik der Hessing Stiftung",
+            "latitude": "48.3404697",
+            "longitude": "10.8630545"
+        },
+        {
+            "uid": 2248,
+            "nameKurz": "Medical Park Loipl",
+            "nameLang": "Fachklinik für Neurologie",
+            "latitude": "47.6607492",
+            "longitude": "12.9364043"
+        },
+        {
+            "uid": 2257,
+            "nameKurz": "BDH-Klinik Braunfels",
+            "nameLang": "Neurologisches Zentrum mit Akutstation, Stroke Unit, Intensivmedizin und Rehabilitation",
+            "latitude": "50.5148481",
+            "longitude": "8.39474312"
+        },
+        {
+            "uid": 2261,
+            "nameKurz": "MediClin Reha-Zentrum Spreewald",
+            "nameLang": "MediClin Reha-Zentrum Spreewald, Fachklinik für Innere Medizin, Kardiologie, Angiologie, Diabetologie; konservative Orthopädie und unfallchirurgische Rehabilitation sowie und Neurologie",
+            "latitude": "51.8329245",
+            "longitude": "14.1407106"
+        },
+        {
+            "uid": 2269,
+            "nameKurz": "MEDICLIN Reha-Zentrum Roter Hügel",
+            "nameLang": "MEDICLIN Reha-Zentrum Roter Hügel",
+            "latitude": "49.9419011",
+            "longitude": "11.5286806"
+        },
+        {
+            "uid": 2272,
+            "nameKurz": "Klinik Schönsicht GmbH",
+            "nameLang": "Rehabilitation für Kinder und Jugendliche Kind-Mutter/Vater-Heilbehandlung",
+            "latitude": "47.6306889",
+            "longitude": "12.9948976"
+        },
+        {
+            "uid": 2273,
+            "nameKurz": "CJD Berchtesgaden - Gesundheit · Bildung · Beruf",
+            "nameLang": "",
+            "latitude": "47.6299597",
+            "longitude": "13.0628698"
+        },
+        {
+            "uid": 2276,
+            "nameKurz": "MEDIAN Klinik Berlin-Kladow",
+            "nameLang": "MEDIAN Klinik Berlin-Kladow",
+            "latitude": "52.4626427",
+            "longitude": "13.1618341"
+        },
+        {
+            "uid": 2286,
+            "nameKurz": "MEDICLIN Staufenburg Klinik",
+            "nameLang": "MEDICLIN Staufenburg Klinik Durbach und MEDICLIN Staufenburg.ambulant",
+            "latitude": "48.4898150",
+            "longitude": "8.00043980"
+        },
+        {
+            "uid": 2288,
+            "nameKurz": "BDH-Klinik Elzach",
+            "nameLang": "Klinik für NeuroRehabilitation, Beatmungs- und Intensivmedizin",
+            "latitude": "48.1754328",
+            "longitude": "8.07949890"
+        },
+        {
+            "uid": 2289,
+            "nameKurz": "Klinik Königsfeld",
+            "nameLang": "Klinik Königsfeld",
+            "latitude": "51.2760807",
+            "longitude": "7.33055734"
+        },
+        {
+            "uid": 2290,
+            "nameKurz": "MediClin Fachklinik Rhein/Ruhr",
+            "nameLang": "MEDICLIN Fachklinik Rhein/Ruhr",
+            "latitude": "51.3544923",
+            "longitude": "6.94035984"
+        },
+        {
+            "uid": 2292,
+            "nameKurz": "MEDIAN Klinik Flechtingen",
+            "nameLang": "Klinik für Neurologie, Herz-Kreislauf-, Gefäß- und Atemwegserkrankungen",
+            "latitude": "52.3259929",
+            "longitude": "11.2379998"
+        },
+        {
+            "uid": 2295,
+            "nameKurz": "Das Alpreflect",
+            "nameLang": "Das Alpreflect GmbH & Co. KG",
+            "latitude": "47.6035632",
+            "longitude": "10.6837450"
+        },
+        {
+            "uid": 2296,
+            "nameKurz": "Hegau-Jugendwerk",
+            "nameLang": "Neurologisches Krankenhaus und Rehabilitationszentrum  für Kinder, Jugendliche und junge Erwachsene",
+            "latitude": "47.6909472",
+            "longitude": "8.76800799"
+        },
+        {
+            "uid": 2301,
+            "nameKurz": "MEDIAN Klinik Graal-Müritz",
+            "nameLang": "MEDIAN Klinik Graal-Müritz",
+            "latitude": "54.2479122",
+            "longitude": "12.2328592"
+        },
+        {
+            "uid": 2305,
+            "nameKurz": "Fachklinik St. Lukas",
+            "nameLang": "Fachklinik St. Lukas",
+            "latitude": "48.4398283",
+            "longitude": "13.1960134"
+        },
+        {
+            "uid": 2308,
+            "nameKurz": "Altmühlseeklinik Hensoltshöhe",
+            "nameLang": "der Stiftung Hensoltshöhe gGmbH",
+            "latitude": "49.1164841",
+            "longitude": "10.7649760"
+        },
+        {
+            "uid": 2310,
+            "nameKurz": "VAMED Klinik Hagen-Ambrock",
+            "nameLang": "Fachklinik für neurologische und neurochirurgische Rehabilitation, Fachklinik für Pneumologie",
+            "latitude": "51.3149273",
+            "longitude": "7.51482750"
+        },
+        {
+            "uid": 2311,
+            "nameKurz": "VAMED Klinik Hattingen",
+            "nameLang": "Rehabilitationszentrum für Neurologie, Neurochirurgie, Neuropädiatrie",
+            "latitude": "51.3908200",
+            "longitude": "7.21633505"
+        },
+        {
+            "uid": 2325,
+            "nameKurz": "St. Georg Vorsorge- und Rehabilitationsklinik",
+            "nameLang": "St. Georg Vorsorge- und Rehabilitationskliniken GmbH & Co. KG",
+            "latitude": "47.7351291",
+            "longitude": "8.16576740"
+        },
+        {
+            "uid": 2328,
+            "nameKurz": "Klinik Alpenblick",
+            "nameLang": "Fachklinik für Psychosomatische Medizin und Psychotherapie",
+            "latitude": "47.7083780",
+            "longitude": "10.0302668"
+        },
+        {
+            "uid": 2329,
+            "nameKurz": "Argentalklinik",
+            "nameLang": "Fachklinik für Konservative Orthopädie und Rheumatologie",
+            "latitude": "47.7096411",
+            "longitude": "10.0254240"
+        },
+        {
+            "uid": 2330,
+            "nameKurz": "Klinik Schwabenland",
+            "nameLang": "Fachklinik für Innere Medizin",
+            "latitude": "47.7095458",
+            "longitude": "10.0354060"
+        },
+        {
+            "uid": 2336,
+            "nameKurz": "MediClin Albert Schweitzer & Baar Klinik",
+            "nameLang": "MediClin Albert Schweitzer & Baar Klinik",
+            "latitude": "48.1373844",
+            "longitude": "8.41245541"
+        },
+        {
+            "uid": 2337,
+            "nameKurz": "Visio Klinik GmbH",
+            "nameLang": "Mittelbayerisches Rehabilitationszentrum Klinikum Luitpold - Klinikum Maximilian",
+            "latitude": "49.1710795",
+            "longitude": "12.8577775"
+        },
+        {
+            "uid": 2351,
+            "nameKurz": "Mühlenbergklinik Holsteinische Schweiz",
+            "nameLang": "Holsteinische Schweiz",
+            "latitude": "54.1650568",
+            "longitude": "10.5502017"
+        },
+        {
+            "uid": 2352,
+            "nameKurz": "Klinik Sonnenblick der DRV Hessen",
+            "nameLang": "Klinik Sonnenblick der Deutschen Rentenversicherung Hessen",
+            "latitude": "50.7999513",
+            "longitude": "8.80220790"
+        },
+        {
+            "uid": 2356,
+            "nameKurz": "Johannesbad Saarschleife GmbH & Co. KG",
+            "nameLang": "Johannesbad Fachklinik, Gesundheits- -& Rehazentrum Saarschleife",
+            "latitude": "49.5077929",
+            "longitude": "6.5410615"
+        },
+        {
+            "uid": 2367,
+            "nameKurz": "Klinik Norderney",
+            "nameLang": "der DRV Westfalen",
+            "latitude": "53.7110901",
+            "longitude": "7.14713942"
+        },
+        {
+            "uid": 2369,
+            "nameKurz": "Dr. Becker Rhein-Sieg-Klinik",
+            "nameLang": "Dr. Becker Rhein-Sieg-Klinik",
+            "latitude": "50.9074783",
+            "longitude": "7.54978784"
+        },
+        {
+            "uid": 2372,
+            "nameKurz": "Alpenklinik Santa Maria",
+            "nameLang": "Alpenklink Santa Maria - KJF Rehakliniken für Kinder und Jugendliche",
+            "latitude": "47.5177426",
+            "longitude": "10.4047490"
+        },
+        {
+            "uid": 2374,
+            "nameKurz": "Reha-Zentrum Oldenburg",
+            "nameLang": "Rehabilitationszentrum Oldenburg GmbH",
+            "latitude": "53.1142238",
+            "longitude": "8.22167650"
+        },
+        {
+            "uid": 2379,
+            "nameKurz": "Med. Reha-Einrichtungen der Stadt Radolfzell, METTNAU",
+            "nameLang": "Werner-Messmer-Klinik, Hermann-Albrecht-Klinik, Klinik Seehalde, Kurpark-Klinik",
+            "latitude": "47.7280292",
+            "longitude": "8.99575790"
+        },
+        {
+            "uid": 2384,
+            "nameKurz": "Sana Rehabilitationsklinik Sommerfeld",
+            "nameLang": "Sana Rehabilitationsklinik Sommerfeld",
+            "latitude": "52.8115589",
+            "longitude": "13.0351826"
+        },
+        {
+            "uid": 2385,
+            "nameKurz": "Dr. Becker Burg-Klinik",
+            "nameLang": "Stadtlengsfeld",
+            "latitude": "50.7825909",
+            "longitude": "10.1269843"
+        },
+        {
+            "uid": 2392,
+            "nameKurz": "Klinik am schönen Moos",
+            "nameLang": "Klinik am schönen Moos",
+            "latitude": "48.0142075",
+            "longitude": "9.48460920"
+        },
+        {
+            "uid": 2401,
+            "nameKurz": "Schön Klinik Berchtesgadener Land",
+            "nameLang": "",
+            "latitude": "47.6021941",
+            "longitude": "12.9794371"
+        },
+        {
+            "uid": 2402,
+            "nameKurz": "Ostseeklinik Schönberg-Holm",
+            "nameLang": "Ostseeklinik Schönberg-Holm",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 2403,
+            "nameKurz": "Rehabilitationsklinik Bad Salzelmen",
+            "nameLang": "Waldburg-Zeil Kliniken",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 2407,
+            "nameKurz": "Privatklinik Lauterbacher Mühle",
+            "nameLang": "Kardiologie - Innere Medizin - Psychosomatik",
+            "latitude": "47.7917209",
+            "longitude": "11.2914802"
+        },
+        {
+            "uid": 2411,
+            "nameKurz": "Klinik Maria Frieden Telgte",
+            "nameLang": "Klinik für Geriatrie, Klinik für Neurologie",
+            "latitude": "51.9879862",
+            "longitude": "7.81785509"
+        },
+        {
+            "uid": 2424,
+            "nameKurz": "Westerwaldklinik Waldbreitbach",
+            "nameLang": "Westerwaldklinik Waldbreitbach",
+            "latitude": "50.5490473",
+            "longitude": "7.40001833"
+        },
+        {
+            "uid": 2427,
+            "nameKurz": "Klinik für Neurologie",
+            "nameLang": "Waldburg-Zeil Kliniken – Fachkliniken Wangen",
+            "latitude": "47.6972654",
+            "longitude": "9.83571650"
+        },
+        {
+            "uid": 2432,
+            "nameKurz": "MEDIAN Reha-Zentrum Wiesbaden Sonnenberg",
+            "nameLang": "",
+            "latitude": "50.0902161",
+            "longitude": "8.2633544"
+        },
+        {
+            "uid": 2436,
+            "nameKurz": "GLG Fachklinik Wolletzsee GmbH",
+            "nameLang": "GLG Fachklinik Wolletzsee GmbH",
+            "latitude": "53.0261554",
+            "longitude": "13.9046160"
+        },
+        {
+            "uid": 2439,
+            "nameKurz": "NORDSEEKLINIK WESTFALEN",
+            "nameLang": "PNEUMOREHA am Meer",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 2441,
+            "nameKurz": "Schön Klinik Bad Aibling Harthausen",
+            "nameLang": "Schön Klinik Bad Aibling SE & Co. KG",
+            "latitude": "47.8568677",
+            "longitude": "12.0292774"
+        },
+        {
+            "uid": 2445,
+            "nameKurz": "Fachklinik Bad Bentheim",
+            "nameLang": "Thermalsole- und Schwefelbad Bentheim GmbH",
+            "latitude": "52.3194754",
+            "longitude": "7.165007"
+        },
+        {
+            "uid": 2452,
+            "nameKurz": "VAMED Rehaklinik Bad Berleburg GmbH",
+            "nameLang": "Fachbereiche für Hörstörungen, Tinnitus und Schwindel, Neurologie, Psychosomatik, Psychotherapie und psychiatrische Rehabilitation",
+            "latitude": "51.0505057",
+            "longitude": "8.38398398"
+        },
+        {
+            "uid": 2457,
+            "nameKurz": "HESCURO KLINIK Bad Bocklet",
+            "nameLang": "HESCURO KLINIK Bad Bocklet",
+            "latitude": "50.2704082",
+            "longitude": "10.0810567"
+        },
+        {
+            "uid": 2458,
+            "nameKurz": "Hufeland-Klinik Bad Ems GmbH",
+            "nameLang": "Centrum für Pneumologie",
+            "latitude": "50.3338149",
+            "longitude": "7.72689928"
+        },
+        {
+            "uid": 2461,
+            "nameKurz": "Klinik Bad Brambach",
+            "nameLang": "Klinik Bad Brambach, Dr. Ebel Fachklinik für Orthopädie, Rheumatologie und Kardiologie",
+            "latitude": "50.2241378",
+            "longitude": "12.2985009"
+        },
+        {
+            "uid": 2465,
+            "nameKurz": "Medical Park Bad Feilnbach Reithofpark",
+            "nameLang": "Medical Park Bad Feilnbach Reithofpark Betriebs GmbH&Co.KG",
+            "latitude": "47.7884815",
+            "longitude": "12.0082614"
+        },
+        {
+            "uid": 2467,
+            "nameKurz": "Vinzenz Klinik",
+            "nameLang": "Vinzenz von Paul Kliniken gGmbH",
+            "latitude": "48.5869545",
+            "longitude": "9.6986321"
+        },
+        {
+            "uid": 2469,
+            "nameKurz": "MEDIAN Klinik Heiligendamm",
+            "nameLang": "",
+            "latitude": "54.1423063",
+            "longitude": "11.8397242"
+        },
+        {
+            "uid": 2470,
+            "nameKurz": "Celenus Klinik Carolabad",
+            "nameLang": "Medizinisches Rehabilitationszentrum für Psychotherapie, Psychiatrie und Psychosomatik",
+            "latitude": "50.8195557",
+            "longitude": "12.8184904"
+        },
+        {
+            "uid": 2476,
+            "nameKurz": "Park Klinik",
+            "nameLang": "Gräfliche Kliniken GmbH & Co. KG Standort Park Klinik",
+            "latitude": "51.7636304",
+            "longitude": "9.05655086"
+        },
+        {
+            "uid": 2498,
+            "nameKurz": "Dr. Ebel Fachkliniken - Carolinum",
+            "nameLang": "Dr. Ebel Fachkliniken GmbH & Co. Rehabilitationsklinik CAROLINUM KG",
+            "latitude": "51.6444219",
+            "longitude": "9.45405870"
+        },
+        {
+            "uid": 2499,
+            "nameKurz": "Rehaklinik Glotterbad",
+            "nameLang": "Fachklinik für Psychosomatik, Psychotherapeutische und Innere Medizin",
+            "latitude": "48.0499644",
+            "longitude": "7.96484437"
+        },
+        {
+            "uid": 2500,
+            "nameKurz": "Rehaklinik Am Kurpark",
+            "nameLang": "Fachklinik für Onkologie/Hämatologie und Neurootologie, Rheumatologie/Orthopädie, Ernährungsmedizin",
+            "latitude": "50.1958329",
+            "longitude": "10.0792560"
+        },
+        {
+            "uid": 2502,
+            "nameKurz": "Rehaklinik Klausenbach",
+            "nameLang": "Fachklinik für Neurologie und Orthopädie",
+            "latitude": "48.4312193",
+            "longitude": "8.1260624"
+        },
+        {
+            "uid": 2504,
+            "nameKurz": "Rehaklinik Heidelberg-Königstuhl",
+            "nameLang": "Fachklinik für Innere Med. Schwerpunkt: Herz-, Kreislauf-, Gefäß-, Lungen- und Bronchialerkrankungen",
+            "latitude": "49.3893842",
+            "longitude": "8.73769972"
+        },
+        {
+            "uid": 2514,
+            "nameKurz": "Frankenklinik Bad Kissingen",
+            "nameLang": "Deutschen Rentenversicherung Nordbayern",
+            "latitude": "50.1975816",
+            "longitude": "10.0810981"
+        },
+        {
+            "uid": 2515,
+            "nameKurz": "MEDIAN Klinik BAd Gottleuba",
+            "nameLang": "MEDIAN Gesundheitspark Bad Gottleuba GmbH & Co. KG",
+            "latitude": "50.8566322",
+            "longitude": "13.9441285"
+        },
+        {
+            "uid": 2516,
+            "nameKurz": "CELENUS Algos Fachklinik",
+            "nameLang": "Celenus Algos Fachklinik Bad Klosterlausnitz GmbH",
+            "latitude": "50.9195363",
+            "longitude": "11.8640050"
+        },
+        {
+            "uid": 2517,
+            "nameKurz": "Moritz Klinik",
+            "nameLang": "Gräfliche Kliniken Moritz Klinik GmbH",
+            "latitude": "50.9183285",
+            "longitude": "11.8605696"
+        },
+        {
+            "uid": 2518,
+            "nameKurz": "Passauer Wolf Bad Griesbach",
+            "nameLang": "Passauer Wolf Bad Griesbach",
+            "latitude": "48.4303112",
+            "longitude": "13.1838253"
+        },
+        {
+            "uid": 2525,
+            "nameKurz": "Hamm Klinik Nahetal",
+            "nameLang": "Hamm Klinik Nahetal",
+            "latitude": "49.8263343",
+            "longitude": "7.84532946"
+        },
+        {
+            "uid": 2535,
+            "nameKurz": "Heinrich-Mann-Klinik Bad Liebenstein",
+            "nameLang": "MEDIAN Heinrich-Mann-Klinik GmbH & Co. KG",
+            "latitude": "50.8103944",
+            "longitude": "10.3519645"
+        },
+        {
+            "uid": 2540,
+            "nameKurz": "MEDIAN Fontana-Klinik Bad Liebenwerda",
+            "nameLang": "Fachklinik für Orthopädie und Rheumatologie",
+            "latitude": "51.5159324",
+            "longitude": "13.3965082"
+        },
+        {
+            "uid": 2544,
+            "nameKurz": "MEDICLIN Rose Klinik",
+            "nameLang": "",
+            "latitude": "51.895275",
+            "longitude": "8.9814115"
+        },
+        {
+            "uid": 2545,
+            "nameKurz": "Klinik Niedersachsen",
+            "nameLang": "Klinik Niedersachsen Erwin Röver GmbH & Co.KG",
+            "latitude": "52.3379924",
+            "longitude": "9.38738090"
+        },
+        {
+            "uid": 2550,
+            "nameKurz": "MATERNUS-Klinik für Rehabilitation",
+            "nameLang": "MATERNUS-Klinik für Rehabilitation GmbH & Co. KG",
+            "latitude": "52.1954822",
+            "longitude": "8.78740037"
+        },
+        {
+            "uid": 2552,
+            "nameKurz": "Klinik Porta Westfalica",
+            "nameLang": "",
+            "latitude": "52.1989863",
+            "longitude": "8.80581633"
+        },
+        {
+            "uid": 2553,
+            "nameKurz": "Klinik am Rosengarten",
+            "nameLang": "Die Spezialisten für neurologische und orthopädische Rehabilitation",
+            "latitude": "52.1999859",
+            "longitude": "8.79200550"
+        },
+        {
+            "uid": 2555,
+            "nameKurz": "Johanniter-Ordenshäuser Bad Oeynhausen",
+            "nameLang": "Johanniter-Ordenshäuser Bad Oeynhausen",
+            "latitude": "52.1995797",
+            "longitude": "8.78831170"
+        },
+        {
+            "uid": 2562,
+            "nameKurz": "Drei-Burgen-Klinik",
+            "nameLang": "Fachklinik für Herz- und Kreislaufkrankheiten/Orthopädie",
+            "latitude": "49.8004040",
+            "longitude": "7.83704664"
+        },
+        {
+            "uid": 2565,
+            "nameKurz": "MEDIAN Zentrum für Verhaltensmedizin Bad Pyrmont",
+            "nameLang": "MEDIAN Zentrum für Verhaltensmedizin Bad Pyrmont – Klinik für Psychosomatik",
+            "latitude": "51.9906332",
+            "longitude": "9.25236620"
+        },
+        {
+            "uid": 2569,
+            "nameKurz": "Salinen Klinik",
+            "nameLang": "Salinen Klinik AG",
+            "latitude": "49.2387902",
+            "longitude": "9.11231472"
+        },
+        {
+            "uid": 2572,
+            "nameKurz": "Klinik Bad Reichenhall der Deutschen Rentenversicherung Bayern Süd",
+            "nameLang": "Zentrum für Rehabilitation Pneumologie und Orthopädie",
+            "latitude": "47.7279252",
+            "longitude": "12.8830714"
+        },
+        {
+            "uid": 2573,
+            "nameKurz": "Rehaklinik Prinzregent Luitpold GmbH",
+            "nameLang": "Rehaklinik Prinzregent Luitpold Bad Reichenhall GmbH",
+            "latitude": "47.7321555",
+            "longitude": "12.8776098"
+        },
+        {
+            "uid": 2574,
+            "nameKurz": "Klinik Alpenland",
+            "nameLang": "Klinik Alpenland, Bad Reichenhall",
+            "latitude": "47.7322814",
+            "longitude": "12.8849432"
+        },
+        {
+            "uid": 2579,
+            "nameKurz": "Klinik Teutoburger Wald",
+            "nameLang": "Deutsche Rentenversicherung Braunschweig-Hannover",
+            "latitude": "52.1176543",
+            "longitude": "8.15335222"
+        },
+        {
+            "uid": 2580,
+            "nameKurz": "Klinik im Kurpark",
+            "nameLang": "Klinik im Kurpark",
+            "latitude": "52.1082302",
+            "longitude": "8.16426130"
+        },
+        {
+            "uid": 2590,
+            "nameKurz": "MEDIAN Klinik am Burggraben - Bad Salzuflen",
+            "nameLang": "MEDIAN Klinik am Burggraben - Bad Salzuflen",
+            "latitude": "52.0942906",
+            "longitude": "8.7621579"
+        },
+        {
+            "uid": 2592,
+            "nameKurz": "Asklepios Kliniken Bad Salzungen GmbH",
+            "nameLang": "Asklepios Kliniken Bad Salzungen GmbH",
+            "latitude": "50.8082194",
+            "longitude": "10.2390568"
+        },
+        {
+            "uid": 2601,
+            "nameKurz": "Reha-Klinik Frisia",
+            "nameLang": "Reha-Klinik Frisia Munkert GmbH",
+            "latitude": "47.7568659",
+            "longitude": "11.5446079"
+        },
+        {
+            "uid": 2606,
+            "nameKurz": "Klinik Reinhardshöhe",
+            "nameLang": "",
+            "latitude": "51.1119058",
+            "longitude": "9.08320477"
+        },
+        {
+            "uid": 2608,
+            "nameKurz": "ASKLEPIOS Fachklinik Fürstenhof Bad Wildungen",
+            "nameLang": "Fachklinik Fürstenhof",
+            "latitude": "51.1149672",
+            "longitude": "9.10945150"
+        },
+        {
+            "uid": 2610,
+            "nameKurz": "Wicker Klinik",
+            "nameLang": "Werner Wicker GmbH & Co. KG",
+            "latitude": "51.1161862",
+            "longitude": "9.11149183"
+        },
+        {
+            "uid": 2612,
+            "nameKurz": "Klinik Birkental",
+            "nameLang": "Fachklinik für Orthopädie und Psychosmatik",
+            "latitude": "51.1080284",
+            "longitude": "9.08296679"
+        },
+        {
+            "uid": 2617,
+            "nameKurz": "KMG Elbtalklinik Bad Wilsnack GmbH",
+            "nameLang": "Rehaklinik für Orthopädie und Rheumatologie",
+            "latitude": "52.9605330",
+            "longitude": "11.9513749"
+        },
+        {
+            "uid": 2619,
+            "nameKurz": "Dr. Becker Kiliani-Klinik",
+            "nameLang": "",
+            "latitude": "49.5093035",
+            "longitude": "10.4110391"
+        },
+        {
+            "uid": 2625,
+            "nameKurz": "Hardtwaldklinik I Werner Wicker GmbH&Co.KG",
+            "nameLang": "Hardtwaldklinik I Werner-Wicker GmbH&Co.KG",
+            "latitude": "51.0616984",
+            "longitude": "9.17328960"
+        },
+        {
+            "uid": 2628,
+            "nameKurz": "Asklepios Klinik Am Kurpark Bad Schwartau",
+            "nameLang": "Asklepios Klinik Am Kurpark Bad Schwartau",
+            "latitude": "53.9215939",
+            "longitude": "10.6996477"
+        },
+        {
+            "uid": 2636,
+            "nameKurz": "Klinik Kurhessen",
+            "nameLang": "Klinik Kurhessen Bad Sooden-Allendorf",
+            "latitude": "51.2715229",
+            "longitude": "9.96211170"
+        },
+        {
+            "uid": 2637,
+            "nameKurz": "Sonnenberg-Klinik",
+            "nameLang": "Sonnenberg-Klinik",
+            "latitude": "51.2733162",
+            "longitude": "9.95622200"
+        },
+        {
+            "uid": 2638,
+            "nameKurz": "Klinik am Park Bad Steben GmbH",
+            "nameLang": "",
+            "latitude": "50.3616375",
+            "longitude": "11.6340351"
+        },
+        {
+            "uid": 2640,
+            "nameKurz": "Paracelsus Harzklinik Bad Suderode GmbH",
+            "nameLang": "OT Bad Suderode",
+            "latitude": "51.7257960",
+            "longitude": "11.1055379"
+        },
+        {
+            "uid": 2648,
+            "nameKurz": "Hochwald-Kliniken Weiskirchen",
+            "nameLang": "Reha-Fachklinik für Innere Medizin | Orthopädie und Sportmedizin | Neurologie | Geriatrie",
+            "latitude": "49.5638793",
+            "longitude": "6.79992280"
+        },
+        {
+            "uid": 2651,
+            "nameKurz": "Reha-Zentrum Utersum auf Föhr",
+            "nameLang": "Reha-Zentrum Utersum eine Klinik der Deutschen Rentenversicherung Bund",
+            "latitude": "54.7039152",
+            "longitude": "8.40117060"
+        },
+        {
+            "uid": 2653,
+            "nameKurz": "Reha-Zentrum Bad Driburg Klinik Berlin",
+            "nameLang": "Reha-Zentrum Bad Driburg der DRV-Bund - Klinik Berlin",
+            "latitude": "51.7364270",
+            "longitude": "9.04387472"
+        },
+        {
+            "uid": 2664,
+            "nameKurz": "Reha-Zentrum Todtmoos - Klinik Wehrawald",
+            "nameLang": "Klinik Wehrawald",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 2671,
+            "nameKurz": "St. Mauritius Therapieklinik",
+            "nameLang": "St. Mauritius Therapieklinik Meerbusch",
+            "latitude": "51.2795106",
+            "longitude": "6.62779837"
+        },
+        {
+            "uid": 2672,
+            "nameKurz": "VAMED Klinik Hohenstücken",
+            "nameLang": "",
+            "latitude": "52.4331358",
+            "longitude": "12.5130211"
+        },
+        {
+            "uid": 2677,
+            "nameKurz": "Kurparkklinik Dr. Lauterbach-Klinik GmbH",
+            "nameLang": "Kurparkklinik Dr. Lauterbach-Klinik GmbH",
+            "latitude": "50.8142849",
+            "longitude": "10.3519396"
+        },
+        {
+            "uid": 2679,
+            "nameKurz": "Therapiezentrum Burgau",
+            "nameLang": "Gemeinnützige Gesellschaft zur neurologischen Rehabilitation nach erworbenen cerebralen Schäden mbH",
+            "latitude": "48.4339033",
+            "longitude": "10.4067702"
+        },
+        {
+            "uid": 2686,
+            "nameKurz": "Rehaklinik \"Garder See\"",
+            "nameLang": "Rehabilitationsklinik \"Garder See\" GmbH",
+            "latitude": "53.6835492",
+            "longitude": "12.0718269"
+        },
+        {
+            "uid": 2687,
+            "nameKurz": "Knappschaftsklinik Borkum",
+            "nameLang": "Knappschafts-Klinik Borkum",
+            "latitude": "53.5947572",
+            "longitude": "6.66469615"
+        },
+        {
+            "uid": 2689,
+            "nameKurz": "Rheumaklinik Bad Aibling",
+            "nameLang": "Rehazentrum Bad Aibling, Klinik Wendelstein-Rheumaklinik, Deutsche Rentenversicherung Bund",
+            "latitude": "47.8544870",
+            "longitude": "12.0220177"
+        },
+        {
+            "uid": 2692,
+            "nameKurz": "BDH-Klinik Greifswald",
+            "nameLang": "Neurologisches Rehabilitationszentrum und Querschnittgelähmtenzentrum",
+            "latitude": "54.089739",
+            "longitude": "13.4100638"
+        },
+        {
+            "uid": 2694,
+            "nameKurz": "MEDIAN Klinik NRZ Magdeburg",
+            "nameLang": "",
+            "latitude": "52.0862439",
+            "longitude": "11.6378271"
+        },
+        {
+            "uid": 2701,
+            "nameKurz": "Fachklinik Allgäu",
+            "nameLang": "Alpcura Fachklinik Allgäu Betriebsgesellschaft mbH",
+            "latitude": "47.5835627",
+            "longitude": "10.5451042"
+        },
+        {
+            "uid": 2702,
+            "nameKurz": "Rehabilitationsklinik Seebad Ahlbeck",
+            "nameLang": "Betriebs GmbH",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 2712,
+            "nameKurz": "MEDIAN Klinik NRZ Wiesbaden",
+            "nameLang": "",
+            "latitude": "50.0873646",
+            "longitude": "8.27452910"
+        },
+        {
+            "uid": 2715,
+            "nameKurz": "RehaKlinikum Bad Säckingen",
+            "nameLang": "",
+            "latitude": "47.5610833",
+            "longitude": "7.94023354"
+        },
+        {
+            "uid": 2716,
+            "nameKurz": "MEDIAN Klinik Münchwies",
+            "nameLang": "MEDIAN Klinik Münchwies",
+            "latitude": "49.3976531",
+            "longitude": "7.25346082"
+        },
+        {
+            "uid": 2724,
+            "nameKurz": "Espan-Klinik",
+            "nameLang": "Kliniken Benner GmbH & Co KG",
+            "latitude": "48.0165840",
+            "longitude": "8.53905121"
+        },
+        {
+            "uid": 2728,
+            "nameKurz": "Klinik für Kardiologie",
+            "nameLang": "Rehabilitation und Prävention",
+            "latitude": "51.0044520",
+            "longitude": "9.73781224"
+        },
+        {
+            "uid": 2731,
+            "nameKurz": "Aggertalklinik",
+            "nameLang": "",
+            "latitude": "50.9872",
+            "longitude": "7.3841345"
+        },
+        {
+            "uid": 2732,
+            "nameKurz": "MEDIAN Klinik Bad Tennstedt",
+            "nameLang": "",
+            "latitude": "51.1555626",
+            "longitude": "10.8415748"
+        },
+        {
+            "uid": 2734,
+            "nameKurz": "Bad Sebastiansweiler",
+            "nameLang": "Bad Sebastiansweiler GmbH",
+            "latitude": "48.4013360",
+            "longitude": "9.01455720"
+        },
+        {
+            "uid": 2735,
+            "nameKurz": "FACHKRANKENHAUS Kloster Grafschaft",
+            "nameLang": "Zentrum für Pneumologie und Allergologie",
+            "latitude": "51.1444896",
+            "longitude": "8.32443544"
+        },
+        {
+            "uid": 2736,
+            "nameKurz": "Klinik Roderbirken",
+            "nameLang": "Klinik Roderbirken",
+            "latitude": "51.1045488",
+            "longitude": "7.03794391"
+        },
+        {
+            "uid": 2755,
+            "nameKurz": "Fachklinik Feldberg",
+            "nameLang": "Klinik am Haussee",
+            "latitude": "53.3411209",
+            "longitude": "13.4337644"
+        },
+        {
+            "uid": 2760,
+            "nameKurz": "MediClin Kraichgau-Klinik",
+            "nameLang": "",
+            "latitude": "49.2408557",
+            "longitude": "9.10991632"
+        },
+        {
+            "uid": 2765,
+            "nameKurz": "medbo-Klinik für Neurologische Rehabilitation",
+            "nameLang": "ZENTRUM FÜR NEUROLOGISCHE REHABILITATION der Klinik für Neurologie der Universität Regensburg am medbo Bezirksklinikum Regensburg",
+            "latitude": "48.9980266",
+            "longitude": "12.0875469"
+        },
+        {
+            "uid": 2773,
+            "nameKurz": "Asklepios Nordseeklinik Westerland/Sylt",
+            "nameLang": "",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 2775,
+            "nameKurz": "Dr. Becker Klinik Möhnesee",
+            "nameLang": "Dr. Becker Klinikgesellschaft Möhnesee GmbH",
+            "latitude": "51.4921214",
+            "longitude": "8.11723582"
+        },
+        {
+            "uid": 2776,
+            "nameKurz": "BG Nordsee Reha-Klinik",
+            "nameLang": "BG Nordsee Reha-Klinik St. Peter-Ording",
+            "latitude": "54.3004322",
+            "longitude": "8.65358305"
+        },
+        {
+            "uid": 2777,
+            "nameKurz": "Rangauklinik Ansbach",
+            "nameLang": "Diakoneo Rangauklinik Ansbach GmbH",
+            "latitude": "49.3255993",
+            "longitude": "10.5400082"
+        },
+        {
+            "uid": 2779,
+            "nameKurz": "Thoraxzentrum Bezirk Unterfranken",
+            "nameLang": "Lungenfachklinik für Pneumologie, Thoraxchirurgie, Rehabilitation, Schlaf- und Beatmungsmedizin",
+            "latitude": "50.2511078",
+            "longitude": "10.1787842"
+        },
+        {
+            "uid": 2781,
+            "nameKurz": "Passauer Wolf Ingolstadt",
+            "nameLang": "Passauer Wolf City-Reha und Reha-Zentrum Ingolstadt",
+            "latitude": "48.7700053",
+            "longitude": "11.3818126"
+        },
+        {
+            "uid": 2785,
+            "nameKurz": "Krankenhaus Lindenbrunn",
+            "nameLang": "Krankenhaus Lindenbrunn",
+            "latitude": "52.1100804",
+            "longitude": "9.54878468"
+        },
+        {
+            "uid": 2787,
+            "nameKurz": "Klinik Solequelle",
+            "nameLang": "Orthopädische Fachklinik für med. Rehabilitation, Anschlussheilbehandlung (AHB) und Arthrofibrose",
+            "latitude": "51.6293174",
+            "longitude": "8.35531497"
+        },
+        {
+            "uid": 2790,
+            "nameKurz": "KLINIK BAVARIA Kreischa",
+            "nameLang": "Zentrum für medizinische Rehabilitation und Intensivrehabilitation",
+            "latitude": "50.9466151",
+            "longitude": "13.7690696"
+        },
+        {
+            "uid": 2791,
+            "nameKurz": "KLINIK BAVARIA Kreischa/Zscheckwitz",
+            "nameLang": "Rehabilitationszentrum für Säuglinge, Kinder, Jugendliche und junge Erwachsene",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 2823,
+            "nameKurz": "Ostseeklinik Prerow",
+            "nameLang": "Ostseeklinik Prerow",
+            "latitude": "54.4493230",
+            "longitude": "12.5869674"
+        },
+        {
+            "uid": 2827,
+            "nameKurz": "VAMED Klinik Geesthacht / VAMED Rehaklinik Altona",
+            "nameLang": "Fachklinik für Neurologie und Neurologisches Rehazentrum für Kinder, Jugendliche und junge Erwachsene",
+            "latitude": "53.4272203",
+            "longitude": "10.3869761"
+        },
+        {
+            "uid": 2836,
+            "nameKurz": "DRK-Nordsee-Reha-Klinik Goldene Schlüssel",
+            "nameLang": "Fachklinik für interdisziplinäre Ganzheitsmedizin",
+            "latitude": "54.3070592",
+            "longitude": "8.62016910"
+        },
+        {
+            "uid": 2837,
+            "nameKurz": "Fachklinik Satteldüne für Kinder und Jugendliche",
+            "nameLang": "eine Klinik der Deutschen Rentenversicherung Nord",
+            "latitude": "54.6637876",
+            "longitude": "8.3360011"
+        },
+        {
+            "uid": 2851,
+            "nameKurz": "MEDIAN Klinik Flachsheide",
+            "nameLang": "MEDIAN Klinik Flachsheide Bad Salzuflen",
+            "latitude": "52.0973687",
+            "longitude": "8.75034909"
+        },
+        {
+            "uid": 2859,
+            "nameKurz": "Klinik am Park",
+            "nameLang": "Fachklinik für Psychosomatik und Entwöhnungsbehandlung",
+            "latitude": "51.786932",
+            "longitude": "8.79908509"
+        },
+        {
+            "uid": 2875,
+            "nameKurz": "Rehazentrum Oberharz",
+            "nameLang": "Am Schwarzenbacher Teich",
+            "latitude": "51.7871104",
+            "longitude": "10.3356702"
+        },
+        {
+            "uid": 2892,
+            "nameKurz": "MediClin Reichshof",
+            "nameLang": "MediClin Klinik Reichshof",
+            "latitude": "50.9884245",
+            "longitude": "7.68597873"
+        },
+        {
+            "uid": 2901,
+            "nameKurz": "BDH-Klinik Vallendar gGmbH",
+            "nameLang": "",
+            "latitude": "50.4006103",
+            "longitude": "7.6110928"
+        },
+        {
+            "uid": 2908,
+            "nameKurz": "Johannesbad Fachklinik Hochsauerland",
+            "nameLang": "Therapie- und Rehabilitationszentrum für psychosomatische und internistische Erkrankungen",
+            "latitude": "51.1984633",
+            "longitude": "8.31637622"
+        },
+        {
+            "uid": 2910,
+            "nameKurz": "MEDIAN Klinik Wied",
+            "nameLang": "Facheinrichtung für psychosomatische Medizin",
+            "latitude": "50.6315595",
+            "longitude": "7.76616420"
+        },
+        {
+            "uid": 2918,
+            "nameKurz": "Paul-Ehrlich-Klinik Deutsche Rentenversicherung Knappschaft-Bahn-See",
+            "nameLang": "Paul-Ehrlich-Klinik Deutsche Rentenversicherung Knappschaft-Bahn-See",
+            "latitude": "50.2301581",
+            "longitude": "8.61869537"
+        },
+        {
+            "uid": 2941,
+            "nameKurz": "Luise von Marillac Klinik",
+            "nameLang": "Vinzenz von Paul Kliniken gGmbH",
+            "latitude": "48.5972302",
+            "longitude": "9.79183016"
+        },
+        {
+            "uid": 2948,
+            "nameKurz": "Sankt Rochus Kliniken",
+            "nameLang": "",
+            "latitude": "49.2197105",
+            "longitude": "8.6687023"
+        },
+        {
+            "uid": 2962,
+            "nameKurz": "Rehaklinik Kandertal",
+            "nameLang": "Psychosmatische Fachklinik für Familien, Jugendliche und Erwachsene",
+            "latitude": "47.7814583",
+            "longitude": "7.73174950"
+        },
+        {
+            "uid": 2967,
+            "nameKurz": "Klinik Sonnenbichl gGmbH  Prävention und Rehabilitation für Mutter und Kind",
+            "nameLang": "Klinik Sonnenbichl gGmbH im FrauenWerk Stein e.V. Prävention und Rehabilitation für Mutter und Kind",
+            "latitude": "47.7712718",
+            "longitude": "12.3148480"
+        },
+        {
+            "uid": 2972,
+            "nameKurz": "VAMED Klinik Kipfenberg",
+            "nameLang": "VAMED Klinik Kipfenberg",
+            "latitude": "48.9518059",
+            "longitude": "11.3949280"
+        },
+        {
+            "uid": 3008,
+            "nameKurz": "Klinik für Neurologische Rehabilitation RHÖN-KLINIKUM Campus Bad Neustadt",
+            "nameLang": "Klinik für Neurologische Rehabilitation RHÖN-KLINIKUM Campus Bad Neustadt",
+            "latitude": "50.3227554",
+            "longitude": "10.2343508"
+        },
+        {
+            "uid": 3015,
+            "nameKurz": "Gesundheitszentrum Federsee",
+            "nameLang": "Federseeklinik",
+            "latitude": "48.0654035",
+            "longitude": "9.60790545"
+        },
+        {
+            "uid": 3021,
+            "nameKurz": "BG Unfallklinik Murnau",
+            "nameLang": "Abteilung für BG-Rehabilitation",
+            "latitude": "47.6715774",
+            "longitude": "11.2173405"
+        },
+        {
+            "uid": 3022,
+            "nameKurz": "BG Unfallklinik Murnau",
+            "nameLang": "Abteilung für Neurorehabilitation",
+            "latitude": "47.6715774",
+            "longitude": "11.2173405"
+        },
+        {
+            "uid": 3058,
+            "nameKurz": "PhysioKlinik im Aitrachtal",
+            "nameLang": "",
+            "latitude": "48.7189838",
+            "longitude": "12.4421792"
+        },
+        {
+            "uid": 3077,
+            "nameKurz": "Klinik Jesuitenschlößl Betriebs GmbH",
+            "nameLang": "Rahabilitationszentrum",
+            "latitude": "48.5708217",
+            "longitude": "13.4723303"
+        },
+        {
+            "uid": 3078,
+            "nameKurz": "Villa Henckel",
+            "nameLang": "Kur-Residenz Villa Henckel GbR",
+            "latitude": "47.7297011",
+            "longitude": "12.8830079"
+        },
+        {
+            "uid": 3079,
+            "nameKurz": "Eltern-Kind-Fachklinik Münstertal",
+            "nameLang": "Eltern-Kind-Fachklinik Münstertal",
+            "latitude": "47.8716520",
+            "longitude": "7.73899345"
+        },
+        {
+            "uid": 3090,
+            "nameKurz": "MediClin Deister Weser Kliniken",
+            "nameLang": "Haus Deister und Haus Weser",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 3098,
+            "nameKurz": "AUGUST-BIER-KLINIK",
+            "nameLang": "Fachklinik für Neurologie, Neurotraumatologie und Rehabilitation",
+            "latitude": "54.1643761",
+            "longitude": "10.5477242"
+        },
+        {
+            "uid": 3099,
+            "nameKurz": "Celenus DEKIMED",
+            "nameLang": "Deutsche Klinik für Integrative Medizin und Naturheilverfahren",
+            "latitude": "50.2837999",
+            "longitude": "12.2352541"
+        },
+        {
+            "uid": 3115,
+            "nameKurz": "Celenus Psychosomatische Fachklinik Freiburg",
+            "nameLang": "Fachklinik für Psychosomatische Medizin und Psychotherapie",
+            "latitude": "47.9823039",
+            "longitude": "7.76703885"
+        },
+        {
+            "uid": 3119,
+            "nameKurz": "Kneipp-Sanatorium Bad Clevers",
+            "nameLang": "Klinik für Naturheilverfahren",
+            "latitude": "47.8812948",
+            "longitude": "10.2125962"
+        },
+        {
+            "uid": 3134,
+            "nameKurz": "BG Klinik Bad Reichenhall",
+            "nameLang": "BG Klinik für Berufskrankheiten Bad Reichenhall",
+            "latitude": "47.7313757",
+            "longitude": "12.8836256"
+        },
+        {
+            "uid": 3138,
+            "nameKurz": "Privatklinik Haus am Stalten",
+            "nameLang": "Privatklinik Haus am Stalten - Fachklinik für Anthroposophische Medizin (AM)",
+            "latitude": "47.7067997",
+            "longitude": "7.72667540"
+        },
+        {
+            "uid": 3147,
+            "nameKurz": "Median Psychotherapeutische Klinik",
+            "nameLang": "Fachklinik für abhängigkeitskranke Menschen",
+            "latitude": "51.5159324",
+            "longitude": "13.3965082"
+        },
+        {
+            "uid": 3167,
+            "nameKurz": "Klinik Füssen",
+            "nameLang": "Abteilung für Geriatrische Rehabilitation",
+            "latitude": "47.5666371",
+            "longitude": "10.7039014"
+        },
+        {
+            "uid": 3239,
+            "nameKurz": "Neurologisches Rehabilitationszentrum Quellenhof",
+            "nameLang": "Neurologisches Rehabilitationszentrum Quellenhof in Bad Wildbad GmbH",
+            "latitude": "48.7486559",
+            "longitude": "8.55000979"
+        },
+        {
+            "uid": 3249,
+            "nameKurz": "Neurologisches Therapiecentrum gGmbH",
+            "nameLang": "",
+            "latitude": "50.9475427",
+            "longitude": "6.96213497"
+        },
+        {
+            "uid": 3254,
+            "nameKurz": "Heinrich-Heine-Klinik",
+            "nameLang": "Zentrum für Psychosomatik und Psychotherapie",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 3256,
+            "nameKurz": "Eifelklinik",
+            "nameLang": "Klinik für Psychosomatische Rehabilitation",
+            "latitude": "50.0892055",
+            "longitude": "6.79895594"
+        },
+        {
+            "uid": 3266,
+            "nameKurz": "Reha-Zentrum prosper",
+            "nameLang": "Knappschaft Kliniken Reha-Zentrum prosper",
+            "latitude": "51.5133641",
+            "longitude": "6.90828500"
+        },
+        {
+            "uid": 3268,
+            "nameKurz": "Rehabilitationsmedizin Ostalb GmbH",
+            "nameLang": "",
+            "latitude": "48.8492435",
+            "longitude": "10.0859236"
+        },
+        {
+            "uid": 3320,
+            "nameKurz": "Klinik am Doniswald",
+            "nameLang": "Klinik am Doniswald",
+            "latitude": "48.1398608",
+            "longitude": "8.41700268"
+        },
+        {
+            "uid": 3333,
+            "nameKurz": "SSB saludis - Zentrum für rehabilitative Medizin",
+            "nameLang": "SSB saludis - Zentrum für rehabilitative Medizin",
+            "latitude": "49.8680147",
+            "longitude": "10.8917974"
+        },
+        {
+            "uid": 3366,
+            "nameKurz": "BG Klinikum Hamburg gGmbH",
+            "nameLang": "BG Klinikum Hamburg gGmbH",
+            "latitude": "53.5067160",
+            "longitude": "10.1771389"
+        },
+        {
+            "uid": 3426,
+            "nameKurz": "VIALIFE Reha Bardenberg",
+            "nameLang": "VIALIFE Reha Bardenberg GmbH",
+            "latitude": "50.8430404",
+            "longitude": "6.11035960"
+        },
+        {
+            "uid": 3479,
+            "nameKurz": "Asklepios Klinik Bad Salzungen",
+            "nameLang": "Asklepios Klinik Bad Salzungen / Parkklinik / Katharina Schroth Klinik",
+            "latitude": "50.8087166",
+            "longitude": "10.2351796"
+        },
+        {
+            "uid": 3498,
+            "nameKurz": "MEDICLIN Reha-Zentrum Bad Düben",
+            "nameLang": "MediClin GmbH & CO KG Zweigniederlassung Reha-Zentrum Bad Düben",
+            "latitude": "51.5986225",
+            "longitude": "12.5829468"
+        },
+        {
+            "uid": 1322,
+            "nameKurz": "medi-Gesundheitsgruppe GmbH",
+            "nameLang": "medi-Gesundheitsgruppe GmbH",
+            "latitude": "49.2964576",
+            "longitude": "10.5712264"
+        },
+        {
+            "uid": 1344,
+            "nameKurz": "Reha Vita",
+            "nameLang": "Reha Vita GmbH Klinik für Gesundheit und Sport",
+            "latitude": "51.7546110",
+            "longitude": "14.3339273"
+        },
+        {
+            "uid": 3135,
+            "nameKurz": "medicos.AufSchalke Reha GmbH & Co.KG",
+            "nameLang": "medicos.AufSchalke Reha GmbH & Co.KG, Zentrum für ambulante Rehabilitation, Prävention und Sport",
+            "latitude": "51.5599593",
+            "longitude": "7.07356210"
+        },
+        {
+            "uid": 3342,
+            "nameKurz": "TheraVent aktiv GmbH",
+            "nameLang": "ambulante neurologische Rehabilitation",
+            "latitude": "",
+            "longitude": ""
+        },
+        {
+            "uid": 3343,
+            "nameKurz": "Marien Aktiv Siegen",
+            "nameLang": "Marien Aktiv Therapiezentrum Siegen",
+            "latitude": "50.8800040",
+            "longitude": "8.02969655"
+        },
+        {
+            "uid": 3346,
+            "nameKurz": "VAMED Rehazentrum Karlsruhe GmbH",
+            "nameLang": "VAMED Rehazentrum Karlsruhe GmbH",
+            "latitude": "49.0103497",
+            "longitude": "8.35662066"
+        },
+        {
+            "uid": 3347,
+            "nameKurz": "Reha-Zentrum Teltow",
+            "nameLang": "Reha-Zentrum Teltow GmbH & Co.KG",
+            "latitude": "52.3991795",
+            "longitude": "13.2357155"
+        },
+        {
+            "uid": 3351,
+            "nameKurz": "NiB GmbH & Co.KG",
+            "nameLang": "Neurologisches interdisziplinäres Behandlungszentrum",
+            "latitude": "50.9431956",
+            "longitude": "6.88283070"
+        },
+        {
+            "uid": 3373,
+            "nameKurz": "HOY-REHA Hoyerswerda",
+            "nameLang": "HOY-REHA GmbH Tagesklinik für Rehabilitation & Prävention",
+            "latitude": "51.4415013",
+            "longitude": "14.2755715"
+        },
+        {
+            "uid": 3374,
+            "nameKurz": "Vitalis Brandenburg",
+            "nameLang": "Vitalis Brandenburg GmbH Klinik für ambulante Rehabilitation, Gesundheitssport und Wellness",
+            "latitude": "52.4056393",
+            "longitude": "12.5658778"
+        },
+        {
+            "uid": 3379,
+            "nameKurz": "BZfAR GmbH",
+            "nameLang": "Bonner Zentrum für Ambulante Rehabilitation GmbH",
+            "latitude": "50.7413722",
+            "longitude": "7.15316480"
+        },
+        {
+            "uid": 3391,
+            "nameKurz": "ZAR Tübingen am Universitätsklinikum GmbH",
+            "nameLang": "ZAR Tübingen am Universitätsklinikum GmbH",
+            "latitude": "48.5311722",
+            "longitude": "9.03674537"
+        },
+        {
+            "uid": 3396,
+            "nameKurz": "Gesundheits-Zentrum Hunsrück  -Ambulantes Reha-Zentrum-",
+            "nameLang": "Gesundheits-Zentrum Hunsrück  -Ambulantes Reha-Zentrum für orthopädische und neurologische Erkrankungen-",
+            "latitude": "50.0712595",
+            "longitude": "7.44247130"
+        },
+        {
+            "uid": 3401,
+            "nameKurz": "ZAR am Klinikum Ludwigshafen GmbH",
+            "nameLang": "ZAR am Klinikum Ludwigshafen GmbH",
+            "latitude": "49.4898698",
+            "longitude": "8.42553849"
+        },
+        {
+            "uid": 3403,
+            "nameKurz": "ZAR Kaiserslautern",
+            "nameLang": "ZAR Kaiserslautern GmbH",
+            "latitude": "49.4577456",
+            "longitude": "7.80293701"
+        },
+        {
+            "uid": 3407,
+            "nameKurz": "UniReha GmbH",
+            "nameLang": "Zentrum für Prävention und Rehabilitation der Uniklinik Köln",
+            "latitude": "50.9265303",
+            "longitude": "6.91859824"
+        },
+        {
+            "uid": 3413,
+            "nameKurz": "reha düsseldorf ges.für indikationsübergreifende Rehabilitation mbH",
+            "nameLang": "Reha Düsseldorf Gesellschaft für indikationsübergreifende Rehabilitation mbH-Salvea",
+            "latitude": "51.2167750",
+            "longitude": "6.78941400"
+        },
+        {
+            "uid": 3415,
+            "nameKurz": "Therapiezentrum Koblenz",
+            "nameLang": "Therapiezentrum Koblenz",
+            "latitude": "50.3486859",
+            "longitude": "7.58991400"
+        },
+        {
+            "uid": 3416,
+            "nameKurz": "MAINTAIN Frankfurt",
+            "nameLang": "MAINTAIN  Gesundheitsinstitut Frankfurt am Main",
+            "latitude": "50.0922988",
+            "longitude": "8.64984213"
+        },
+        {
+            "uid": 3417,
+            "nameKurz": "MAINTAIN Bad Homburg",
+            "nameLang": "MAINTAIN Gesundheitsinstitut Bad Homburg",
+            "latitude": "50.2238653",
+            "longitude": "8.61465020"
+        },
+        {
+            "uid": 3418,
+            "nameKurz": "Reha-Zentrum Hess",
+            "nameLang": "Reha-Zentrum Hess",
+            "latitude": "48.9556067",
+            "longitude": "9.14872410"
+        },
+        {
+            "uid": 3429,
+            "nameKurz": "ZAR Ulm",
+            "nameLang": "ZAR Zentrum für ambulante Rehabilitation GmbH am Unviersitätsklinikum Ulm",
+            "latitude": "48.3954169",
+            "longitude": "9.95941800"
+        },
+        {
+            "uid": 3451,
+            "nameKurz": "Vamed Gesundheitszentrum Chiemgau",
+            "nameLang": "Vamed Gesundheitszentrum Chiemgau",
+            "latitude": "47.8785772",
+            "longitude": "12.6345724"
+        },
+        {
+            "uid": 3459,
+            "nameKurz": "Neurologische Therapie RheinAhr gGmbH",
+            "nameLang": "Neurologische Therapie RheinAhr Zentrum für Rehabilitation, Eingliederung und Nachsorge g-GmbH",
+            "latitude": "50.5488904",
+            "longitude": "7.13123490"
+        },
+        {
+            "uid": 3474,
+            "nameKurz": "ZAR Stuttgart",
+            "nameLang": "ZAR Stuttgart - Zentrum für ambulante Rehabilitation",
+            "latitude": "48.7711908",
+            "longitude": "9.17793250"
+        },
+        {
+            "uid": 3475,
+            "nameKurz": "ZAR Bad Cannstatt",
+            "nameLang": "ZAR im MineralBad Cannstatt - Zentrum für ambulante Rehabilitation",
+            "latitude": "48.8092834",
+            "longitude": "9.22269670"
+        },
+        {
+            "uid": 3476,
+            "nameKurz": "ZAR Fulda",
+            "nameLang": "ZAR Fulda - Zentrum für ambulante Rehabilitation",
+            "latitude": "50.5519151",
+            "longitude": "9.64436200"
+        },
+        {
+            "uid": 3477,
+            "nameKurz": "ZAR Frankfurt",
+            "nameLang": "ZAR Frankfurt - Zentrum für ambulante Rehabilitation",
+            "latitude": "50.1236209",
+            "longitude": "8.59083010"
+        },
+        {
+            "uid": 3482,
+            "nameKurz": "Reha Bergedorf",
+            "nameLang": "Rehabilitations- und Trainingszentrum für Unfallverletzte in Bergedorf GmbH",
+            "latitude": "53.4872119",
+            "longitude": "10.2151853"
+        },
+        {
+            "uid": 3491,
+            "nameKurz": "Mobile geriatrische Reha MORA",
+            "nameLang": "Mobile geriatrische Reha MORA",
+            "latitude": "49.2671006",
+            "longitude": "9.77142620"
+        },
+        {
+            "uid": 3508,
+            "nameKurz": "ZAR Mainz",
+            "nameLang": "ZAR Rhein-Main GmbH, Betriebsstätte Mainz",
+            "latitude": "50.0001244",
+            "longitude": "8.25657510"
+        }
+    ]
+}
