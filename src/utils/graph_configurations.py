@@ -41,26 +41,26 @@ def get_index_timeline_plot(data) -> None:
         None (plots the graph)
     """
 
-    df = pd.DataFrame(list(data.items()), columns=['Date', 'Value'])
-    df['Date'] = pd.to_datetime(df['Date'])
+    # df = pd.DataFrame(list(data.items()), columns=['Date', 'Value'])
+    data['Date'] = pd.to_datetime(data['Date'])
 
     # Set the date as index
-    df.set_index('Date', inplace=True)
+    data.set_index('Date', inplace=True)
 
     # Reindex to include all dates in the range, filling with NaN where data is missing
-    df = df.reindex(pd.date_range(start=df.index.min(), end=df.index.max()), fill_value=None)
+    data = data.reindex(pd.date_range(start=data.index.min(), end=data.index.max()), fill_value=None)
 
-    df.index.name = 'Date'
-    df['Color'] = df['Value'].apply(lambda x: get_color(value = x, mapper = luftdaten_color_ranges) if not np.isnan(x) else (0, 0, 0, 0))
+    data.index.name = 'Date'
+    data['Color'] = data['Value'].apply(lambda x: get_color(value = x, mapper = luftdaten_color_ranges) if not np.isnan(x) else (0, 0, 0, 0))
 
     plt.figure(figsize=(10, 5))
-    for i in range(1, len(df)):
-        x = [df.index[i - 1], df.index[i]]
-        y = [df['Value'].iloc[i - 1], df['Value'].iloc[i]]
+    for i in range(1, len(data)):
+        x = [data.index[i - 1], data.index[i]]
+        y = [data['Value'].iloc[i - 1], data['Value'].iloc[i]]
         
         # Only plot if both points in the segment have values (not NaN)
         if not np.isnan(y).any():
-            plt.plot(x, y, color=df['Color'].iloc[i])
+            plt.plot(x, y, color=data['Color'].iloc[i])
 
     plt.ylim(0, 4)
     plt.title("Luftqualität index Timeline")

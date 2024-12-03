@@ -88,7 +88,7 @@ class AirdataDownloader:
         return closest_station
 
 
-    def get_luftdaten_index(self, longitude: float, latitude: float, start_date: str, end_date: str) -> dict: 
+    def get_luftdaten_index_patient(self, longitude: float, latitude: float, start_date: str, end_date: str) -> pd.DataFrame: 
         '''
         Function to get the air quality data from the closest station to a given patient location
         The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
@@ -101,7 +101,7 @@ class AirdataDownloader:
             end_date (str): end date of the timeframe
 
         Returns: 
-            dict: a dictionary containing the daily mean air quality index for the given timeframe (daily)
+            pd.DataFrame: a dataframe containing the daily mean air quality index for the given timeframe (daily)
         '''
 
         # find nearest station 
@@ -123,7 +123,7 @@ class AirdataDownloader:
             # sort values into their days (if multiple values per day)
             for key, value in station_data.items():
                 day = key.split(" ")[0]
-                if daily_data.get(day, None) is None and value[2]:
+                if daily_data.get(day, None) is None and value[1]: #todo: warum davor hier 2
                     daily_data[day] = []
                     daily_data[day].append(value[1]) # value[1] = Index
                 elif value[1]: # append only if values are valid
@@ -135,6 +135,8 @@ class AirdataDownloader:
                 daily_data_index_mean[key] = sum(value) / len(value)
 
             # daily_data contains the daily values for the given timeframe, not the mean
+            daily_data_index_mean = pd.DataFrame(list(daily_data_index_mean.items()), columns=['Date', 'Index'])
+            daily_data_index_mean["standort"] = [(longitude, latitude)] * len(daily_data_index_mean)
             return daily_data_index_mean
 
         else: 
@@ -143,7 +145,7 @@ class AirdataDownloader:
         return None
 
 
-    def get_luftdaten_schadstoffe(self, longitude: float, latitude: float, start_date: str, end_date: str) -> dict:
+    def get_luftdaten_schadstoffe_patient(self, longitude: float, latitude: float, start_date: str, end_date: str) -> pd.DataFrame:
         # todo: documentation
 
         # find nearest station 
@@ -205,4 +207,74 @@ class AirdataDownloader:
             
 
         schadstoff_data = pd.DataFrame(schadstoff_data)
+        schadstoff_data["standort"] = [(longitude, latitude)] * len(schadstoff_data)
         return schadstoff_data
+
+
+    def get_luftdaten_index_patient_collection(self, patients, start_date: str, end_date: str) -> dict: 
+        '''
+        Function to get the air quality data from a patient collection
+        The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
+        https://www.umweltbundesamt.de/daten/luft/luftdaten/luftqualitaet/eJzrWJSSuMrIwMhE19BQ18B0UUnmIkPDRXmpCxYVlyxYnOJWBJU00DWyXJwSko-sNreKbVFuctPinMSS0w6eq-a9apQ7vjgnL_20g8o5F4dPFrMBSMokdQ==
+
+        Args:
+            start_date (str): start date of the timeframe
+            end_date (str): end date of the timeframe
+
+        Returns: 
+            dict: a dictionary containing the daily mean air quality index for the given timeframe (daily)
+        '''
+        patient_stations = []
+
+        
+        patient_positions = []
+        for patient in patients:
+            long_lat = (patient.address.longitude, patient.address.latitude)
+            patient_positions.append({"patient_id": patient.id, "standort": long_lat})
+
+        patient_positions = pd.DataFrame(patient_positions)
+
+        result_df = pd.DataFrame()
+
+        # Iterate over a range and append the DataFrames
+        for position in patient_positions["standort"].unique(): 
+            new_df = self.get_luftdaten_index_patient(longitude = position[0], latitude=position[1], start_date = start_date, end_date = end_date)
+            result_df = pd.concat([result_df, new_df], ignore_index=True)
+
+        merge = pd.merge(result_df, patient_positions, on='standort', how='right')
+
+        # checks
+        assert len(merge["patient_id"].unique()) == len(patients)
+        assert len(patient_positions) == len(merge["patient_id"].unique()), "Error: Not all patients have a matching station"
+        assert len(merge["standort"].unique()) == len(patient_positions["standort"].unique()), "Error: Not all stations are in the merged data"
+        
+        return merge
+
+
+    def get_luftdaten_schadstoffe_patient_collection(self, patients, start_date: str, end_date: str) -> dict:
+        # todo: docmentation
+        
+        patient_stations = []
+
+        patient_positions = []
+        for patient in patients:
+            long_lat = (patient.address.longitude, patient.address.latitude)
+            patient_positions.append({"patient_id": patient.id, "standort": long_lat})
+
+        patient_positions = pd.DataFrame(patient_positions)
+
+        result_df = pd.DataFrame()
+
+        # Iterate over a range and append the DataFrames
+        for position in patient_positions["standort"].unique(): 
+            new_df = self.get_luftdaten_schadstoffe_patient(longitude = position[0], latitude=position[1], start_date = start_date, end_date = end_date)
+            result_df = pd.concat([result_df, new_df], ignore_index=True)
+
+        merge = pd.merge(result_df, patient_positions, on='standort', how='right')
+
+        # checks
+        assert len(merge["patient_id"].unique()) == len(patients)
+        assert len(patient_positions) == len(merge["patient_id"].unique()), "Error: Not all patients have a matching station"
+        assert len(merge["standort"].unique()) == len(patient_positions["standort"].unique()), "Error: Not all stations are in the merged data"
+        
+        return merge

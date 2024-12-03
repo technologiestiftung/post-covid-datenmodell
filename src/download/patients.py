@@ -79,10 +79,10 @@ class Patient:
         self.birth_date: datetime
         self.address: PatientAddress = PatientAddress()
         
-        # Luftdaten
-        self.closest_airdata_station = None
-        self.airdata_index = None
-        self.airdata_schadstoffe = None
+        # # Luftdaten
+        # self.closest_airdata_station = None
+        # self.airdata_index = None
+        # self.airdata_schadstoffe = None
         
 
 
