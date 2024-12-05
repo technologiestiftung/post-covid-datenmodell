@@ -126,6 +126,7 @@ class SewagedataDownloader:
             start_date (str): Start date of the timeframe for which the data should be retrieved
             end_date (str): End date of the timeframe for which the data should be retrieved
             virus_type (str | None): Type of virus to retrieve data for. Options are: "SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B". Can also be None to retrieve all data. Defaults to None.
+            patients (list): List of patient objects
 
         Returns:
             pd.DataFrame: a pandas DataFrame containing the relevant sewage data for the given location and timeframe. 
