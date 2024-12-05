@@ -57,7 +57,7 @@ class RehabilitationDownloader:
             if closest_station is None or distance < closest_station["distance"]:
                 closest_station = {
                     "patient_id": patient.id,
-                    "rehat_station_short": row["nameKurz"],
+                    "reha_station_short": row["nameKurz"],
                     "reha_station_long": row["nameLang"],
                     "distance": distance
                 }

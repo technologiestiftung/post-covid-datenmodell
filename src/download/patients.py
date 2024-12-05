@@ -40,7 +40,6 @@ class PatientMedicationStatement:
         self.status: Literal["active", "completed", "entered-in-error", "intended", "stopped", "on-hold", "unknown", "not-taken"]
         self.code: Optional[str] = None
         self.reason_code: Optional[str] = None
-        # self.dosage: str
         self.note: str = ""
 
 
@@ -57,7 +56,6 @@ class PatientEncounter:
         self.period_start: datetime
         self.period_end: datetime
         self.diagnosis: Optional[str] = None
-        # todo: also contains other info like location, hospitalization -> needed?
 
 class PatientCondition: 
     '''
@@ -68,7 +66,6 @@ class PatientCondition:
         self.id: str
         self.clinical_status: Literal["active", "recurrence", "relapse", "inactive", "remission", "resolved"]
         self.code: str
-        # bodySite: relevant? -> also nested
         self.recorded_date: datetime
         self.note: str = ""
 
@@ -79,13 +76,6 @@ class Patient:
         self.birth_date: datetime
         self.address: PatientAddress = PatientAddress()
         
-        # # Luftdaten
-        # self.closest_airdata_station = None
-        # self.airdata_index = None
-        # self.airdata_schadstoffe = None
-        
-
-
 class PatientsDownload: # PatientCollection
     '''
     Class is based on 'Modul Person: Patient - Pseudonymisiert', see here: 
@@ -94,8 +84,6 @@ class PatientsDownload: # PatientCollection
     '''
     def __init__(self):
         self.patients = []
-
-
 
     def get_patient_by_id(self, patient_id: str):
         """
@@ -107,7 +95,6 @@ class PatientsDownload: # PatientCollection
                 return patient
         return None
 
-    # @classmethod
     def extract_patients(self, data):
         '''
         Extract patients data from a provided dataset (json) and return a PatientsDownload object.
