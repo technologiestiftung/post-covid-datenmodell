@@ -12,6 +12,7 @@ import warnings
 from haversine import haversine
 from io import BytesIO
 from typing import Literal
+from src.download.patients import Patient
 
 
 class SewagedataDownloader:
@@ -28,7 +29,7 @@ class SewagedataDownloader:
             pd.DataFrame: DataFrame with all available stations
 
         """
-        stations = pd.read_csv("docs/2024_11_26_abwasser_standorte.csv")
+        stations = pd.read_csv("data/raw/2024_11_26_abwasser_standorte.csv")
         return stations
 
     def get_closest_station(self, lat: float, long: float) -> dict:
@@ -118,7 +119,7 @@ class SewagedataDownloader:
 
         return None
 
-    def get_sewage_data_patient_collection(self, patients, start_date: str, end_date: str, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
+    def get_sewage_data_patient_collection(self, patients: list[Patients], start_date: str, end_date: str, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
         """
         Retrieves sewage data for a given patient collection and timeframe using weekly updated GitHub data. The repository is part of the AMELAG project by the RKI
 
@@ -126,7 +127,7 @@ class SewagedataDownloader:
             start_date (str): Start date of the timeframe for which the data should be retrieved
             end_date (str): End date of the timeframe for which the data should be retrieved
             virus_type (str | None): Type of virus to retrieve data for. Options are: "SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B". Can also be None to retrieve all data. Defaults to None.
-            patients (list): List of patient objects
+            patients (list of Patients): List of patient objects
 
         Returns:
             pd.DataFrame: a pandas DataFrame containing the relevant sewage data for the given location and timeframe. 
