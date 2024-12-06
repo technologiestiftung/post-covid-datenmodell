@@ -119,7 +119,7 @@ class SewagedataDownloader:
 
         return None
 
-    def get_sewage_data_patient_collection(self, patients: list[Patients], start_date: str, end_date: str, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
+    def get_sewage_data_patient_collection(self, patients: list[Patient], start_date: str, end_date: str, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
         """
         Retrieves sewage data for a given patient collection and timeframe using weekly updated GitHub data. The repository is part of the AMELAG project by the RKI
 

@@ -9,6 +9,7 @@ For a location (latitude, longitude) of a patient one can get the data from the 
 import pandas as pd
 import json
 from haversine import haversine
+from src.download.patients import Patient
 
 class RehabilitationDownloader:
     def __init__(self):
@@ -30,7 +31,7 @@ class RehabilitationDownloader:
         return stations
 
 
-    def get_closest_station(self, patient, longitude: float, latitude: float) -> dict:
+    def get_closest_station(self, patient: Patient, longitude: float, latitude: float) -> dict:
         """
         Find the closest station to a given geographic location based on latitude and longitude 
         using the Haversine formula. 
@@ -64,7 +65,7 @@ class RehabilitationDownloader:
         return closest_station
 
 
-    def get_rehabilitation_data_patient(self, patient, longitude: float, latitude: float) -> pd.DataFrame: 
+    def get_rehabilitation_data_patient(self, patient: Patient, longitude: float, latitude: float) -> pd.DataFrame: 
         """
         Get the rehabilitation data for a patient based on the location. 
         The data is based on the closest station to the patient's location. 

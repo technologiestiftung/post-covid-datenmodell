@@ -9,6 +9,7 @@ from haversine import haversine
 import httpx
 import pandas as pd
 import warnings
+from src.download.patients import Patient
 
 
 class AirdataDownloader: 
@@ -146,7 +147,21 @@ class AirdataDownloader:
 
 
     def get_luftdaten_schadstoffe_patient(self, longitude: float, latitude: float, start_date: str, end_date: str) -> pd.DataFrame:
-        # todo: documentation
+        '''
+        Function to get the schadstoffe (pollutant) data from the closest station to a given patient location
+        The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
+        https://www.umweltbundesamt.de/daten/luft/luftdaten/luftqualitaet/eJzrWJSSuMrIwMhE19BQ18B0UUnmIkPDRXmpCxYVlyxYnOJWBJU00DWyXJwSko-sNreKbVFuctPinMSS0w6eq-a9apQ7vjgnL_20g8o5F4dPFrMBSMokdQ==
+
+        Args:
+            longitude (float): longitude of the patient 
+            latitude (float): latitude of the patient
+            start_date (str): start date of the timeframe
+            end_date (str): end date of the timeframe
+
+        Returns: 
+            pd.DataFrame: a dataframe containing the daily mean schadstoffe (pollutant) data for the given timeframe (daily)
+
+        '''
 
         # find nearest station 
         closest_station = self.get_closest_station(latitude, longitude)
@@ -211,13 +226,14 @@ class AirdataDownloader:
         return schadstoff_data
 
 
-    def get_luftdaten_index_patient_collection(self, patients, start_date: str, end_date: str) -> dict: 
+    def get_luftdaten_index_patient_collection(self, patients: list[Patient], start_date: str, end_date: str) -> dict: 
         '''
         Function to get the air quality data from a patient collection
         The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
         https://www.umweltbundesamt.de/daten/luft/luftdaten/luftqualitaet/eJzrWJSSuMrIwMhE19BQ18B0UUnmIkPDRXmpCxYVlyxYnOJWBJU00DWyXJwSko-sNreKbVFuctPinMSS0w6eq-a9apQ7vjgnL_20g8o5F4dPFrMBSMokdQ==
 
         Args:
+            patients (list[Patient]): list of patient objects
             start_date (str): start date of the timeframe
             end_date (str): end date of the timeframe
 
@@ -251,8 +267,20 @@ class AirdataDownloader:
         return merge
 
 
-    def get_luftdaten_schadstoffe_patient_collection(self, patients, start_date: str, end_date: str) -> dict:
-        # todo: docmentation
+    def get_luftdaten_schadstoffe_patient_collection(self, patients: list[Patient], start_date: str, end_date: str) -> dict:
+        '''
+        Function to get the schadstoffe (pollutant) data from the closest station for a patient collection
+        The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
+        https://www.umweltbundesamt.de/daten/luft/luftdaten/luftqualitaet/eJzrWJSSuMrIwMhE19BQ18B0UUnmIkPDRXmpCxYVlyxYnOJWBJU00DWyXJwSko-sNreKbVFuctPinMSS0w6eq-a9apQ7vjgnL_20g8o5F4dPFrMBSMokdQ==
+
+        Args:
+            patients (list[Patient]): list of patient objects
+            start_date (str): start date of the timeframe
+            end_date (str): end date of the timeframe
+
+        Returns: 
+            pd.DataFrame: a dataframe containing the daily mean schadstoffe (pollutant) data for the given timeframe (daily) and for each patient (identified by patient_id)
+        '''
         
         patient_stations = []
 

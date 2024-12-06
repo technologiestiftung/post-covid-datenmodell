@@ -7,6 +7,7 @@ import pandas as pd
 import json
 from haversine import haversine
 
+from src.download.patients import Patient
 from src.geolocation.address_transformation import get_long_lat_from_postal_code
 
 
@@ -105,13 +106,13 @@ class ClinicDownloader:
         return closest_station
 
 
-    def get_clinic_data_patient_collection(self, patients)-> pd.DataFrame:
+    def get_clinic_data_patient_collection(self, patients: list[Patient])-> pd.DataFrame:
         """
         Get the clinic data for a patient based on the location. 
         The data is based on the closest station to the patient's location. 
 
         Args:
-            patients (list): List of patient objects
+            patients (list of Patients): List of patient objects
 
         Returns:
             pd.DataFrame: DataFrame containing the clinic data for the patient

@@ -8,6 +8,7 @@ For a location (latitude, longitude) of a patient one can get the weather data f
 import httpx
 import pandas as pd
 import warnings
+from src.download.patients import Patient
 
 
 class WeatherdataDownloader: 
@@ -64,7 +65,7 @@ class WeatherdataDownloader:
         return None
 
 
-    def get_weatherdata_patient_collection(self, patients, start_date: str, end_date: str ) -> pd.DataFrame:
+    def get_weatherdata_patient_collection(self, patients: list[Patient], start_date: str, end_date: str ) -> pd.DataFrame:
         """
         Function to get the weatherdata from a collection of patients.
         The function uses the Brightsky API to get the data, see API documentation here: https://brightsky.dev/docs/#/
