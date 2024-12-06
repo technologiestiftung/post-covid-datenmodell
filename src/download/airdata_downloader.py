@@ -35,7 +35,7 @@ class AirdataDownloader:
 
         
         try: 
-            response = httpx.get(url, timeout=10.0)
+            response = httpx.get(url, timeout=20.0)
             response_data = response.json()
 
             # get necessary station data
@@ -110,7 +110,7 @@ class AirdataDownloader:
         station_id = closest_station['station']['id']
 
         request_url = f"https://www.umweltbundesamt.de/api/air_data/v3/airquality/json?date_from={start_date}&time_from=1&date_to={end_date}&time_to=24&station={station_id}"
-        response = httpx.get(request_url, timeout=10.0)
+        response = httpx.get(request_url, timeout=20.0)
         response_data = response.json()
 
         if response_data["data"] and len(response_data["data"]) > 0: 
@@ -124,7 +124,7 @@ class AirdataDownloader:
             # sort values into their days (if multiple values per day)
             for key, value in station_data.items():
                 day = key.split(" ")[0]
-                if daily_data.get(day, None) is None and value[1]: #todo: warum davor hier 2
+                if daily_data.get(day, None) is None and value[1]:
                     daily_data[day] = []
                     daily_data[day].append(value[1]) # value[1] = Index
                 elif value[1]: # append only if values are valid
@@ -223,6 +223,8 @@ class AirdataDownloader:
 
         schadstoff_data = pd.DataFrame(schadstoff_data)
         schadstoff_data["standort"] = [(longitude, latitude)] * len(schadstoff_data)
+        schadstoff_data.index.name = "Date"
+        schadstoff_data.reset_index(inplace=True)
         return schadstoff_data
 
 

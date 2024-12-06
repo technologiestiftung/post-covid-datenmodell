@@ -26,22 +26,18 @@ def get_color(value, mapper)-> str:
             return color
     return "#00000000"  # Transparent for NaN or out of range values
 
-############################################################################################
-# LUFTDATEN
 
-
-def get_index_timeline_plot(data) -> None:
+def get_air_data_index_timeline_plot(data: pd.DataFrame) -> None:
     """
     Function to plot the timeline graph of the airdata API (index)
 
     Args: 
         data : pd.DataFrame containing the weather data for one patient over a timeframe
-        column : the column to be plotted over time
+
     Returns: 
         None (plots the graph)
     """
 
-    # df = pd.DataFrame(list(data.items()), columns=['Date', 'Value'])
     data['Date'] = pd.to_datetime(data['Date'])
 
     # Set the date as index
@@ -51,12 +47,12 @@ def get_index_timeline_plot(data) -> None:
     data = data.reindex(pd.date_range(start=data.index.min(), end=data.index.max()), fill_value=None)
 
     data.index.name = 'Date'
-    data['Color'] = data['Value'].apply(lambda x: get_color(value = x, mapper = luftdaten_color_ranges) if not np.isnan(x) else (0, 0, 0, 0))
+    data['Color'] = data['Index'].apply(lambda x: get_color(value = x, mapper = luftdaten_color_ranges) if not np.isnan(x) else (0, 0, 0, 0))
 
     plt.figure(figsize=(10, 5))
     for i in range(1, len(data)):
         x = [data.index[i - 1], data.index[i]]
-        y = [data['Value'].iloc[i - 1], data['Value'].iloc[i]]
+        y = [data['Index'].iloc[i - 1], data['Index'].iloc[i]]
         
         # Only plot if both points in the segment have values (not NaN)
         if not np.isnan(y).any():
@@ -69,8 +65,16 @@ def get_index_timeline_plot(data) -> None:
 
     plt.show()
 
-def get_component_timeline_plot(data: pd.DataFrame, component_name: str)-> None: 
-    #todo: time range dynamically
+def get_air_data_component_timeline_plot(data: pd.DataFrame, component_name: str)-> None: 
+    """
+    Function to plot the timeline graph of the airdata API (components)
+
+    Args: 
+        data (pd.DataFrame): pd.DataFrame containing the weather data for one patient over a timeframe
+        component_name (str): the name of the component to be plotted over time
+    Returns: 
+        None (plots the graph)
+    """
     data = data.rename_axis('Date').reset_index()
 
     # Reindex to include all dates in the range, filling with NaN where data is missing
@@ -86,8 +90,6 @@ def get_component_timeline_plot(data: pd.DataFrame, component_name: str)-> None:
     plt.show()
 
 
-############################################################################################
-# WEATHERDATA
 
 def get_weatherdata_timeline_plot(data: pd.DataFrame, column: Literal["Niederschlag (mm)", "Luftdruck (hPa)", "Sonnenscheindauer (min)", "Temperatur (°C)","Windgeschwindigkeit (km / h)", "Relative Luftfeuchtigkeit (%)",])-> None:
     """
@@ -115,10 +117,7 @@ def get_weatherdata_timeline_plot(data: pd.DataFrame, column: Literal["Niedersch
 
     plt.show()
 
-############################################################################################
-# SEWAGE DATA
 
-# todo: add literals for columns
 def get_sewagedata_timeline_plot(data: pd.DataFrame, column: str)-> None:
     """
     Function to plot the timeline graph of the sewage data.

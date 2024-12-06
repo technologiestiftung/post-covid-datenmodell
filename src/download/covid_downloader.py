@@ -60,8 +60,6 @@ class CovidDataDownloader:
         Returns: 
             pd.DataFrame containing the covid data for the selected timeframe, (if applied) gender and age group
         '''
-        # todo: function description
-
 
         # get relevant landkreis_id
         landkreis_id = self.get_closest_station(patient.address.postal_code)
@@ -83,7 +81,7 @@ class CovidDataDownloader:
                 
                 # filter df
                 df = df[df["IdLandkreis"] == landkreis_id] # filter for landkreis_id
-                # todo info: Refdatum as it is either the date of the first symptoms or the date the person reported the symptoms
+                # info: Refdatum as it is either the date of the first symptoms or the date the person reported the symptoms
                 df["Refdatum"] = pd.to_datetime(df["Refdatum"])
                 df = df[(df["Refdatum"] >= start_date) & (df["Refdatum"] <= end_date)] # filter for date range
                 if filter_gender: 
@@ -112,3 +110,72 @@ class CovidDataDownloader:
 
         return None
 
+    def get_coviddata_patient_collection(self, patients: list(Patient), start_date: str, end_date: str, filter_gender: bool = False, filter_age: bool = False)-> pd.DataFrame:
+        '''
+        Function to get the covid data for a patient collection.
+
+        Args: 
+            patients (list(Patient)): patient collection
+            start_date (str): start date of the timeframe, in format: "YYYY-MM-DD"
+            end_date (str): end date of the timeframe, in format: "YYYY-MM-DD"
+            patient: patient object
+            filter_gender (bool): if True, the data will be filtered
+            filter_age (bool): if True, the data will be filtered
+
+        Returns: 
+            pd.DataFrame containing the covid data for the selected timeframe, (if applied) gender and age group
+        '''
+
+        # get all relevant patient info
+        gender_mapping = {"male": "M", "female": "W", "other": "unbekannt", "unknown": "unbekannt"}
+
+
+        patient_info = []
+
+        for patient in patients:
+            patient_landkreis = self.get_closest_station(postal_code = patient.address.postal_code)
+            patient_age = calculate_age(patient.birth_date)
+            patient_age_group = find_age_group(patient_age, self.age_groups)
+            patient_gender_mapped = gender_mapping.get(patient.gender, None)
+
+            patient_info.append({"patient_id": patient.id, 
+                                "IdLandkreis": patient_landkreis, 
+                                "patient_geschlecht": patient_gender_mapped, 
+                                "patient_altersgruppe": patient_age_group})
+
+
+        patient_info = pd.DataFrame(patient_info)
+        landkreis_ids = patient_info["IdLandkreis"].unique()
+
+        # make request
+        request_url = "https://media.githubusercontent.com/media/robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland/refs/heads/main/Aktuell_Deutschland_SarsCov2_Infektionen.csv"
+        with httpx.stream("GET", request_url, timeout = httpx.Timeout(80.0)) as response:
+            if response.status_code == 200:
+                # Stream the data directly into a BytesIO buffer
+                buffer = BytesIO()
+                for chunk in response.iter_bytes():
+                    buffer.write(chunk)
+                buffer.seek(0)  # Reset the buffer pointer to the beginning
+                    
+                df = pd.read_csv(buffer) 
+                # filter df
+                df = df[df["IdLandkreis"].isin(landkreis_ids)] # filter for landkreis_id
+                
+                # info: Refdatum as it is either the date of the first symptoms or the date the person reported the symptoms
+                df["Refdatum"] = pd.to_datetime(df["Refdatum"])
+                df = df[(df["Refdatum"] >= start_date) & (df["Refdatum"] <= end_date)] # filter for date range
+
+                merge = pd.merge(df, patient_info, on='IdLandkreis', how='right')
+                
+                # further filtering - if wanted
+                if filter_age: 
+                    merge = merge[merge["Altersgruppe"] == merge["patient_altersgruppe"]]
+                if filter_gender: 
+                    merge = merge[merge["Geschlecht"] == merge["patient_geschlecht"]]
+
+                return merge
+
+            else:
+                warnings.warn("No data could be retrieved")
+
+            return None

@@ -1,5 +1,5 @@
 '''
-The following code snippet is used to calculate the age of a person based on the birthdate and to find the age group of the person.
+The following functions are used to calculate the age of a person based on the birthdate and to find the age group of the person.
 The age groups are used for the Use Case SARS-CoV-2-Infektionen_in_Deutschland (by the RKI)
 See project source: https://github.com/robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland/tree/main
 See documentation here: https://github.com/robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland/blob/main/%5BDokumentation%5D_SARS-CoV-2-Infektionen_in_Deutschland.pdf
@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 
-def calculate_age(birthdate: str):
+def calculate_age(birthdate: str)-> int:
     '''
     Function to calculate the age of a person based on the birthdate.
     Args:
@@ -21,12 +21,16 @@ def calculate_age(birthdate: str):
     return today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
 
 
-def find_age_group(age, age_groups):
+def find_age_group(age, age_groups)-> str:
     '''
     Function to find the age group of a person based on the age.
     Args:
         age (int): age of the person
         age_groups (list): list of dictionaries containing the age groups
+
+        Example age group: 
+        {"group": "A00-A04", "min_age": 0, "max_age": 4}
+
     Returns:
         str | None: age group of the person
     '''

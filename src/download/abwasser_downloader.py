@@ -32,26 +32,27 @@ class SewagedataDownloader:
         stations = pd.read_csv("data/raw/2024_11_26_abwasser_standorte.csv")
         return stations
 
-    def get_closest_station(self, lat: float, long: float) -> dict:
+    def get_closest_station(self, patient: Patient) -> dict:
         """
         Find the closest station to a given geographic location based on latitude and longitude 
         using the Haversine formula. 
 
         Args:
-            lat (float): Latitude of the reference point
-            long (float): Longitude of the reference point
+            patient (Patient): patient object
 
         Returns:
             dict: a dictionary containing the closest station and its distance from the input location. 
         """
+        latitude = patient.address.latitude
+        longitude = patient.address.longitude
 
-        if lat is None or long is None:
+        if latitude is None or longitude is None:
             return None
 
         closest_station = None
         for index, row in self.all_stations.iterrows(): 
 
-            distance = haversine((lat, long), (row["lat"], row["long"]))
+            distance = haversine((latitude, longitude), (row["lat"], row["long"]))
 
             if closest_station is None or distance < closest_station["distance"]:
                 closest_station = {
@@ -61,22 +62,21 @@ class SewagedataDownloader:
         return closest_station
 
         
-
-
-    def get_sewage_data_patient(self, start_date: str, end_date: str, longitude: float, latitude: float, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
+    def get_sewage_data_patient(self, start_date: str, end_date: str, patient: Patient, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
         """
         Retrieves sewage data for a given location and timeframe using weekly updated GitHub data. The repository is part of the AMELAG project by the RKI
 
         Args:
             start_date (str): Start date of the timeframe for which the data should be retrieved
             end_date (str): End date of the timeframe for which the data should be retrieved
-            lat (float): Latitude of the reference point
-            long (float): Longitude of the reference point
+            patient (Patient): patient object
             virus_type (str | None): Type of virus to retrieve data for. Options are: "SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B". Can also be None to retrieve all data. Defaults to None.
 
         Returns:
             pd.DataFrame: a pandas DataFrame containing the relevant sewage data for the given location and timeframe. 
         """
+        latitude = patient.address.latitude
+        longitude = patient.address.longitude
 
         # handle invalid timeframes
         if start_date is None or end_date is None:
@@ -101,7 +101,7 @@ class SewagedataDownloader:
             data["datum"] = pd.to_datetime(data["datum"]) # convert to datetime
             
             # match the data to the station
-            closest_station = self.get_closest_station(latitude, longitude)
+            closest_station = self.get_closest_station(patient)
             print(f"Es werden die Daten der Station {closest_station['station_name']} verwendet")
             filtered_data = data[data['standort'] == closest_station['station_name']]
             filtered_data = filtered_data[(filtered_data['datum'] >= start_date) & (filtered_data['datum'] <= end_date)]
@@ -168,7 +168,7 @@ class SewagedataDownloader:
 
             # match patients to stations
             for patient in patients:
-                patient_station = self.get_closest_station(patient.address.latitude, patient.address.longitude)
+                patient_station = self.get_closest_station(patient)
                 patient_stations.append({"patient_id": patient.id, "standort": patient_station["station_name"]})
 
             patient_stations = pd.DataFrame(patient_stations)

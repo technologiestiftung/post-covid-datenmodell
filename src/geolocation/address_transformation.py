@@ -41,7 +41,7 @@ def get_long_lat_from_postal_code(postal_code: str) -> tuple | None:
 def get_landkreis_id_from_postal_code(postal_code: str) -> int | None:
     '''
     Function to transform (parts of) postal codes to landkreis id using the postal code to landkreis mapping. 
-    -> source:  # source: https://public.opendatasoft.com/explore/dataset/georef-germany-postleitzahl/table/?dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6Imdlb3JlZi1nZXJtYW55LXBvc3RsZWl0emFobCIsIm9wdGlvbnMiOnt9fSwiY2hhcnRzIjpbeyJhbGlnbk1vbnRoIjp0cnVlLCJ0eXBlIjoiY29sdW1uIiwiZnVuYyI6IkNPVU5UIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoiI0ZGNTE1QSJ9XSwieEF4aXMiOiJwbHpfbmFtZSIsIm1heHBvaW50cyI6NTAsInNvcnQiOiIifV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9&location=11,51.6931,8.28335&basemap=jawg.light
+    -> source: https://public.opendatasoft.com/explore/dataset/georef-germany-postleitzahl/table/?dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6Imdlb3JlZi1nZXJtYW55LXBvc3RsZWl0emFobCIsIm9wdGlvbnMiOnt9fSwiY2hhcnRzIjpbeyJhbGlnbk1vbnRoIjp0cnVlLCJ0eXBlIjoiY29sdW1uIiwiZnVuYyI6IkNPVU5UIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoiI0ZGNTE1QSJ9XSwieEF4aXMiOiJwbHpfbmFtZSIsIm1heHBvaW50cyI6NTAsInNvcnQiOiIifV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9&location=11,51.6931,8.28335&basemap=jawg.light
     Function is used when retrieving data from the RKI API, as the data is provided on a landkreisId level.
     There are special cases for Berlin postal codes, they have a separate (manual) mapping. See the document 
     
@@ -62,7 +62,6 @@ def get_landkreis_id_from_postal_code(postal_code: str) -> int | None:
     berlin_mapper = {row["plz"]: row["landkreisId"] for index, row in berlin_postal_codes.iterrows()}
 
     if int(postal_code) in berlin_postal_codes["plz"].values:
-        print("Berlin postal code found")
         return berlin_mapper.get(int(postal_code), None)
 
     elif len(postal_code) == 5: 

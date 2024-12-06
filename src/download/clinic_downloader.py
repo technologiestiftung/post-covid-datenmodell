@@ -45,19 +45,20 @@ class ClinicDownloader:
         return stations
 
 
-    def get_closest_station(self, patient, longitude: float, latitude: float)-> dict:
+    def get_closest_station(self, patient)-> dict:
         """
         Find the closest station to a given geographic location based on latitude and longitude 
         using the Haversine formula. 
 
         Args:
             patient (Patient): Patient object
-            latitude (float): Latitude of the reference point
-            longitude (float): Longitude of the reference point
+
 
         Returns:
             dict: a dictionary containing the closest station and its distance (km) from the input location. 
         """
+        latitude = patient.address.latitude
+        longitude = patient.address.longitude
         
         if latitude is None or longitude is None:
             return None
@@ -88,20 +89,19 @@ class ClinicDownloader:
         return closest_station
 
 
-    def get_clinic_data_patient(self, patient, longitude: float, latitude: float) -> pd.DataFrame: 
+    def get_clinic_data_patient(self, patient) -> pd.DataFrame: 
         """
         Get the clinic data for a patient based on the location. 
         The data is based on the closest station to the patient's location. 
 
         Args:
             patient (Patient): Patient object
-            longitude (float): Longitude of the patient's location
-            latitude (float): Latitude of the patient's location
 
         Returns:
             pd.DataFrame: DataFrame containing the clinic data for the patient
         """
-        closest_station = pd.DataFrame(self.get_closest_station(patient, longitude, latitude), index = [0])
+
+        closest_station = pd.DataFrame(self.get_closest_station(patient), index = [0])
 
         return closest_station
 
@@ -122,7 +122,7 @@ class ClinicDownloader:
 
         # Iterate over a range and append the DataFrames
         for patient in patients: 
-            new_df = self.get_clinic_data_patient(patient = patient, longitude = patient.address.longitude, latitude=patient.address.latitude)
+            new_df = self.get_clinic_data_patient(patient = patient)
             result_df = pd.concat([result_df, new_df], ignore_index=True)
 
 
