@@ -28,7 +28,7 @@
   },
   "dcat:theme": [
     {
-      "@id": "https://www.dcat-ap.de/def/dcatde/2.0/spec/themes#public_health"
+      "@id": "https://publications.europa.eu/resource/authority/data-theme/HEAL"
     }
   ],
   "dcat:contactPoint": {

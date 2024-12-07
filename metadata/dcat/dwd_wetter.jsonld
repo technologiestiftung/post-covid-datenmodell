@@ -19,6 +19,9 @@
       "@id": "https://api.brightsky.dev/weather"
     }
   ],
+  "dcat:theme": {
+    "@id": "https://publications.europa.eu/resource/authority/data-theme/ENVI"
+  },
   "dcat:endpointDescription": {
     "@id": "https://api.brightsky.dev/docs"
   },

@@ -32,6 +32,9 @@
       "@id": "https://www.umweltbundesamt.de/daten/luft/luftdaten"
     }
   },
+  "dcat:theme": {
+    "@id": "https://publications.europa.eu/resource/authority/data-theme/ENVI"
+  },
   "dct:license": {
     "@id": "https://www.dcat-ap.de/def/licenses/cc-by-4.0"
   },

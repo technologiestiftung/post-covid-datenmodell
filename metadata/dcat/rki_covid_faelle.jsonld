@@ -21,7 +21,11 @@
   "dct:language": {
     "@id": "http://publications.europa.eu/resource/authority/language/DEU"
   },
-  "@id": "https://www.dcat-ap.de/def/dcatde/2.0/spec/themes#public_health",
+  "dcat:theme": [
+    {
+      "@id": "https://publications.europa.eu/resource/authority/data-theme/HEAL"
+    }
+  ],
   "dcat:contactPoint": {
     "@type": "vcard:Kind",
     "vcard:fn": "Open Data Team, Fachgebiet MF4",
