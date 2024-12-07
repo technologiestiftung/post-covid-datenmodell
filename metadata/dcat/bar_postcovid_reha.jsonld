@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "org": "http://www.w3.org/ns/org#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dcatde": "https://www.dcat-ap.de/def/dcatde/2.0/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@type": "dcat:Dataset",
+  "dct:title": "POST-COVID Rehaeinrichtungen in Deutschland",
+  "dct:description": "Ein Verzeichnis von Rehaeinrichtungen in Deutschland, die sich auf die Diagnostik und Behandlung von Post-COVID spezialisiert haben. Die Daten wurden von der Webseite der Bundesarbeitsgemeinschaft für Rehabilitation (BAR) extrahiert.",
+  "dct:identifier": "urn:uuid:post-covid-rehaeinrichtungen",
+  "dct:issued": {
+    "@value": "2024-12-02",
+    "@type": "xsd:date"
+  },
+  "dct:modified": {
+    "@value": "2024-12-02",
+    "@type": "xsd:date"
+  },
+  "dct:language": {
+    "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+  },
+  "dcat:theme": {
+    "@id": "https://publications.europa.eu/resource/authority/data-theme/HEAL"
+  },
+  "dcat:contactPoint": {
+    "@type": "vcard:Kind",
+    "vcard:fn": "Bundesarbeitsgemeinschaft für Rehabilitation (BAR)",
+    "vcard:hasEmail": "mailto:einrichtungsverzeichnis@bar-frankfurt.de"
+  },
+  "dcat:landingPage": {
+    "@id": "https://www.reha-einrichtungsverzeichnis.de/suche.html"
+  },
+  "dct:publisher": {
+    "@type": "foaf:Agent",
+    "foaf:name": "Bundesarbeitsgemeinschaft für Rehabilitation (BAR)"
+  },
+  "dcat:distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "dct:title": "JSON-Datei der POST-COVID Rehaeinrichtungen",
+      "dct:description": "Eine JSON-Datei, die die Liste der POST-COVID Rehaeinrichtungen in Deutschland enthält.",
+      "dcat:mediaType": {
+        "@id": "https://www.iana.org/assignments/media-types/application/json"
+      },
+      "dcat:accessURL": {
+        "@id": "https://github.com/technologiestiftung/main/data/raw/2024-12-02_post_covid_reha.json"
+      }
+    }
+  ],
+  "dct:spatial": [
+    {
+      "@type": "dcterms:Location",
+      "dcterms:identifier": "DE",
+      "dcterms:title": "Deutschland",
+      "dcat:bbox": "5.866,47.27,15.041,55.058",
+      "dcterms:description": "Der räumliche Geltungsbereich umfasst alle NUTS-3-Regionen in Deutschland."
+    }
+  ],
+  "dct:temporal": {
+    "@type": "dcterms:PeriodOfTime",
+    "dcat:startDate": {
+      "@value": "2024-12-02",
+      "@type": "xsd:date"
+    }
+  },
+  "dcat:keyword": [
+    "Rehabilitation",
+    "Rehaeinrichtungen",
+    "Gesundheit",
+    "COVID-19",
+    "Post-COVID"
+  ],
+  "dct:accessRights": {
+    "@type": "dcterms:RightsStatement",
+    "dcterms:title": "Daten öffentlich zugänglich"
+  }
+}
