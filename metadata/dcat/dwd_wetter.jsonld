@@ -40,10 +40,15 @@
     "@type": "dcterms:RightsStatement",
     "dcterms:title": "Öffentlich zugänglich"
   },
-  "dct:spatial": {
-    "@type": "dcterms:Location",
-    "dcat:bbox": "5.866, 47.27, 15.041, 55.058"
-  },
+  "dct:spatial": [
+    {
+      "@type": "dcterms:Location",
+      "dcterms:identifier": "DE",
+      "dcterms:title": "Deutschland",
+      "dcat:bbox": "5.866,47.27,15.041,55.058",
+      "dcterms:description": "Der räumliche Geltungsbereich umfasst alle NUTS-3-Regionen in Deutschland."
+    }
+  ],
   "dct:temporal": {
     "@type": "dcterms:PeriodOfTime",
     "dcat:startDate": {

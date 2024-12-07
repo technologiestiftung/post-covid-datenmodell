@@ -26,11 +26,9 @@
   "dct:language": {
     "@id": "http://publications.europa.eu/resource/authority/language/DEU"
   },
-  "dcat:theme": [
-    {
-      "@id": "https://publications.europa.eu/resource/authority/data-theme/HEAL"
-    }
-  ],
+  "dcat:theme": {
+    "@id": "https://publications.europa.eu/resource/authority/data-theme/HEAL"
+  },
   "dcat:contactPoint": {
     "@type": "vcard:Kind",
     "vcard:fn": "Bundesarbeitsgemeinschaft für Rehabilitation (BAR)",
@@ -54,6 +52,15 @@
       "dcat:accessURL": {
         "@id": "https://github.com/technologiestiftung/main/data/raw/2024-12-02_post_covid_reha.json"
       }
+    }
+  ],
+  "dct:spatial": [
+    {
+      "@type": "dcterms:Location",
+      "dcterms:identifier": "DE",
+      "dcterms:title": "Deutschland",
+      "dcat:bbox": "5.866,47.27,15.041,55.058",
+      "dcterms:description": "Der räumliche Geltungsbereich umfasst alle NUTS-3-Regionen in Deutschland."
     }
   ],
   "dct:temporal": {

@@ -39,6 +39,15 @@
   "dcat:landingPage": {
     "@id": "https://robert-koch-institut.github.io/Abwassersurveillance_AMELAG"
   },
+  "dct:spatial": [
+    {
+      "@type": "dcterms:Location",
+      "dcterms:identifier": "DE",
+      "dcterms:title": "Deutschland",
+      "dcat:bbox": "5.866,47.27,15.041,55.058",
+      "dcterms:description": "Der räumliche Geltungsbereich umfasst alle NUTS-3-Regionen in Deutschland."
+    }
+  ],
   "dcat:theme": [
     {
       "@id": "http://publications.europa.eu/resource/authority/data-theme/HEAL"
