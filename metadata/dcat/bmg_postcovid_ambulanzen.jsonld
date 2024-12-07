@@ -12,15 +12,15 @@
     "dct": "http://purl.org/dc/terms/"
   },
   "@type": "dcat:Dataset",
-  "dct:title": "Post-COVID Rehabilitationszentren in Deutschland",
-  "dct:description": "Eine Liste von Rehabilitationszentren, die sich auf die Behandlung von Post-COVID-Patient:innen spezialisiert haben. Die Daten wurden von der Webseite 'Das Reha-Portal' extrahiert und als CSV-Datei verfügbar gemacht.",
-  "dct:identifier": "urn:uuid:post-covid-reha-centers",
+  "dct:title": "POST-COVID Ambulanzen und Kliniken in Deutschland",
+  "dct:description": "Eine Liste von Kliniken und Ambulanzen in Deutschland, die sich auf die Diagnostik und Behandlung von Long COVID spezialisiert haben. Die Daten wurden von der Webseite des Bundesministeriums für Gesundheit (BMG) extrahiert und stehen als JSON-Datei zur Verfügung.",
+  "dct:identifier": "urn:uuid:post-covid-ambulanzen-kliniken",
   "dct:issued": {
-    "@value": "2023-11-15",
+    "@value": "2024-12-02",
     "@type": "xsd:date"
   },
   "dct:modified": {
-    "@value": "2023-11-15",
+    "@value": "2024-12-02",
     "@type": "xsd:date"
   },
   "dct:language": {
@@ -33,51 +33,46 @@
   ],
   "dcat:contactPoint": {
     "@type": "vcard:Kind",
-    "vcard:fn": "TODO: Label",
-    "vcard:hasEmail": "TODO; Email"
+    "vcard:fn": "Referat L 8 „Öffentlichkeitsarbeit, Publikationen\"",
+    "vcard:hasEmail": "mailto:longcovid@bmg.bund.de"
   },
   "dcat:landingPage": {
-    "@id": "TODO"
+    "@id": "https://www.bmg-longcovid.de/service/buergertelefon-und-regionale-kliniksuche"
   },
   "dct:publisher": {
     "@type": "foaf:Agent",
-    "foaf:name": "Das Reha-Portal"
+    "foaf:name": "Bundesministerium für Gesundheit (BMG)"
   },
   "dcat:distribution": [
     {
       "@type": "dcat:Distribution",
-      "dct:title": "CSV-Datei der Post-COVID Rehabilitationszentren",
-      "dct:description": "Die Liste der Post-COVID Rehabilitationszentren in Deutschland, bereitgestellt als CSV-Datei.",
+      "dct:title": "JSON-Datei der POST-COVID Ambulanzen und Kliniken",
+      "dct:description": "Eine JSON-Datei, die die Liste der POST-COVID Ambulanzen und Kliniken in Deutschland enthält.",
       "dcat:mediaType": {
-        "@id": "https://www.iana.org/assignments/media-types/text/csv"
+        "@id": "https://www.iana.org/assignments/media-types/application/json"
       },
       "dcat:accessURL": {
-        "@id": "TODO"
-      },
-      "dcat:downloadURL": {
-        "@id": "TODO: post_covid_reha_centers.csv"
+        "@id": "https://github.com/technologiestiftung/post-covid-datenmodell/blob/main/data/raw/2024-12-02_post_covid_ambulanzen_kliniken.json"
       }
     }
   ],
   "dct:temporal": {
     "@type": "dcterms:PeriodOfTime",
     "dcat:startDate": {
-      "@value": "2024-01-01",
+      "@value": "2024-12-02",
       "@type": "xsd:date"
     }
   },
   "dcat:keyword": [
     "Post-COVID",
     "Rehabilitation",
-    "Reha-Kliniken",
+    "Ambulanzen",
+    "Kliniken",
     "Gesundheit",
     "COVID-19"
   ],
   "dct:accessRights": {
     "@type": "dcterms:RightsStatement",
     "dcterms:title": "Daten öffentlich zugänglich"
-  },
-  "dct:license": {
-    "@id": "https://creativecommons.org/licenses/by/4.0/"
   }
 }

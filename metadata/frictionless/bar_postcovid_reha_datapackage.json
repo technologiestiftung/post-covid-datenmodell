@@ -1,0 +1,67 @@
+{
+  "name": "post-covid-rehaeinrichtungen",
+  "title": "POST-Covid Rehaeinrichtungen in Deutschland",
+  "description": "Ein Verzeichnis von Rehaeinrichtungen in Deutschland, die sich auf Post-COVID spezialisiert haben. Die Daten wurden von der Webseite der Bundesarbeitsgemeinschaft für Rehabilitation (BAR) extrahiert.",
+  "id": "urn:uuid:post-covid-rehaeinrichtungen",
+  "sources": [
+    {
+      "title": "Bundesarbeitsgemeinschaft für Rehabilitation (BAR)",
+      "path": "https://www.reha-einrichtungsverzeichnis.de/suche.html"
+    }
+  ],
+  "profile": "data-package",
+  "keywords": [
+    "Rehabilitation",
+    "Rehaeinrichtungen",
+    "Gesundheit",
+    "COVID-19",
+    "Post-COVID"
+  ],
+  "language": ["de"],
+  "created": "2024-12-02T00:00:00Z",
+  "modified": "2024-12-02T00:00:00Z",
+  "resources": [
+    {
+      "name": "post_covid_rehaeinrichtungen",
+      "path": "post_covid_rehaeinrichtungen.json",
+      "profile": "tabular-data-resource",
+      "format": "json",
+      "mediatype": "application/json",
+      "schema": {
+        "fields": [
+          {
+            "name": "uid",
+            "type": "integer",
+            "description": "Eindeutige ID der Einrichtung, bereitgestellt durch das Suchportal"
+          },
+          {
+            "name": "nameKurz",
+            "type": "string",
+            "description": "Kurzer Name der Einrichtung"
+          },
+          {
+            "name": "nameLang",
+            "type": "string",
+            "description": "Langer Name der Einrichtung"
+          },
+          {
+            "name": "latitude",
+            "type": "number",
+            "description": "Breitengrad der Einrichtung"
+          },
+          {
+            "name": "longitude",
+            "type": "number",
+            "description": "Längengrad der Einrichtung"
+          },
+          {
+            "name": "isPositionAddedManually",
+            "type": "boolean",
+            "description": "Gibt an, ob die Position manuell hinzugefügt wurde"
+          }
+        ],
+        "primaryKey": "uid"
+      }
+    }
+  ]
+}

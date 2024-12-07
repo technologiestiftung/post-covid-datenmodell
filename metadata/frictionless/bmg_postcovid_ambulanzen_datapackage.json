@@ -1,0 +1,92 @@
+{
+  "name": "post-covid-ambulanzen-kliniken",
+  "title": "POST-COVID Ambulanzen und Kliniken in Deutschland",
+  "description": "Eine Liste von Kliniken und Ambulanzen in Deutschland, die sich auf die Diagnostik und Behandlung von Long COVID spezialisiert haben. Die Daten wurden von der Webseite des Bundesministeriums für Gesundheit (BMG) extrahiert.",
+  "id": "urn:uuid:post-covid-ambulanzen-kliniken",
+  "sources": [
+    {
+      "title": "Bundesministerium für Gesundheit (BMG)",
+      "path": "https://www.bmg-longcovid.de/service/buergertelefon-und-regionale-kliniksuche"
+    }
+  ],
+  "profile": "data-package",
+  "keywords": [
+    "Post-COVID",
+    "Rehabilitation",
+    "Ambulanzen",
+    "Kliniken",
+    "Gesundheit",
+    "COVID-19"
+  ],
+  "language": ["de"],
+  "created": "2024-12-02T00:00:00Z",
+  "modified": "2024-12-02T00:00:00Z",
+  "resources": [
+    {
+      "name": "post_covid_ambulanzen_kliniken",
+      "path": "post_covid_ambulanzen_kliniken.json",
+      "profile": "tabular-data-resource",
+      "format": "json",
+      "mediatype": "application/json",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "integer",
+            "description": "Eindeutige ID für jede Einrichtung"
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "constraints": {
+              "enum": ["published"]
+            },
+            "description": "Status der Einrichtung"
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "description": "Bundesland, in dem sich die Einrichtung befindet"
+          },
+          {
+            "name": "place",
+            "type": "string",
+            "description": "Ort der Einrichtung"
+          },
+          {
+            "name": "zip",
+            "type": "string",
+            "description": "Postleitzahl der Einrichtung"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Name der Einrichtung"
+          },
+          {
+            "name": "link",
+            "type": "string",
+            "format": "uri",
+            "description": "URL zur Webseite der Einrichtung"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "description": "Typ der Einrichtung (z. B. Klinikum, Ambulanz)"
+          },
+          {
+            "name": "focusarea1",
+            "type": "string",
+            "description": "Erster Schwerpunkt der Einrichtung"
+          },
+          {
+            "name": "focusarea2",
+            "type": "string",
+            "description": "Zweiter Schwerpunkt der Einrichtung"
+          }
+        ],
+        "primaryKey": "id"
+      }
+    }
+  ]
+}
