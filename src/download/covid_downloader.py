@@ -110,7 +110,7 @@ class CovidDataDownloader:
 
         return None
 
-    def get_coviddata_patient_collection(self, patients: list(Patient), start_date: str, end_date: str, filter_gender: bool = False, filter_age: bool = False)-> pd.DataFrame:
+    def get_coviddata_patient_collection(self, patients: list[Patient], start_date: str, end_date: str, filter_gender: bool = False, filter_age: bool = False)-> pd.DataFrame:
         '''
         Function to get the covid data for a patient collection.
 
