@@ -15,7 +15,7 @@ from io import BytesIO
 
 from src.download.patients import Patient
 from src.geolocation.address_transformation import get_landkreis_id_from_postal_code
-from src.utils.age_calculation import calculate_age, find_age_group
+from src.utils.time_age_calculation import calculate_age, find_age_group
 
 
 

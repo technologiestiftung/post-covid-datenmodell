@@ -11,8 +11,9 @@ import pandas as pd
 import warnings
 from haversine import haversine
 from io import BytesIO
-from typing import Literal
+from typing import Literal, Optional
 from src.download.patients import Patient
+from src.utils.time_age_calculation import calculate_months_from_date, calculate_min_max_months_from_data_collection
 
 
 class SewagedataDownloader:
@@ -62,7 +63,7 @@ class SewagedataDownloader:
         return closest_station
 
         
-    def get_sewage_data_patient(self, start_date: str, end_date: str, patient: Patient, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
+    def get_sewage_data_patient(self, start_date: Optional[str], end_date: Optional[str], patient: Patient, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
         """
         Retrieves sewage data for a given location and timeframe using weekly updated GitHub data. The repository is part of the AMELAG project by the RKI
 
@@ -80,9 +81,9 @@ class SewagedataDownloader:
 
         # handle invalid timeframes
         if start_date is None or end_date is None:
-            warnings.warn("No dates provided")
-            start_date = "2022-06-01" # set default timeframe
-            end_date = "2024-12-31"
+            warnings.warn("No dates provided. The timeframe will be set to 3 months before and after the diagnosis date")
+            start_date, end_date = calculate_months_from_date(patient.diagnosis_date, 3) # 3 months before and after diagnosis
+
         if start_date <= '2022-06-01' or end_date >= '2024-12-31':
             start_date = "2022-06-01" # set default timeframe
             end_date = "2024-12-31"
@@ -119,7 +120,8 @@ class SewagedataDownloader:
 
         return None
 
-    def get_sewage_data_patient_collection(self, patients: list[Patient], start_date: str, end_date: str, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
+    def get_sewage_data_patient_collection(self, patients: list[Patient], start_date: str | None, end_date: str | None, virus_type: None | Literal["SARS-CoV-2", "Influenza A", "Influenza B", "Influenza A+B"] = None, is_normalsierung: None | Literal["ja", "nein"] = None)-> pd.DataFrame:
+
         """
         Retrieves sewage data for a given patient collection and timeframe using weekly updated GitHub data. The repository is part of the AMELAG project by the RKI
 
@@ -136,8 +138,16 @@ class SewagedataDownloader:
         # handle invalid timeframes
         if start_date is None or end_date is None:
             warnings.warn("No dates provided")
-            start_date = "2022-06-01" # set default timeframe
-            end_date = "2024-12-31"
+            if start_date is None or end_date is None:
+                start_date = "2022-06-01" # set default timeframe
+                end_date = "2024-12-31"
+                # todo: adjust
+                # patients_dates = [patient.diagnosis_date for patient in patients]
+                # start_date, end_date = calculate_min_max_months_from_data_collection(patients_dates)
+                # print(patients_dates)
+                # print(start_date, end_date)
+                warnings.warn("No dates provided. The timeframe will be set to 3 months before and after the diagnosis date")
+
         if start_date <= '2022-06-01' or end_date >= '2024-12-31':
             start_date = "2022-06-01" # set default timeframe
             end_date = "2024-12-31"
