@@ -1,15 +1,16 @@
-from datetime import datetime
-import warnings
-from typing import Optional, Literal
-import os 
-import json
-
 '''
 This script contains multiple classes for patient information that comes from 'Kerndatensatz' of MII (www.medizininformatik-initiative.de).
 
 The classes not yet all used in the project, but are provided for possible future use with their relevant attributes.
 
 '''
+
+from datetime import datetime
+import warnings
+from typing import Optional, Literal
+import os 
+import json
+
 from src.geolocation.address_transformation import get_long_lat_from_postal_code
 
 class PatientAddress:
