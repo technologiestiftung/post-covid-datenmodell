@@ -69,6 +69,11 @@ Tabelle 1: Übersicht der benutzten Datenquellen
 
 ### Frictionless Data
 
+:::info
+**Hinweis:**
+Die frictionless data Metadaten wurden für den Piloten nur exemplarisch erstellt und validiert. Ob eine vollständige Integration in die bestehende Infrastruktur sinnvoll ist, sollte im Rahmen einer zukünftigen Entwicklung geprüft werden.
+:::
+
 1. **Erstellung der Frictionless Data Metadaten**:  
    Zur Strukturierung haben wir eine `datapackage.json` erstellt und darin die relevanten Metadatenfelder aufgenommen:
 
@@ -78,7 +83,11 @@ Tabelle 1: Übersicht der benutzten Datenquellen
    - Im Abschnitt **resources** mit **schema** haben wir detaillierte Informationen zu allen Feldern, Datentypen und Beschreibungen jeder Datentabelle festgehalten.
 
 2. **Validierung**:  
-   TODO: Validierung der Frictionless Data Metadaten
+   Die Metadaten können mit der frictionless CLI oder der Python-Bibliothek validiert werden. Dazu haben wir die `datapackage.json` mit dem Befehl `frictionless validate metadata/frictionless/datapackage.json --type package` geprüft.
+
+   Für eine zukünftige Entwicklung müsste festgelegt werden, wie genau frictionless Data in die bestehende Infrastruktur integriert werden soll. Dementsprechend müssten Anpassungen an den Metadaten vorgenommen werden (z.B. spezifische Abfragen der APIs) und eine Umstrukturierung der Daten als vollständige Data Packages.
+
+
 
 Durch die strukturierte Erstellung und Validierung nach DCAT-AP.de- und Frictionless-Standards sind die Metadaten nun gut auffindbar und beschrieben. Dies erleichtert die Nutzung und Weiterverwendung der Daten für unterschiedliche Zwecke.
 

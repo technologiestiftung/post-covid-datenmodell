@@ -21,7 +21,11 @@
   "dct:language": {
     "@id": "http://publications.europa.eu/resource/authority/language/DEU"
   },
-  "@id": "https://www.dcat-ap.de/def/dcatde/2.0/spec/themes#public_health",
+  "dcat:theme": [
+    {
+      "@id": "https://publications.europa.eu/resource/authority/data-theme/HEAL"
+    }
+  ],
   "dcat:contactPoint": {
     "@type": "vcard:Kind",
     "vcard:fn": "Open Data Team, Fachgebiet MF4",
@@ -58,10 +62,15 @@
   "dct:accrualPeriodicity": {
     "@id": "http://publications.europa.eu/resource/authority/frequency/DAILY"
   },
-  "dct:spatial": {
-    "@type": "http://purl.org/dc/terms/Location",
-    "dcat:bbox": "10.0, 51.0, 15.0, 55.0"
-  },
+  "dct:spatial": [
+    {
+      "@type": "dcterms:Location",
+      "dcterms:identifier": "DE",
+      "dcterms:title": "Deutschland",
+      "dcat:bbox": "5.866,47.27,15.041,55.058",
+      "dcterms:description": "Der räumliche Geltungsbereich umfasst alle NUTS-3-Regionen in Deutschland."
+    }
+  ],
   "dcat:temporal": {
     "@type": "http://purl.org/dc/terms/PeriodOfTime",
     "dcat:startDate": {
