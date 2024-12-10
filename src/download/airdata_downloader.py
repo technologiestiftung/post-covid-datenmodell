@@ -17,14 +17,14 @@ class AirdataDownloader:
         self.all_stations = self.get_all_stations()
        
 
-    def get_all_stations(self, time_start: str = "2019-01-01", time_end: str = "2019-01-01") -> list:
+    def get_all_stations(self, time_start: str = "2019-01-01", time_end: str = "2024-12-31") -> list:
         """
         Gets all available air quality stations in Germany that are available through
         the Umwelt Bundesamt Luftdaten API.
 
         Args:
             time_start (str): start date of the timeframe, default is 2019-01-01
-            time_end (str): end date of the timeframe, default is 2019-12-31
+            time_end (str): end date of the timeframe, default is 2024-12-31
 
         Returns:
             list: list of all available stations with their respective data
@@ -42,7 +42,7 @@ class AirdataDownloader:
             stations = []
 
             # if response is valid
-            if response_data["data"] and response_data["data"]:
+            if response_data["data"]:
                 for key, value in response_data["data"].items():
                     stations.append({
                     "id": value[0],
@@ -50,7 +50,7 @@ class AirdataDownloader:
                     "name": value[2], 
                     "longitude": float(value[7]), 
                     "latitude": float(value[8])})
-        except ReadTimeout:
+        except httpx.ReadTimeout:
             warnings.warn("Request timed out")
             
 
@@ -228,7 +228,7 @@ class AirdataDownloader:
         return schadstoff_data
 
 
-    def get_luftdaten_index_patient_collection(self, patients: list[Patient], start_date: str, end_date: str) -> dict: 
+    def get_luftdaten_index_patient_collection(self, patients: list[Patient], start_date: str, end_date: str) -> pd.DataFrame: 
         '''
         Function to get the air quality data from a patient collection
         The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
@@ -240,7 +240,7 @@ class AirdataDownloader:
             end_date (str): end date of the timeframe
 
         Returns: 
-            dict: a dictionary containing the daily mean air quality index for the given timeframe (daily)
+            pd.DataFrame: a dataframe containing the daily mean air quality index for the given timeframe (daily)
         '''
         patient_stations = []
 
@@ -269,7 +269,7 @@ class AirdataDownloader:
         return merge
 
 
-    def get_luftdaten_schadstoffe_patient_collection(self, patients: list[Patient], start_date: str, end_date: str) -> dict:
+    def get_luftdaten_schadstoffe_patient_collection(self, patients: list[Patient], start_date: str, end_date: str) -> pd.DataFrame:
         '''
         Function to get the schadstoffe (pollutant) data from the closest station for a patient collection
         The function uses the Umwelt Bundesamt Luftdaten API to get the data, see API here:
