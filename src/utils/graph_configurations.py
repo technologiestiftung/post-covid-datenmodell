@@ -75,14 +75,14 @@ def get_air_data_component_timeline_plot(data: pd.DataFrame, component_name: str
     Returns: 
         None (plots the graph)
     """
-    data = data.rename_axis('Date').reset_index()
+    data_ = data.copy()
 
     # Reindex to include all dates in the range, filling with NaN where data is missing
-    data['Date'] = pd.to_datetime(data['Date'])
-    data.set_index('Date', inplace=True)
-    data = data.reindex(pd.date_range(start=data.index.min(), end=data.index.max()), fill_value=None)
+    data_['Date'] = pd.to_datetime(data_['Date'])
+    data_.set_index('Date', inplace=True)
+    data_ = data_.reindex(pd.date_range(start=data_.index.min(), end=data_.index.max()), fill_value=None)
     plt.figure(figsize=(10, 5))
-    plt.plot(data.index, data[component_name])
+    plt.plot(data_.index, data_[component_name])
     plt.title(f"{component_name} Timeline")
     plt.xlabel("Tage")
     plt.ylabel(f"{component_name}")

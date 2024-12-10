@@ -13,6 +13,7 @@ from src.download.patients import Patient
 
 class WeatherdataDownloader: 
     def __init__(self):
+        # mapping from english to german names
         self.weather_unit_mapping = {
             "precipitation": "Niederschlag (mm)",
             "pressure_msl": "Luftdruck (hPa)",

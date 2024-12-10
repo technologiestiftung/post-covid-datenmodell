@@ -1,11 +1,16 @@
-from datetime import datetime
-from typing import Optional, Literal
 '''
 This script contains multiple classes for patient information that comes from 'Kerndatensatz' of MII (www.medizininformatik-initiative.de).
 
 The classes not yet all used in the project, but are provided for possible future use with their relevant attributes.
 
 '''
+
+from datetime import datetime
+import warnings
+from typing import Optional, Literal
+import os 
+import json
+
 from src.geolocation.address_transformation import get_long_lat_from_postal_code
 
 class PatientAddress:
@@ -26,6 +31,7 @@ class PatientProcedure:
     '''
     Class is based on MII IG Prozedur DE v2024 
     See here: https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Prozedur_Version_2/MIIIGModulProzedur-TechnischeImplementierung-FHIRProfile-Prozedur-Procedure.html
+    Can be used in the future, with following relevant information:
     '''
 
     def __init__(self):
@@ -39,6 +45,7 @@ class PatientMedicationStatement:
     '''
     Class is based on MII IG Modul Medikation - MedicationStatement
     See here: https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Medikation_Version_2/MedicationStatement.html
+    Can be used in the future, with following relevant information:
     '''
 
     def __init__(self):
@@ -53,7 +60,7 @@ class PatientEncounter:
     '''
     Class is based on MII PR Fall Kontakt mit einer Gesundheitseinrichtung (Encounter)
     See here: https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Fall_Version_2/MIIIGModulFall-TechnischeImplementierung-FHIRProfile-EncounterKontaktGesundheitseinrichtung.html
-    
+    Can be used in the future, with following relevant information:
     '''
     def __init__(self):
         self.id: str
@@ -67,6 +74,7 @@ class PatientCondition:
     '''
     Class is based on MII PR Diagnose Condition / MII IG Diagnose DE v2024
     See here: https://www.medizininformatik-initiative.de/Kerndatensatz/Modul_Diagnose_Version_2/MIIIGModulDiagnose-TechnischeImplementierung-FHIRProfile-Diagnose-Condition.html
+    Can be used in the future, with following relevant information:
     '''
     def __init__(self):
         self.id: str
@@ -92,7 +100,7 @@ class PatientsDownload: # PatientCollection
     def __init__(self):
         self.patients = []
 
-    def get_patient_by_id(self, patient_id: str):
+    def get_patient_by_id(self, patient_id: str)-> Patient:
         """
         Retrieves a patient by their unique ID.
         
@@ -102,7 +110,7 @@ class PatientsDownload: # PatientCollection
                 return patient
         return None
 
-    def extract_patients(self, data):
+    def extract_patients(self, data)-> list[Patient]:
         '''
         Extract patients data from a provided dataset (json) and return a PatientsDownload object.
         
@@ -113,7 +121,11 @@ class PatientsDownload: # PatientCollection
                 patient = Patient()  # Create a new instance of PatientDownload
 
                 try: 
-                    patient.id = entry["resource"].get("id", None)
+                    if entry.get("fullUrl", None) and "urn:uuid:" in entry.get("fullUrl", None):
+                        patient.id = entry.get("fullUrl", None).split("urn:uuid:")[1]
+
+                    else: 
+                        patient.id = entry["resource"].get("id", None)
                     patient.gender = entry["resource"].get("gender", None)
                     patient.birth_date = entry["resource"].get("birthDate", None)
 
@@ -147,17 +159,22 @@ class PatientsDownload: # PatientCollection
             # Add diagnosis data
             if entry["resource"].get("resourceType") == "Condition":
                 try: 
-                    
-                    patient_id = entry["resource"]["subject"].get("reference", None).strip("Patient/")
+                    patient_id_full = entry["resource"]["subject"].get("reference", None)
+                    if "Patient" in patient_id_full:
+                        patient_id = patient_id_full.split("Patient/")[1]
+                    elif "urn:uuid:" in patient_id_full:
+                        patient_id = patient_id_full.split("urn:uuid:")[1]
+                    else: 
+                        print("No patient ID found, skipping entry")
+                        continue
+
                     relevant_patient = self.get_patient_by_id(patient_id)
                     relevant_patient.diagnosis_date = entry["resource"].get("recordedDate", None).split("T")[0]
-                # todo: adjust for large mii dataset
                 except KeyError: 
                     warnings.warn("Error: Patient Diagnosis data incomplete")
                     continue
                 except AttributeError:
-                    warnings.warn("Error: Patient ID not found")
+                    warnings.warn("Error: Patient Diagnosis data incomplete")
                     continue
-
 
         return self.patients

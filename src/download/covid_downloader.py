@@ -22,6 +22,7 @@ from src.utils.time_age_calculation import calculate_age, find_age_group
 
 class CovidDataDownloader:
     def __init__(self):
+        # the age groups are defined by the RKI and specified in their documentation on GitHub
         self.age_groups =[
         {"group": "A00-A04", "min_age": 0, "max_age": 4},
         {"group": "A05-A14", "min_age": 5, "max_age": 14},
@@ -110,7 +111,7 @@ class CovidDataDownloader:
 
         return None
 
-    def get_coviddata_patient_collection(self, patients: list(Patient), start_date: str, end_date: str, filter_gender: bool = False, filter_age: bool = False)-> pd.DataFrame:
+    def get_coviddata_patient_collection(self, patients: list[Patient], start_date: str, end_date: str, filter_gender: bool = False, filter_age: bool = False)-> pd.DataFrame:
         '''
         Function to get the covid data for a patient collection.
 

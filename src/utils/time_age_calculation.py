@@ -55,9 +55,9 @@ def calculate_months_from_date(date: str, months: int)-> (str, str):
         # Convert the string to a datetime object
         given_date = datetime.strptime(date, '%Y-%m-%d')
         
-        # Calculate 6 months before and after
-        six_months_before = given_date - relativedelta(months=6)
-        six_months_after = given_date + relativedelta(months=6)
+        # Calculate months before and after
+        six_months_before = given_date - relativedelta(months=months)
+        six_months_after = given_date + relativedelta(months=months)
         
         # Convert back to string format
         return six_months_before.strftime('%Y-%m-%d'), six_months_after.strftime('%Y-%m-%d')
