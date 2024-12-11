@@ -1,6 +1,6 @@
 # Post-Covid Metadatenkatalog
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Über dieses Projekt
@@ -131,6 +131,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/bauerfriederike"><img src="https://avatars.githubusercontent.com/u/141726622?v=4?s=100" width="100px;" alt="bauerfriederike"/><br /><sub><b>bauerfriederike</b></sub></a><br /><a href="https://github.com/technologiestiftung/post-covid-datenmodell/commits?author=bauerfriederike" title="Code">💻</a> <a href="https://github.com/technologiestiftung/post-covid-datenmodell/commits?author=bauerfriederike" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ckeuss"><img src="https://avatars.githubusercontent.com/u/147528104?v=4?s=100" width="100px;" alt="ckeuss"/><br /><sub><b>ckeuss</b></sub></a><br /><a href="https://github.com/technologiestiftung/post-covid-datenmodell/commits?author=ckeuss" title="Documentation">📖</a> <a href="https://github.com/technologiestiftung/post-covid-datenmodell/pulls?q=is%3Apr+reviewed-by%3Ackeuss" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/m-b-e"><img src="https://avatars.githubusercontent.com/u/36029603?v=4?s=100" width="100px;" alt="Max B. Eckert"/><br /><sub><b>Max B. Eckert</b></sub></a><br /><a href="#projectManagement-m-b-e" title="Project Management">📆</a> <a href="https://github.com/technologiestiftung/post-covid-datenmodell/commits?author=m-b-e" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jjmllr"><img src="https://avatars.githubusercontent.com/u/68501961?v=4?s=100" width="100px;" alt="jjmllr"/><br /><sub><b>jjmllr</b></sub></a><br /><a href="https://github.com/technologiestiftung/post-covid-datenmodell/commits?author=jjmllr" title="Code">💻</a> <a href="https://github.com/technologiestiftung/post-covid-datenmodell/commits?author=jjmllr" title="Documentation">📖</a> <a href="#projectManagement-jjmllr" title="Project Management">📆</a></td>
     </tr>
   </tbody>
 </table>
