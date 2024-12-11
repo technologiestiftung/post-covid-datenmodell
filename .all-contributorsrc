@@ -36,6 +36,17 @@
         "projectManagement",
         "doc"
       ]
+    },
+    {
+      "login": "jjmllr",
+      "name": "jjmllr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68501961?v=4",
+      "profile": "https://github.com/jjmllr",
+      "contributions": [
+        "code",
+        "doc",
+        "projectManagement"
+      ]
     }
   ],
   "contributorsPerLine": 7,
