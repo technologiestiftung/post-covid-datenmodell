@@ -116,7 +116,6 @@ Weiterführende Informationen zum Projekt, sowie der Challenge zur Gründung des
 
 Dieses Repository wurde in Kollaboration der Technologiestiftung Berlin und [&effect](https://www.and-effect.com/) erstellt.
 
-### Credits
 
 ### Contributors ✨
 
@@ -143,6 +142,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
+### Credits
 
 <table>
   <tr>
