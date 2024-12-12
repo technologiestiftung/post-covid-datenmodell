@@ -116,7 +116,6 @@ Weiterführende Informationen zum Projekt, sowie der Challenge zur Gründung des
 
 Dieses Repository wurde in Kollaboration der Technologiestiftung Berlin und [&effect](https://www.and-effect.com/) erstellt.
 
-tbd: Lizenz?m Hinweise zur Veröffentlichung?
 
 ## Contributors ✨
 
@@ -142,3 +141,31 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Credits
+
+<table>
+  <tr>
+    <td>
+      <a href="https://www.technologiestiftung-berlin.de/">
+        <br />
+        <br />
+        <img width="200" src="https://logos.citylab-berlin.org/logo-technologiestiftung-berlin-de.svg" />
+      </a>
+    </td>
+    <td>
+      In Zusammenarbeit mit: <a href="https://www.bihealth.org/en/">
+        <br />
+        <br />
+        <img width="200" src="https://www.bihealth.org/_assets/6cb4206c3a065969362f190803612019/Frontend/Build/assets/images/bih-logo.svg" />
+      </a>
+    </td>
+    <td>
+      Im Auftrag des: <a href="https://www.bmi.bund.de/DE/startseite/startseite-node.html">
+        <br />
+        <br />
+        <img width="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/BMI_Logo.svg/320px-BMI_Logo.svg.png" />
+      </a>
+    </td>
+  </tr>
+</table>
