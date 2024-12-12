@@ -5,7 +5,7 @@
 
 ## Über dieses Projekt
 
-Dieses Repo beinhaltet Skripte und die technische Umsetzung eines Konzeptes für ein Datenmodell, das die Technologiestiftung Berlin im Rahmen der Post-COVID-Challenge anlässlich der Gründung des Dateninstitutes des Bundes entwickelt. Aktuell befinden wir uns in zweiten Stufe der ingesamt drei Stufen der Challenge. Ziel des Datenmodells für die Post-COVID-Forschung ist es, eine Datengrundlage für gesellschaftlich relevante Forschungsfragen rund um Post-COVID zu bilden. Dies ermöglicht das Datenmodell durch eine Auswahl von Tools, die Forschende nutzen können, um Daten aus der medizinischen Versorgung mit offenen Daten zu verschneiden. 
+Die Technologiestiftung Berlin entwickelt im Rahmen der Post-COVID-Challenge des Dateninstituts des Bundes ein Datenmodell zur Post-COVID-Forschung. Dieses ermöglicht es Medizinforschenden, Gesundheitsdaten mit offenen Daten zu kombinieren. Aktuell befinden wir uns in der zweiten von drei Challenge-Stufen. Ziel ist es, eine Datengrundlage für gesellschaftlich relevante Forschungsfragen zu schaffen, unterstützt durch Tools zur Verschneidung und Analyse medizinischer und offener Daten.
 
 Inhalt
 
