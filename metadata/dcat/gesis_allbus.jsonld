@@ -1,0 +1,103 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "org": "http://www.w3.org/ns/org#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dcatde": "https://www.dcat-ap.de/def/dcatde/2.0/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@type": "dcat:Dataset",
+  "dct:title": "German General Social Survey ALLBUScompact 2023",
+  "dct:description": "ALLBUS (GGSS - the German General Social Survey) is a biennial trend survey monitoring attitudes, behavior, and social change in Germany. The 2023 edition focuses on topics such as religion and world view, lifestyle and personality, social inequality, political attitudes, and ethnocentrism and minorities. Data is available as a scientific-use-file.",
+  "dct:identifier": "urn:doi:10.4232/1.14395",
+  "dct:issued": {
+    "@value": "2024-09-20",
+    "@type": "xsd:date"
+  },
+  "dct:modified": {
+    "@value": "2024-10-08",
+    "@type": "xsd:date"
+  },
+  "dct:language": {
+    "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+  },
+  "dcat:theme": {
+    "@id": "https://publications.europa.eu/resource/authority/data-theme/SOCI"
+  },
+  "dcat:contactPoint": {
+    "@type": "vcard:Kind",
+    "vcard:fn": "GESIS - Leibniz Institute for the Social Sciences",
+    "vcard:hasEmail": "mailto:info@gesis.org"
+  },
+  "dcat:landingPage": {
+    "@id": "https://www.gesis.org/en/allbus"
+  },
+  "dct:publisher": {
+    "@type": "foaf:Agent",
+    "foaf:name": "GESIS - Leibniz Institute for the Social Sciences"
+  },
+  "dcat:distribution": [
+    {
+      "@type": "dcat:Distribution",
+      "dct:title": "ALLBUScompact 2023 Data File (Stata)",
+      "dct:description": "Downloadable dataset of the German General Social Survey 2023 in Stata (.dta) format.",
+      "dcat:mediaType": {
+        "@id": "https://www.iana.org/assignments/media-types/application/zip"
+      },
+      "dcat:accessURL": {
+        "@id": "https://search.gesis.org/research_data/ZA8831"
+      }
+    },
+    {
+      "@type": "dcat:Distribution",
+      "dct:title": "ALLBUScompact 2023 Data File (SPSS)",
+      "dct:description": "Downloadable dataset of the German General Social Survey 2023 in SPSS (.sav) format",
+      "dcat:mediaType": {
+        "@id": "https://www.iana.org/assignments/media-types/application/zip"
+      },
+      "dcat:accessURL": {
+        "@id": "https://search.gesis.org/research_data/ZA8831"
+      }
+    }
+  ],
+  "dct:spatial": [
+    {
+      "@type": "dcterms:Location",
+      "dcterms:identifier": "DE",
+      "dcterms:title": "Germany",
+      "dcat:bbox": "5.866,47.27,15.041,55.058",
+      "dcterms:description": "The dataset covers the geographic area of Germany, including both old and new federal states."
+    }
+  ],
+  "dct:temporal": {
+    "@type": "dcterms:PeriodOfTime",
+    "dcat:startDate": {
+      "@value": "2023-04-01",
+      "@type": "xsd:date"
+    },
+    "dcat:endDate": {
+      "@value": "2023-09-30",
+      "@type": "xsd:date"
+    }
+  },
+  "dcat:keyword": [
+    "Social monitoring",
+    "Attitudes",
+    "Social change",
+    "Religion",
+    "Political attitudes",
+    "Social inequality",
+    "Ethnocentrism",
+    "Germany",
+    "ALLBUS"
+  ],
+  "dct:accessRights": {
+    "@type": "dcterms:RightsStatement",
+    "dcterms:title": "Publicly accessible for research and teaching purposes"
+  }
+}
