@@ -5,7 +5,7 @@
 
 ## Über dieses Projekt
 
-tbd - Text von Seiten Technologiestiftung?
+Dieses Repo beinhaltet Skripte und die technische Umsetzung eines Konzeptes für ein Datenmodell, das die Technologiestiftung Berlin im Rahmen der Post-COVID-Challenge anlässlich der Gründung des Dateninstitutes des Bundes entwickelt. Aktuell befinden wir uns in zweiten Stufe der ingesamt drei Stufen der Challenge. Ziel des Datenmodells für die Post-COVID-Forschung ist es, eine Datengrundlage für gesellschaftlich relevante Forschungsfragen rund um Post-COVID zu bilden. Dies ermöglicht das Datenmodell durch eine Auswahl von Tools, die Forschende nutzen können, um Daten aus der medizinischen Versorgung mit offenen Daten zu verschneiden. 
 
 Inhalt
 
@@ -43,7 +43,7 @@ Für eine Auflistung der verfügbaren Skripte und abgedeckten Use Cases gibt es 
 
 ## Benutze Datenquellen
 
-Für das Projekt wurden mehrere (öffentliche) Datensätze benutzt um mehr Informationen an die MII-Daten (Patient:innen-Daten zu spielen).
+Für das Projekt wurden mehrere (öffentliche) Datensätze benutzt, um weitere Informationen an die Patient:innen-Daten zu spielen.
 
 | Datensatz                                 | Kurzbeschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Link                                                                          | Metaden-Beschreibung                                                                                                                                    |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -112,7 +112,7 @@ Für die verschiedenen Use Cases wurden Hilfsfunktionen, wie z.B. Berechnung des
 
 ### Autoren, Mehr Informationen
 
-tbd: Hinweise von Seiten Technologiestiftung, weiterfürhrende Informationen zu dem Projekt?
+Weiterführende Informationen zum Projekt, sowie der Challenge zur Gründung des Dateninstitutes finden Sie auf der Seite der [Technologiestiftung Berlin](https://www.technologiestiftung-berlin.de/projekte/post-covid-datenmodell).
 
 Dieses Repository wurde in Kollaboration der Technologiestiftung Berlin und [&effect](https://www.and-effect.com/) erstellt.
 
